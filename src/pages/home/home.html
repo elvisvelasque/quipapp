@@ -1,0 +1,49 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>
+      <ion-icon name="menu" menuToggle></ion-icon>
+      Quipapp
+    </ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding class="transparent-header" [ngStyle]="{'background-image': 'url(' + backgroundImage +')'}" style="“background-size: cover” ">
+
+<ion-col align-self-center>
+      <h1>
+        Menu
+      </h1>
+</ion-col>
+
+<div style="margin-top: 20px;">
+  <ion-row class="row">
+    <ion-col class="col"><ion-icon style="font-size: 60px;" color="primary" name="ionic" role="img" class="icon icon-ios icon-ios-primary ion-ios-ionic" aria-label="ionic"></ion-icon><br>Resumen</ion-col>
+
+ </ion-row>
+
+
+</div>
+
+<div style="margin-top: 70px;">
+
+ <ion-row class="row">
+    <ion-col class="col"><ion-icon (click)="abrirventas()" style="font-size: 60px;" name="logo-angular" role="img" class="icon ion-logo-angular" aria-label="logo angular"></ion-icon><br>Ventas</ion-col>
+    <ion-col class="col"><ion-icon style="font-size: 60px;" color="danger" name="heart" role="img" class="icon icon-ios icon-ios-danger ion-ios-heart" aria-label="heart"></ion-icon><br>Inventario</ion-col>
+    <ion-col class="col"><ion-icon style="font-size: 60px;" color="primary" name="ionitron" role="img" class="icon icon-ios icon-ios-primary ion-ios-ionitron" aria-label="ionitron"></ion-icon><br>Costos</ion-col>
+ </ion-row>
+
+  <ion-row class="row">
+    <ion-col class="col"><ion-icon style="font-size: 60px;" color="secondary" name="map" role="img" class="icon icon-ios icon-ios-secondary ion-ios-map" aria-label="map"></ion-icon><br>Clientes</ion-col>
+    <ion-col class="col"><ion-icon style="font-size: 60px;" name="navigate" role="img" class="icon icon-ios ion-ios-navigate" aria-label="navigate"></ion-icon><br>Ratios</ion-col>
+    <ion-col class="col"><ion-icon style="font-size: 60px;" name="pin" role="img" class="icon icon-ios ion-ios-pin" aria-label="pin"></ion-icon><br>Proveedores</ion-col>
+ </ion-row>
+
+ <ion-row class="row">
+    <ion-col class="col"><ion-icon style="font-size: 60px;" name="apps" role="img" class="icon icon-ios ion-ios-apps" aria-label="apps"></ion-icon><br>Laboratorio</ion-col>
+    <ion-col class="col"><ion-icon style="font-size: 60px;" name="lock" role="img" class="icon icon-ios ion-ios-lock" aria-label="lock"></ion-icon><br>Distribucion</ion-col>
+    <ion-col class="col"><ion-icon style="font-size: 60px;" color="bright" name="key" role="img" class="icon icon-ios icon-ios-bright ion-ios-key" aria-label="key"></ion-icon><br>Notas</ion-col> 
+ </ion-row>
+
+</div>
+
+</ion-content>
