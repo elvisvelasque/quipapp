@@ -1,6 +1,13 @@
 import { Component } from '@angular/core';
+
 import { NavController } from 'ionic-angular';
-import { ventaspage } from '../ventas/ventas'
+import { ventaspage } from '../ventas/ventas';
+import { costospage } from '../costos/costos';
+import { inventariopage } from '../inventario/inventario';
+import { ratiospage } from '../ratios/ratios';
+import { resumenpage } from '../resumen/resumen';
+
+
 
 @Component({
   selector: 'page-home',
@@ -17,5 +24,22 @@ export class HomePage {
   abrirventas(){
    this.navCtrl.push(ventaspage);
   }
+
+  abririnventario(){
+   this.navCtrl.push(inventariopage);
+  }
+
+  abrircostos(){
+   this.navCtrl.push(costospage);
+  }
+
+   abrirratios(){
+   this.navCtrl.push(ratiospage);
+  }
+
+   abrirresumen(){
+   this.navCtrl.push(resumenpage);
+  }
+
 
 }

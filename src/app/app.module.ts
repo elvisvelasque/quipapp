@@ -4,6 +4,12 @@ import { MyApp } from './app.component';
 
 import { HomePage } from '../pages/home/home';
 import { ventaspage } from '../pages/ventas/ventas';
+import { costospage } from '../pages/costos/costos';
+import { inventariopage } from '../pages/inventario/inventario';
+import { ratiospage } from '../pages/ratios/ratios';
+import { resumenpage } from '../pages/resumen/resumen';
+
+
 
 
 
@@ -12,6 +18,11 @@ import { ventaspage } from '../pages/ventas/ventas';
     MyApp,
     HomePage,
     ventaspage,
+    costospage,
+    inventariopage,
+    ventaspage,
+    ratiospage,
+    resumenpage,
    
   ],
   imports: [
@@ -22,6 +33,11 @@ import { ventaspage } from '../pages/ventas/ventas';
     MyApp,
     HomePage,
     ventaspage,
+    costospage,
+    inventariopage,
+    ventaspage,
+    ratiospage,
+    resumenpage,
     
   ],
   providers: [{provide: ErrorHandler, useClass: IonicErrorHandler}]

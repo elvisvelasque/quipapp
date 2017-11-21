@@ -4,6 +4,11 @@ import { StatusBar, Splashscreen } from 'ionic-native';
 
 import { HomePage } from '../pages/home/home';
 import { ventaspage } from '../pages/ventas/ventas';
+import { costospage } from '../pages/costos/costos';
+import { inventariopage } from '../pages/inventario/inventario';
+import { ratiospage } from '../pages/ratios/ratios';
+import { resumenpage } from '../pages/resumen/resumen';
+
 
 
 @Component({
@@ -19,6 +24,11 @@ export class MyApp {
     this.pages = [
       {title: 'Inicio', component: HomePage, badge: 'Nuevo', icon: 'home'},
       {title: 'Ventas', component: ventaspage, badge: '',icon: 'home'},
+      {title: 'Costos', component: costospage, badge: '',icon: 'home'},
+      {title: 'Inventario', component: inventariopage, badge: '',icon: 'home'},
+      {title: 'Ratios', component: ratiospage, badge: '',icon: 'home'},
+      {title: 'Resumen', component: resumenpage, badge: '',icon: 'home'},
+
       
     ];
 
