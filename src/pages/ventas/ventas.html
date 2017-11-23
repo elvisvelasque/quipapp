@@ -1,13 +1,54 @@
 <ion-header>
 
   <ion-navbar>
-    <ion-title><ion-icon name="menu" menuToggle></ion-icon> Ventas</ion-title>
+    <ion-title><ion-icon name="menu" menuToggle></ion-icon> QuipApp</ion-title>
   </ion-navbar>
 
 </ion-header>
 
 
-<ion-content padding>
+<ion-content padding class="transparent-header" [ngStyle]="{'background-image': 'url(' + backgroundImage +')'}">
 
+  <ion-col align-self-center><h1>Ventas</h1></ion-col>
+
+  <ion-card id="customer">
+    <ion-card-content>
+      Tu mejor comprador ha sido {{ bestCustomer }}
+      <br /><span class="amount"><strong>S/1500</strong></span>
+    </ion-card-content>
+  </ion-card>
+
+  <ion-card id="product">
+    <ion-card-content>
+      Tu producto más vendido fue {{ bestProduct }}
+      <br /><span class="amount"><strong>S/1500</strong></span>
+    </ion-card-content>
+  </ion-card>
+
+  <div>
+    <ion-row class="row" id="opciones">
+      <ion-col class="col">
+        <button primary large class="circle" id="compradores">
+          <ion-icon (click)="abrirVentasCompradores()" name="people" role="img" class="icon">
+          </ion-icon>
+        </button>
+        <br>Compradores
+      </ion-col>
+      <ion-col class="col">
+        <button primary large class="circle" id="ventas">
+          <ion-icon (click)="abrirVentasListado()" name="pricetags" role="img" class="icon">
+          </ion-icon>
+        </button>
+        <br>Listado de Ventas
+      </ion-col>
+      <ion-col class="col">
+        <button primary large class="circle" id="productos">
+          <ion-icon (click)="abrirVentasProductos()" name="cube" role="img" class="icon">
+          </ion-icon>
+        </button>
+        <br>Productos Vendidos
+      </ion-col>
+    </ion-row>
+  </div>
 
 </ion-content>
