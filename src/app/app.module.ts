@@ -1,17 +1,13 @@
 import { NgModule, ErrorHandler } from '@angular/core';
 import { IonicApp, IonicModule, IonicErrorHandler } from 'ionic-angular';
 import { MyApp } from './app.component';
-
 import { HomePage } from '../pages/home/home';
 import { ventaspage } from '../pages/ventas/ventas';
 import { costospage } from '../pages/costos/costos';
 import { inventariopage } from '../pages/inventario/inventario';
 import { ratiospage } from '../pages/ratios/ratios';
 import { resumenpage } from '../pages/resumen/resumen';
-
-
-
-
+import { InvoiceProvider } from '../providers/InvoiceProvider';
 
 @NgModule({
   declarations: [
@@ -23,7 +19,6 @@ import { resumenpage } from '../pages/resumen/resumen';
     ventaspage,
     ratiospage,
     resumenpage,
-   
   ],
   imports: [
     IonicModule.forRoot(MyApp)
@@ -38,8 +33,7 @@ import { resumenpage } from '../pages/resumen/resumen';
     ventaspage,
     ratiospage,
     resumenpage,
-    
   ],
-  providers: [{provide: ErrorHandler, useClass: IonicErrorHandler}]
+  providers: [InvoiceProvider, {provide: ErrorHandler, useClass: IonicErrorHandler}]
 })
 export class AppModule {}

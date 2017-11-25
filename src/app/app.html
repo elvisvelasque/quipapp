@@ -1,16 +1,18 @@
 <ion-menu [content]="content" id="menu-material">
-    <ion-content>
-      <div class="menu-header">
-        <!--material-design-background-->
-        <img class="user-avatar round" [src]="chosenPicture || placeholder" onerror="this.src='assets/img/ian-avatar.png'"/>
-        <p class="name">Paula Bolliger</p>
-        <p class="e-mail">pbolliger@email.com</p>
-      </div>
-      <ion-list no-lines>
-        <button ion-item *ngFor="let p of pages" (click)="openPage(p)"> <ion-icon [name]="p.icon" item-left></ion-icon>
-        {{ p.title }} <ion-badge>{{ p.badge}}</ion-badge> </button>
-      </ion-list>
-    </ion-content>
-  </ion-menu>
-  <!-- Disable swipe-to-go-back because it's poor UX to combine STGB with side menus -->
- <ion-nav #content [root]="rootPage"></ion-nav>
+  <ion-content>
+    <div class="menu-header">
+      <!--material-design-background-->
+      <img class="user-avatar round" [src]="chosenPicture || placeholder" onerror="this.src='assets/img/ian-avatar.png'" />
+      <p class="name">Paula Bolliger</p>
+      <p class="e-mail">pbolliger@email.com</p>
+    </div>
+    <ion-list no-lines>
+      <button ion-item *ngFor="let p of pages" (click)="openPage(p)">
+        <ion-icon [name]="p.icon" item-left></ion-icon>
+        {{ p.title }} <ion-badge>{{ p.badge}}</ion-badge>
+      </button>
+    </ion-list>
+  </ion-content>
+</ion-menu>
+<!-- Disable swipe-to-go-back because it's poor UX to combine STGB with side menus -->
+<ion-nav #content [root]="rootPage"></ion-nav>
