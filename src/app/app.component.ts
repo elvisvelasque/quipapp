@@ -10,26 +10,25 @@ import { ratiospage } from '../pages/ratios/ratios';
 import { resumenpage } from '../pages/resumen/resumen';
 
 
-
 @Component({
   templateUrl: 'app.html'
 })
 export class MyApp {
   rootPage = HomePage;
 
-  pages: Array<{title: string, component: any, badge: string, icon: string}> = [];
+  pages: Array<{ title: string, component: any, badge: string, icon: string }> = [];
 
   constructor(platform: Platform, public menuCtrl: MenuController) {
 
     this.pages = [
-      {title: 'Inicio', component: HomePage, badge: 'Nuevo', icon: 'home'},
-      {title: 'Ventas', component: ventaspage, badge: '',icon: 'home'},
-      {title: 'Costos', component: costospage, badge: '',icon: 'home'},
-      {title: 'Inventario', component: inventariopage, badge: '',icon: 'home'},
-      {title: 'Ratios', component: ratiospage, badge: '',icon: 'home'},
-      {title: 'Resumen', component: resumenpage, badge: '',icon: 'home'},
+      { title: 'Inicio', component: HomePage, badge: 'Nuevo', icon: 'home' },
+      { title: 'Ventas', component: ventaspage, badge: '', icon: 'home' },
+      { title: 'Costos', component: costospage, badge: '', icon: 'home' },
+      { title: 'Inventario', component: inventariopage, badge: '', icon: 'home' },
+      { title: 'Ratios', component: ratiospage, badge: '', icon: 'home' },
+      { title: 'Resumen', component: resumenpage, badge: '', icon: 'home' },
 
-      
+
     ];
 
     platform.ready().then(() => {
@@ -40,7 +39,7 @@ export class MyApp {
     });
   }
 
-  openPage(page: {title: string, component: any}): void {
+  openPage(page: { title: string, component: any }): void {
     this.rootPage = page.component;
     this.menuCtrl.close();
   }
