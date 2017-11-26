@@ -31,6 +31,30 @@ ion-card {
   margin-top: 50px;
 }
 
+.text_indicator {
+    background: #1b2f73;
+    color:white;
+    text-align: center;
+    display: block;
+    border-radius: 10px 0 0 0;
+    font-size: 13px;
+}
+
+.fila2 {
+   background: #7388d8;
+   color:white;
+   font-size: 13px;
+
+}
+
+ion-row {
+      padding: 10px;
+    }
+
+.titulo1{
+  padding: 0;
+
+}
 .circle {
   background: blue;
   width: 50px;

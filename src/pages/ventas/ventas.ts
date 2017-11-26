@@ -2,6 +2,8 @@ import { Component, ViewChild } from '@angular/core';
 import { NavController, NavParams, Platform } from 'ionic-angular'
 import { InvoiceProvider } from '../../providers/InvoiceProvider';
 import chartJs from 'chart.js';
+import { ventasPeriodo } from './ventasPeriodo/ventasPeriodo';
+
 
 @Component({
   selector: 'ventas-lists',
@@ -71,6 +73,10 @@ export class ventaspage{
     return suma;
   }
 
+  abrirVentasPeriodo(){
+   this.navCtrl.push(ventasPeriodo);
+  }
+
   getDoughnutChart() {
     const data = {
       labels: [this.prov_items["Nombre"][0], "Otros"],
@@ -92,6 +98,8 @@ export class ventaspage{
       this.getProviders();
     });
   }
+
+
 
   getInvoices() {
     this.i_items = [];
@@ -123,7 +131,7 @@ export class ventaspage{
           console.log("PRODUCTOS");
           console.log(this.p_items);
           this.pieChart = this.getPieChart();
-          document.getElementById("porc").textContent = Math.round(this.p_items["Datas"][0]) + " %";
+          document.getElementById("porc").textContent = "El producto mas vendido es " + this.p_items["Nombre"][0] + ", con " + Math.round(this.p_items["Datas"][0]) + " %";
         } else {
           console.error('Error retrieving weather data: Data object is empty');
         }
@@ -145,7 +153,7 @@ export class ventaspage{
           console.log("PROVIDERS");
           console.log(this.prov_items);
           this.doughnutChart = this.getDoughnutChart();
-          document.getElementById("porcprov").textContent = Math.round(this.prov_items["Datas"][0]) + " %";
+          document.getElementById("porcprov").textContent = "El cliente mas vendido es " + this.prov_items["Nombre"][0] + ", con " +Math.round(this.prov_items["Datas"][0]) + " %";
         } else {
           console.error('Error retrieving weather data: Data object is empty');
         }

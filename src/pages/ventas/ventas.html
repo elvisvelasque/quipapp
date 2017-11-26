@@ -12,9 +12,9 @@
   <ion-col align-self-center><h1>Ventas</h1></ion-col>
 
     <ion-card>
-      <ion-card-content>
-      <ion-row style="height: 25%;"><strong>Último Mes</strong></ion-row>
-      <ion-row style="height: 50%;">Producto más vendido</ion-row>
+      <ion-card-content class="titulo1">
+      <ion-row class="text_indicator" style="height: 25%;"><strong>Último Mes</strong></ion-row>
+      <ion-row class="fila2" style="height: 50%;"><ion-icon  style="font-size: 15px;margin-right: 7px" name="cube"></ion-icon> Producto más vendido:</ion-row>
       <ion-row id="porc" style="height: 25%;"><strong></strong></ion-row>
 
         <ion-row>
@@ -26,65 +26,41 @@
     </ion-card>
 
   <ion-card>
-    <ion-card-content>
-        <ion-col>
-          <ion-row style="height: 25%;"><strong>Último Mes</strong></ion-row>
-          <ion-row style="height: 50%;">Clien que más compro</ion-row>
-          <ion-row id="porcprov" style="height: 25%;"><strong></strong></ion-row>
-        </ion-col>
-      <canvas #doughnutCanvas></canvas>
+    <ion-card-content class="titulo1">
+        
+      <ion-row class="text_indicator" style="height: 25%;"><strong>Último Mes</strong></ion-row>
+      <ion-row class="fila2" style="height: 50%;"><ion-icon  style="font-size: 15px;margin-right: 7px" name="cube"></ion-icon>Cliente que más compro</ion-row>
+      <ion-row id="porcprov" style="height: 25%;"><strong></strong></ion-row>
+      <ion-row>
+          <ion-col>
+           <canvas #doughnutCanvas></canvas>
+          </ion-col>
+      </ion-row>
     </ion-card-content>
   </ion-card>
   
-      <ion-row align-items-start justify-content-center>
-        <ion-card>
-          <ion-card-header>
-            Último mes
-          </ion-card-header>
-          <ion-card-content>
-            <ion-grid>
-              <ion-row>
-                <ion-col>
-                  <ion-icon (click)="abrirVentasCompradores()" name="people" role="img" class="icon"></ion-icon>
-                </ion-col>
-                <ion-col col-8>
-                  Producto más vendido
-                </ion-col>
-              </ion-row>
-            </ion-grid>
-          </ion-card-content>
-        </ion-card>
-      </ion-row>
-
-  <ion-card id="product">
-    <ion-card-content>
-      Tu producto más vendido fue {{ bestProduct }}
-      <br /><span class="amount"><strong>S/1500</strong></span>
-    </ion-card-content>
-  </ion-card>
-
   <div>
     <ion-row class="row" id="opciones">
       <ion-col class="col">
         <button primary large class="circle" id="compradores">
-          <ion-icon (click)="abrirVentasCompradores()" name="people" role="img" class="icon">
+          <ion-icon (click)="abrirVentasPeriodo()" name="people" role="img" class="icon">
           </ion-icon>
         </button>
-        <br>Compradores
+        <br>Ventas por periodo
       </ion-col>
       <ion-col class="col">
         <button primary large class="circle" id="ventas">
-          <ion-icon (click)="abrirVentasListado()" name="pricetags" role="img" class="icon">
+          <ion-icon (click)="abrirVentasProyecciones()" name="pricetags" role="img" class="icon">
           </ion-icon>
         </button>
-        <br>Listado de Ventas
+        <br>Proyecciones
       </ion-col>
       <ion-col class="col">
         <button primary large class="circle" id="productos">
-          <ion-icon (click)="abrirVentasProductos()" name="cube" role="img" class="icon">
+          <ion-icon (click)="abrirVentasEstrategias()" name="cube" role="img" class="icon">
           </ion-icon>
         </button>
-        <br>Productos Vendidos
+        <br>Estrategias
       </ion-col>
     </ion-row>
   </div>

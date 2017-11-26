@@ -9,6 +9,9 @@ import { ratiospage } from '../pages/ratios/ratios';
 import { resumenpage } from '../pages/resumen/resumen';
 import { InvoiceProvider } from '../providers/InvoiceProvider';
 import { LoginSliderPage } from '../pages/login-slider/login-slider';
+import { ventasPeriodo } from '../pages/ventas/ventasPeriodo/ventasPeriodo';
+
+
 
 
 @NgModule({
@@ -22,6 +25,7 @@ import { LoginSliderPage } from '../pages/login-slider/login-slider';
     ratiospage,
     resumenpage,
     LoginSliderPage,
+    ventasPeriodo,
   ],
   imports: [
     IonicModule.forRoot(MyApp)
@@ -37,6 +41,7 @@ import { LoginSliderPage } from '../pages/login-slider/login-slider';
     ratiospage,
     resumenpage,
     LoginSliderPage,
+    ventasPeriodo,
   ],
   providers: [InvoiceProvider, {provide: ErrorHandler, useClass: IonicErrorHandler}]
 })
