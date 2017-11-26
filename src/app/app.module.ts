@@ -21,6 +21,7 @@ import { estratprecioideal } from '../pages/estrategias/estrategiasPrecio/estrat
 import {clientespage} from '../pages/clientes/clientes';
 import {NativeGoogleMapsPage} from '../pages/geolocalizacion/geolocalizacion';
 import { Camera, CameraOptions  } from '@ionic-native/camera';
+import {marketing} from '../pages/marketing/marketing';
 
 @NgModule({
   declarations: [
@@ -44,6 +45,7 @@ import { Camera, CameraOptions  } from '@ionic-native/camera';
     estratprecioideal,
     clientespage,
     NativeGoogleMapsPage,
+    marketing,
   ],
   imports: [
     IonicModule.forRoot(MyApp)
@@ -70,6 +72,7 @@ import { Camera, CameraOptions  } from '@ionic-native/camera';
     estratprecioideal,
     clientespage,
     NativeGoogleMapsPage,
+    marketing,
   ],
   providers: [InvoiceProvider, Camera, {provide: ErrorHandler, useClass: IonicErrorHandler}]
 })

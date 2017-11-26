@@ -9,12 +9,17 @@
 
 <ion-content padding class="transparent-header" [ngStyle]="{'background-image': 'url(' + backgroundImage +')'}">
 
-  <ion-col align-self-center><h1 style="color:#50b576">Información de Proveedores</h1></ion-col>
-
-    <ion-row class="row header">
+  <ion-col align-self-center><h1 style="color:#4c4658">Información de Proveedores</h1></ion-col>
+  
+  <ion-card>
+  <ion-card-content class="titulo1">
+    <ion-row class="row header" style="background: #8b328c;
+    color:white;
+    border-radius: 10px 0 0 0;
+    font-size: 13px;">
       <ion-col>Proveedor</ion-col>
       <ion-col>RUC</ion-col>
-      <ion-col><ion-icon name="md-contacts"></ion-icon>Contacto</ion-col>
+      <ion-col><ion-icon name="md-contacts"></ion-icon> Contacto</ion-col>
     </ion-row>
     <ion-row>
       <ion-col class="col">Swiss Just Products</ion-col>
@@ -31,4 +36,6 @@
       <ion-col class="col">3143984</ion-col>
       <ion-col class="col">camila_poma@gmail.com</ion-col>
     </ion-row>
+  </ion-card-content>
+  </ion-card>
 </ion-content>

@@ -12,6 +12,8 @@ import { estrategias } from '../estrategias/estrategias';
 import { clientespage } from '../clientes/clientes';
 import { NativeGoogleMapsPage } from '../geolocalizacion/geolocalizacion';
 import { Camera, CameraOptions } from '@ionic-native/camera';
+import { marketing } from '../marketing/marketing';
+
 
 @Component({
   selector: 'page-home',
@@ -67,10 +69,10 @@ export class HomePage {
   }
 
   abrirmarketing() {
-    this.navCtrl.push(marketingpage);
+    this.navCtrl.push(marketing);
   }
 
-  ionViewDidLoad() {
+ionViewDidLoad() {
     this.platform.ready().then(() => {
         this.headerName = this.invoice.name;
     });
