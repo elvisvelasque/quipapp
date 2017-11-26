@@ -23129,6 +23129,12 @@ button span {
   white-space: initial;
 }
 
+.button {
+  height: -webkit-max-content;
+  height: -moz-max-content;
+  height: max-content;
+}
+
 ion-col {
   text-align: center;
 }
