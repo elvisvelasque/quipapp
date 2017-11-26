@@ -25,7 +25,7 @@ export class HomePage {
   public IsLogged: boolean = true;
 
   i_items: Array<any> = [];
-  public backgroundImage = 'assets/img/nube3.png';
+  public backgroundImage = 'assets/img/background.png';
 
   constructor(public navCtrl: NavController,
     public platform: Platform,

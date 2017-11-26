@@ -45,10 +45,13 @@
 
 <ion-footer>
 	<form [formGroup]="messageForm" (submit)="send(chatBox)" novalidate>
-		<ion-item>
-			<ion-input formControlName="message" [(ngModel)]="chatBox" placeholder="Send {{toUser.username}} a message..."></ion-input>
+		<ion-item style="float:left; width: 80%">
+			<ion-input formControlName="message" [(ngModel)]="chatBox" placeholder="Send {{toUser.username}} a message...">
+			</ion-input>
 		</ion-item>
-					<button ion-button clear (click)="send(chatBox)" item-end><ion-icon class="footer-btn" name="send"></ion-icon></button>
-
+		<button style="float:right; height: 10px !important" ion-button clear (click)="send(chatBox)" item-end>
+			<ion-icon class="footer-btn" name="send">
+			</ion-icon> 
+		</button>
 	</form>
 </ion-footer>
