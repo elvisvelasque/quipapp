@@ -2,7 +2,7 @@ import { Component ,ViewChild} from '@angular/core';
 import { NavController, NavParams } from 'ionic-angular';
 import { InvoiceProvider } from '../../providers/InvoiceProvider';
 import chartJs from 'chart.js';
-
+ 
 @Component({
   selector: 'inevtario-lists',
   templateUrl: 'inventario.html'

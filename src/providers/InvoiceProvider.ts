@@ -28,6 +28,14 @@ export class InvoiceProvider {
       .toPromise()
       .then(this.extractData);
   }
+  public GetRespuesta(pregunta: string): Promise<any> {
+    let content = {mensaje: ""};
+    content.mensaje = pregunta;
+    let url: string = this.getUrl("watson");
+    return this.http.post(url, content)
+      .toPromise()
+      .then(this.extractData);
+  }
 
   private extractData(res: Response) {
     //Convert the response to JSON format
