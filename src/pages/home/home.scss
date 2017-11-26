@@ -256,6 +256,33 @@ body{
   -webkit-margin-after: 0em;
 }
 
+.circle {
+  background: blue;
+  width: 75px;
+  height: 75px;
+  position: relative;
+  border-radius: 100%;
+
+  .icon {
+    font-size: 30px;
+  }
+
+  &#compradores {
+    background: #7bdd5d;
+  }
+
+  &#ventas {
+    background: #5b96dd;
+  }
+
+  &#productos {
+    background: #dd675c;
+  }
+}
+
+.circle i {
+font-size: 30px;
+}
 
 page-home {
     .center {

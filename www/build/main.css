@@ -22762,6 +22762,34 @@ body {
   -webkit-margin-after: 0em;
 }
 
+.circle {
+  background: blue;
+  width: 75px;
+  height: 75px;
+  position: relative;
+  border-radius: 100%;
+}
+
+.circle .icon {
+  font-size: 30px;
+}
+
+.circle#compradores {
+  background: #7bdd5d;
+}
+
+.circle#ventas {
+  background: #5b96dd;
+}
+
+.circle#productos {
+  background: #dd675c;
+}
+
+.circle i {
+  font-size: 30px;
+}
+
 page-home .center {
   text-align: center;
 }

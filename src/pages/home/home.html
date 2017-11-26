@@ -54,9 +54,27 @@
   <div style="margin-top: 10px;">
 
  <ion-row class="row">
-      <ion-col class="col"><ion-icon (click)="abrirventas()" style="font-size: 60px;" name="cart"></ion-icon><br>Ventas</ion-col>
-      <ion-col class="col"><ion-icon (click)="abririnventario()" style="font-size: 60px;" color="danger" name="cube" ></ion-icon><br>Inventario</ion-col>
-      <ion-col class="col"><ion-icon (click)="abrircostos()" style="font-size: 60px;" color="primary" name="md-cash"></ion-icon><br>ChatPakita</ion-col>
+      <ion-col class="col">
+        <button primary large class="circle" id="compradores">
+          <ion-icon (click)="abrirVentas()" name="people" role="img" class="icon">
+          </ion-icon>
+        </button>
+        <br>Ventas
+      </ion-col>
+      <ion-col class="col">
+        <button primary large class="circle" id="compradores">
+          <ion-icon (click)="abrirInventario()" name="cube" role="img" class="icon">
+          </ion-icon>
+        </button>
+        <br>Inventario
+      </ion-col>
+      <ion-col class="col">
+        <button primary large class="circle" id="compradores">
+          <ion-icon (click)="abrirCostos()" name="md-cash" role="img" class="icon">
+          </ion-icon>
+        </button>
+        <br>Chat Pakita
+      </ion-col>
     </ion-row>
 
     <ion-row class="row">
