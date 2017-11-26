@@ -66,6 +66,10 @@ export class HomePage {
     this.navCtrl.push(NativeGoogleMapsPage);
   }
 
+  abrirmarketing() {
+    this.navCtrl.push(marketingpage);
+  }
+
   ionViewDidLoad() {
     this.platform.ready().then(() => {
         this.headerName = this.invoice.name;
