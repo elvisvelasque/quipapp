@@ -12,6 +12,8 @@ import { estrategias } from '../estrategias/estrategias';
 import { clientespage } from '../clientes/clientes';
 import { NativeGoogleMapsPage } from '../geolocalizacion/geolocalizacion';
 import { Camera, CameraOptions } from '@ionic-native/camera';
+import { marketing } from '../marketing/marketing';
+
 
 @Component({
   selector: 'page-home',
@@ -65,6 +67,11 @@ export class HomePage {
   abrirgeo() {
     this.navCtrl.push(NativeGoogleMapsPage);
   }
+
+  abrirmarketing() {
+    this.navCtrl.push(marketing);
+  }
+
 
   ionViewDidLoad() {
     this.platform.ready().then(() => {

@@ -23158,6 +23158,10 @@ ion-card#product {
   background: #41acf4;
 }
 
+.titulo1 {
+  padding: 0;
+}
+
 #opciones {
   margin-top: 50px;
 }
