@@ -11,47 +11,74 @@
 
 <div text-center>
  <ion-row>
-  <ion-col col-4>
-  <button (click)="viewg1()" ion-button color="primary">CONTENIDO1</button>
+  <ion-col col-6>
+  <button (click)="viewg1()" ion-button color="primary">MAS VENDIDOS</button>
   </ion-col>
 
-  <ion-col col-4>
-  <button (click)="viewg2()" ion-button color="secondary">CONTENIDO1</button>
+  <ion-col col-6>
+  <button (click)="viewg2()" ion-button color="secondary">MENOS VENDIDOS</button>
   </ion-col>
 
-  <ion-col col-4>
-  <button (click)="viewg3()" ion-button color="primary">CONTENIDO1</button>
-  </ion-col>
 
   </ion-row>
  </div>
-
-
     <div id = "sw1" style="display: block;">
       <ion-card>
-        <ion-card-header>
-         PRODUCTOS MAS VENDIDOS
-        </ion-card-header>
-        <ion-card-content>
-          <canvas #pieCanvas></canvas>
-        </ion-card-content>
-      </ion-card>
+            <ion-card-content class="titulo1">
+            <ion-row class="text_indicator" style="height: 25%;"><strong>Último Mes</strong></ion-row>
+            <ion-row class="fila2" style="height: 50%;"><ion-icon  style="font-size: 15px;margin-right: 7px" name="cube"></ion-icon> Producto más vendido:</ion-row>
+            <ion-row id="porc" style="height: 25%;"><strong></strong></ion-row>
+
+              <ion-row>
+                <ion-col>
+                  <canvas #pieCanvas></canvas>
+                </ion-col>
+              </ion-row>
+            </ion-card-content>
+    </ion-card>
     </div>
 
     <div id = "sw2" style="display: none;">
-        <ion-row class="row header">
-          <ion-col>Utility Company Name</ion-col>
-          <ion-col>Service Code</ion-col>
-        </ion-row>
-        <ion-row ng-repeat="data in ctrl.data">
-          <ion-col class="col">1</ion-col>
-          <ion-col class="col">2</ion-col>
-        </ion-row>
+          <ion-card>
+            <ion-card-content class="titulo1">
+            <ion-row class="text_indicator" style="height: 25%;"><strong>Último Mes</strong></ion-row>
+            <ion-row class="fila2" style="height: 50%;"><ion-icon  style="font-size: 15px;margin-right: 7px" name="cube"></ion-icon> Producto menos vendido:</ion-row>
+            <ion-row id="porc2" style="height: 25%;"><strong></strong></ion-row>
+
+              <ion-row>
+                <ion-col>
+                  <canvas #pieCanvas2></canvas>
+                </ion-col>
+              </ion-row>
+            </ion-card-content>
+    </ion-card>
     </div>
 
-    <div id = "sw3" style="display: none;">
-        <h1>amio</h1>
-    </div>
+      <div>
+    <ion-row class="row" id="opciones">
+      <ion-col class="col">
+        <button primary large class="circle" id="compradores">
+          <ion-icon (click)="abrirVentasPeriodo()" name="people" role="img" class="icon">
+          </ion-icon>
+        </button>
+        <br>Ventas de Productos
+      </ion-col>
+      <ion-col class="col">
+        <button primary large class="circle" id="ventas">
+          <ion-icon (click)="abrirVentasProyecciones()" name="pricetags" role="img" class="icon">
+          </ion-icon>
+        </button>
+        <br>Proyecciones de Productos
+      </ion-col>
+      <ion-col class="col">
+        <button primary large class="circle" id="productos">
+          <ion-icon (click)="abrirVentasEstrategias()" name="cube" role="img" class="icon">
+          </ion-icon>
+        </button>
+        <br>Recomendaciones
+      </ion-col>
+    </ion-row>
+  </div>
 
 
 </ion-content>
