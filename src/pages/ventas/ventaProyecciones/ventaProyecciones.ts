@@ -1,5 +1,6 @@
 import { Component, ViewChild } from '@angular/core';
-import { NavController} from 'ionic-angular';
+import { NavController, Platform} from 'ionic-angular';
+import { InvoiceProvider } from '../../../providers/InvoiceProvider';
 import chartJs from 'chart.js';
 
 
@@ -12,15 +13,20 @@ export class ventaProyecciones {
   
   @ViewChild('lineCanvas') lineCanvas;
 
+  proj_items = [];
   lineChart: any;
+  numero_proy: number = 0;
 
-  constructor(public navCtrl: NavController) { }
+  constructor(public platform: Platform,
+    public navCtrl: NavController,
+    public invoice: InvoiceProvider) { }
 
   ngAfterViewInit() {
     setTimeout(() => {
-      this.lineChart = this.getLineChart();
-    }, 150);
+      console.log("after view init");
+    }, 1000);
   }
+
 
   getChart(context, chartType, data, options?) {
     return new chartJs(context, {
@@ -37,10 +43,10 @@ export class ventaProyecciones {
 
    getLineChart() {
     const data = {
-      labels: ['January', 'February', 'March', 'April', 'May', 'June', 'July'],
+      labels: this.proj_items["nombres"],
       datasets: [
         {
-          label: 'My First dataset',
+          label: 'Periodos',
           fill: false,
           lineTension: 0.1,
           backgroundColor: 'rgba(75,192,192,0.4)',
@@ -58,29 +64,7 @@ export class ventaProyecciones {
           pointHoverBorderWidth: 2,
           pointRadius: 1,
           pointHitRadius: 10,
-          data: [65, 59, 80, 81, 56, 55, 40],
-          spanGaps: false,
-        },
-        {
-          label: 'My Second dataset',
-          fill: false,
-          lineTension: 0.1,
-          backgroundColor: 'rgba(175,92,192,0.4)',
-          borderColor: 'rgba(31,156,156,1)',
-          borderCapStyle: 'butt',
-          borderDash: [5, 8],
-          borderDashOffset: 0.0,
-          borderJoinStyle: 'miter',
-          pointBorderColor: 'rgba(31,156,156,1)',
-          pointBackgroundColor: '#fff',
-          pointBorderWidth: 1,
-          pointHoverRadius: 5,
-          pointHoverBackgroundColor: 'rgba(31,156,156,1)',
-          pointHoverBorderColor: 'rgba(220,220,220,1)',
-          pointHoverBorderWidth: 2,
-          pointRadius: 1,
-          pointHitRadius: 10,
-          data: [15, 39, 50, 81, 51, 55, 30],
+          data: this.proj_items["data"],
           spanGaps: false,
         }
       ]
@@ -89,6 +73,31 @@ export class ventaProyecciones {
     return this.getChart(this.lineCanvas.nativeElement, 'line', data);
   }
 
+  ionViewDidLoad() {
+    this.platform.ready().then(() => {
+      this.getSalesProjections(3);
+    });
+  }
 
-  
+  getSalesProjections(num: number) {
+    this.proj_items = [];
+    this.proj_items = [];
+    this.invoice.getSalesProjections(num).then(
+      data => {
+        if (data) {
+          this.proj_items = data;
+          console.log("Projections");
+          console.log(this.proj_items);
+          this.lineChart = this.getLineChart();
+        } else {
+          console.error('Error retrieving weather data: Data object is empty');
+        }
+      },
+      error => {
+        //Hide the loading indicator
+        console.error('Error retrieving weather data');
+        console.dir(error);
+      }
+    );
+  }
 }

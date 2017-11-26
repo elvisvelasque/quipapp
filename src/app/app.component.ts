@@ -10,6 +10,8 @@ import { ratiospage } from '../pages/ratios/ratios';
 import { resumenpage } from '../pages/resumen/resumen';
 import { proveedorespage } from '../pages/proveedores/proveedores';
 import { LoginSliderPage } from '../pages/login-slider/login-slider';
+import { estrategias } from '../pages/estrategias/estrategias';
+import {clientespage} from '../pages/clientes/clientes';
 
 
 @Component({
@@ -28,10 +30,12 @@ export class MyApp {
       { title: 'Inicio', component: HomePage, badge: 'Nuevo', icon: 'home' },
       { title: 'Ventas', component: ventaspage, badge: '', icon: 'home' },
       { title: 'Costos', component: costospage, badge: '', icon: 'home' },
+      { title: 'Clientes', component: clientespage, badge: '', icon: 'home' },
       { title: 'Inventario', component: inventariopage, badge: '', icon: 'home' },
       { title: 'Ratios', component: ratiospage, badge: '', icon: 'home' },
       { title: 'Resumen', component: resumenpage, badge: '', icon: 'home' },
       { title: 'Proveedores', component: proveedorespage, badge: '', icon: 'home' },
+      { title: 'Estrategias', component: estrategias, badge: '', icon: 'home' },
 
     ];
 

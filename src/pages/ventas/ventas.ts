@@ -3,6 +3,8 @@ import { NavController, NavParams, Platform } from 'ionic-angular'
 import { InvoiceProvider } from '../../providers/InvoiceProvider';
 import { ventasPeriodo } from './ventasPeriodo/ventasPeriodo';
 import { ventaProyecciones } from './ventaProyecciones/ventaProyecciones';
+import { ventasEstrategias } from './ventasEstrategias/ventasEstrategias';
+
 
 import chartJs from 'chart.js';
 
@@ -81,6 +83,10 @@ export class ventaspage{
 
   abrirVentasProyecciones(){
    this.navCtrl.push(ventaProyecciones);
+  }
+
+   abrirVentasEstrategias(){
+   this.navCtrl.push(ventasEstrategias);
   }
 
 

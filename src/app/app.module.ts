@@ -13,6 +13,10 @@ import { InvoiceProvider } from '../providers/InvoiceProvider';
 import { LoginSliderPage } from '../pages/login-slider/login-slider';
 import { ventasPeriodo } from '../pages/ventas/ventasPeriodo/ventasPeriodo';
 import { ventaProyecciones } from '../pages/ventas/ventaProyecciones/ventaProyecciones';
+import { ventasEstrategias } from '../pages/ventas/ventasEstrategias/ventasEstrategias';
+import { estrategias } from '../pages/estrategias/estrategias';
+import { estrategiasPrecio } from '../pages/estrategias/estrategiasPrecio/estrategiasPrecio';
+import {clientespage} from '../pages/clientes/clientes';
 
 
 ventaProyecciones
@@ -32,6 +36,10 @@ ventaProyecciones
     LoginSliderPage,
     ventasPeriodo,
     ventaProyecciones,
+    ventasEstrategias,
+    estrategias,
+    estrategiasPrecio,
+    clientespage,
   ],
   imports: [
     IonicModule.forRoot(MyApp)
@@ -51,6 +59,10 @@ ventaProyecciones
     LoginSliderPage,
     ventasPeriodo,
     ventaProyecciones,
+    ventasEstrategias,
+    estrategias,
+    estrategiasPrecio,
+    clientespage,
   ],
   providers: [InvoiceProvider, {provide: ErrorHandler, useClass: IonicErrorHandler}]
 })
