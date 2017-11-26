@@ -8,6 +8,7 @@ import { costospage } from '../pages/costos/costos';
 import { inventariopage } from '../pages/inventario/inventario';
 import { ratiospage } from '../pages/ratios/ratios';
 import { resumenpage } from '../pages/resumen/resumen';
+import { LoginSliderPage } from '../pages/login-slider/login-slider';
 
 
 @Component({
@@ -17,6 +18,8 @@ export class MyApp {
   rootPage = HomePage;
 
   pages: Array<{ title: string, component: any, badge: string, icon: string }> = [];
+
+  pages2: Array<{ title: string, component: any}> = [];
 
   constructor(platform: Platform, public menuCtrl: MenuController) {
 
@@ -28,6 +31,12 @@ export class MyApp {
       { title: 'Ratios', component: ratiospage, badge: '', icon: 'home' },
       { title: 'Resumen', component: resumenpage, badge: '', icon: 'home' },
 
+
+    ];
+
+
+    this.pages2 = [
+      { title: 'Login', component: LoginSliderPage},
 
     ];
 
@@ -43,4 +52,5 @@ export class MyApp {
     this.rootPage = page.component;
     this.menuCtrl.close();
   }
+
 }
