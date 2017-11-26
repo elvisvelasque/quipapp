@@ -39,7 +39,14 @@
     </div>
 
     <div id = "sw2" style="display: none;">
-        <h1>que hace</h1>
+        <ion-row class="row header">
+          <ion-col>Utility Company Name</ion-col>
+          <ion-col>Service Code</ion-col>
+        </ion-row>
+        <ion-row ng-repeat="data in ctrl.data">
+          <ion-col class="col">1</ion-col>
+          <ion-col class="col">2</ion-col>
+        </ion-row>
     </div>
 
     <div id = "sw3" style="display: none;">

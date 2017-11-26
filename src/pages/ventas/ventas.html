@@ -27,10 +27,12 @@
     </ion-card>
 
   <ion-card>
-    <ion-card-header>
-      Doughnut Chart
-    </ion-card-header>
     <ion-card-content>
+        <ion-col>
+          <ion-row style="height: 25%;"><strong>Último Mes</strong></ion-row>
+          <ion-row style="height: 50%;">Clien que más compro</ion-row>
+          <ion-row id="porcprov" style="height: 25%;"><strong></strong></ion-row>
+        </ion-col>
       <canvas #doughnutCanvas></canvas>
     </ion-card-content>
   </ion-card>

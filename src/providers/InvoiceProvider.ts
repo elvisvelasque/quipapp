@@ -42,4 +42,11 @@ export class InvoiceProvider {
       .toPromise()
       .then(this.extractData);
   }
+
+  public GetProvidersSales(): Promise<any> {
+    let url: string = this.getUrl("clientes/mas/vendido");
+    return this.http.post(url, this.ruc)
+      .toPromise()
+      .then(this.extractData); 
+  }
 }

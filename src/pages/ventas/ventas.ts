@@ -16,6 +16,7 @@ export class ventaspage{
   pieChart: any;
   i_items: Array<any> = [];
   p_items: Array<any> = [];
+  prov_items: Array<any> = [];
 
   public backgroundImage = 'assets/img/nube3.png';
 
@@ -72,19 +73,12 @@ export class ventaspage{
 
   getDoughnutChart() {
     const data = {
-      labels: ['Red', 'Blue', 'Yellow', 'Green', 'Purple', 'Orange'],
-      datasets: [{
-        label: '# of Votes',
-        data: [12, 19, 3, 5, 2, 3],
-        backgroundColor: [
-          'rgba(255, 99, 132, 0.2)',
-          'rgba(54, 162, 235, 0.2)',
-          'rgba(255, 206, 86, 0.2)',
-          'rgba(75, 192, 192, 0.2)',
-          'rgba(153, 102, 255, 0.2)',
-          'rgba(255, 159, 64, 0.2)'
-        ],
-        hoverBackgroundColor: ['#FF6384', '#36A2EB', '#FFCE56', '#FF6384', '#36A2EB', '#FFCE56']
+      labels: [this.prov_items["Nombre"][0], "Otros"],
+      datasets: [
+      {
+        data: [this.prov_items["Datas"][0], this.getOtros(this.prov_items["Datas"], 1)],
+        backgroundColor: ['#FF6384', '#36A2EB', '#FFCE56'],
+        hoverBackgroundColor: ['#FF6384', '#36A2EB', '#FFCE56']
       }]
     };
 
@@ -95,6 +89,7 @@ export class ventaspage{
     this.platform.ready().then(() => {
       this.getInvoices();
       this.getProducts();
+      this.getProviders();
     });
   }
 
@@ -127,9 +122,30 @@ export class ventaspage{
           this.p_items = data;
           console.log("PRODUCTOS");
           console.log(this.p_items);
-          this.doughnutChart = this.getDoughnutChart();
           this.pieChart = this.getPieChart();
           document.getElementById("porc").textContent = Math.round(this.p_items["Datas"][0]) + " %";
+        } else {
+          console.error('Error retrieving weather data: Data object is empty');
+        }
+      },
+      error => {
+        //Hide the loading indicator
+        console.error('Error retrieving weather data');
+        console.dir(error);
+      }
+    );
+  }
+
+  getProviders() {
+    this.prov_items = [];
+    this.invoice.GetProvidersSales().then(
+      data => {
+        if (data) {
+          this.prov_items = data;
+          console.log("PROVIDERS");
+          console.log(this.prov_items);
+          this.doughnutChart = this.getDoughnutChart();
+          document.getElementById("porcprov").textContent = Math.round(this.prov_items["Datas"][0]) + " %";
         } else {
           console.error('Error retrieving weather data: Data object is empty');
         }
