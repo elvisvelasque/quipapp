@@ -1,0 +1,28 @@
+<ion-header>
+  <ion-navbar color="danger">
+    <ion-title>
+      Ventas
+    </ion-title>
+  </ion-navbar>
+</ion-header>
+<ion-content>
+  <ion-card>
+    <ion-card-header>
+      Proyeccion de Ventas
+    </ion-card-header>
+
+     <ion-row>
+      <ion-col>
+        <ion-item>
+          <ion-label>Numero de meses a proyectar:</ion-label>
+           <ion-datetime class="" displayFormat="M" pickerFormat="M">
+           </ion-datetime>
+        </ion-item>
+      </ion-col>
+     </ion-row>
+
+    <ion-card-content>
+      <canvas #lineCanvas></canvas>
+    </ion-card-content>
+  </ion-card>
+</ion-content>

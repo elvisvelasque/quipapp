@@ -12,9 +12,10 @@ import { resumenpage } from '../pages/resumen/resumen';
 import { InvoiceProvider } from '../providers/InvoiceProvider';
 import { LoginSliderPage } from '../pages/login-slider/login-slider';
 import { ventasPeriodo } from '../pages/ventas/ventasPeriodo/ventasPeriodo';
+import { ventaProyecciones } from '../pages/ventas/ventaProyecciones/ventaProyecciones';
 
 
-
+ventaProyecciones
 
 @NgModule({
   declarations: [
@@ -30,6 +31,7 @@ import { ventasPeriodo } from '../pages/ventas/ventasPeriodo/ventasPeriodo';
     resumenpage,
     LoginSliderPage,
     ventasPeriodo,
+    ventaProyecciones,
   ],
   imports: [
     IonicModule.forRoot(MyApp)
@@ -48,6 +50,7 @@ import { ventasPeriodo } from '../pages/ventas/ventasPeriodo/ventasPeriodo';
     resumenpage,
     LoginSliderPage,
     ventasPeriodo,
+    ventaProyecciones,
   ],
   providers: [InvoiceProvider, {provide: ErrorHandler, useClass: IonicErrorHandler}]
 })

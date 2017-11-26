@@ -2,6 +2,8 @@ import { Component, ViewChild } from '@angular/core';
 import { NavController, NavParams, Platform } from 'ionic-angular'
 import { InvoiceProvider } from '../../providers/InvoiceProvider';
 import { ventasPeriodo } from './ventasPeriodo/ventasPeriodo';
+import { ventaProyecciones } from './ventaProyecciones/ventaProyecciones';
+
 import chartJs from 'chart.js';
 
 
@@ -76,6 +78,11 @@ export class ventaspage{
   abrirVentasPeriodo(){
    this.navCtrl.push(ventasPeriodo);
   }
+
+  abrirVentasProyecciones(){
+   this.navCtrl.push(ventaProyecciones);
+  }
+
 
   getDoughnutChart() {
     const data = {
