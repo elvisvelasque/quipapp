@@ -1,5 +1,6 @@
 import { Component, ViewChild } from '@angular/core';
-import { NavController} from 'ionic-angular';
+import { NavController, Platform} from 'ionic-angular';
+import { InvoiceProvider } from '../../../providers/InvoiceProvider';
 import chartJs from 'chart.js';
 
 
@@ -11,14 +12,21 @@ import chartJs from 'chart.js';
 export class ventasPeriodo {
   @ViewChild('barCanvas') barCanvas;
 
+  fechaInicio: string;
+  fechaFin: string;
+  v_items: Array<any> = [];
+  v_items_orig: Array<any> = [];
   barChart: any;
+  months = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
 
-  constructor(public navCtrl: NavController) { }
+  constructor(public platform: Platform,
+    public navCtrl: NavController,
+    public invoice: InvoiceProvider) { }
 
   ngAfterViewInit() {
     setTimeout(() => {
-      this.barChart = this.getBarChart();
-    }, 150);
+      console.log("after view init");
+    }, 1000);
   }
 
   getChart(context, chartType, data, options?) {
@@ -36,17 +44,29 @@ export class ventasPeriodo {
 
   getBarChart() {
     const data = {
-      labels: ['Red', 'Blue', 'Yellow', 'Green', 'Purple', 'Orange'],
+      labels: this.v_items["nombres"],
       datasets: [{
-        label: '# of Votes',
-        data: [12, 19, 3, 5, 2, 3],
+        label: 'Meses',
+        data: this.v_items["data"],
         backgroundColor: [
           'rgba(255, 99, 132, 0.2)',
           'rgba(54, 162, 235, 0.2)',
           'rgba(255, 206, 86, 0.2)',
           'rgba(75, 192, 192, 0.2)',
           'rgba(153, 102, 255, 0.2)',
-          'rgba(255, 159, 64, 0.2)'
+          'rgba(255, 159, 64, 0.2)',
+          'rgba(255, 99, 132, 0.2)',
+          'rgba(54, 162, 235, 0.2)',
+          'rgba(255, 206, 86, 0.2)',
+          'rgba(75, 192, 192, 0.2)',
+          'rgba(153, 102, 255, 0.2)',
+          'rgba(255, 159, 64, 0.2)',
+          'rgba(255, 99, 132, 0.2)',
+          'rgba(54, 162, 235, 0.2)',
+          'rgba(255, 206, 86, 0.2)',
+          'rgba(75, 192, 192, 0.2)',
+          'rgba(153, 102, 255, 0.2)',
+          'rgba(255, 159, 64, 0.2)',
         ],
         borderColor: [
           'rgba(255,99,132,1)',
@@ -54,7 +74,19 @@ export class ventasPeriodo {
           'rgba(255, 206, 86, 1)',
           'rgba(75, 192, 192, 1)',
           'rgba(153, 102, 255, 1)',
-          'rgba(255, 159, 64, 1)'
+          'rgba(255, 159, 64, 1)',
+          'rgba(255,99,132,1)',
+          'rgba(54, 162, 235, 1)',
+          'rgba(255, 206, 86, 1)',
+          'rgba(75, 192, 192, 1)',
+          'rgba(153, 102, 255, 1)',
+          'rgba(255, 159, 64, 1)',
+          'rgba(255,99,132,1)',
+          'rgba(54, 162, 235, 1)',
+          'rgba(255, 206, 86, 1)',
+          'rgba(75, 192, 192, 1)',
+          'rgba(153, 102, 255, 1)',
+          'rgba(255, 159, 64, 1)',
         ],
         borderWidth: 1
       }]
@@ -74,4 +106,38 @@ export class ventasPeriodo {
   }
 
   
+  ionViewDidLoad() {
+    this.platform.ready().then(() => {
+      this.getPeriodSales();
+    });
+  }
+
+  getPeriodSales() {
+    this.v_items = [];
+    this.v_items_orig = [];
+    this.invoice.GetPeriodSales().then(
+      data => {
+        if (data) {
+          this.v_items = data;
+          this.v_items_orig = data;
+          console.log("PROVIDERS");
+          console.log(this.v_items);
+          console.log(this.v_items_orig);
+          this.barChart = this.getBarChart();
+        } else {
+          console.error('Error retrieving weather data: Data object is empty');
+        }
+      },
+      error => {
+        //Hide the loading indicator
+        console.error('Error retrieving weather data');
+        console.dir(error);
+      }
+    );
+  }
+
+  search() {
+    console.log(this.v_items);
+    this.barChart = this.getBarChart;
+  }
 }

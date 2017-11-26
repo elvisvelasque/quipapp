@@ -49,4 +49,21 @@ export class InvoiceProvider {
       .toPromise()
       .then(this.extractData); 
   }
+  
+  public GetPeriodSales(): Promise<any> {
+    let url: string = this.getUrl("ventas");
+    return this.http.post(url, this.ruc)
+      .toPromise()
+      .then(this.extractData); 
+  }
+
+  public getSalesProjections(num:number): Promise<any> {
+    let content = { RucVendedor: 20480072872, dias: 0};
+    content.dias = num;
+    let url: string = this.getUrl("ventas/proyectadas");
+    return this.http.post(url, content)
+      .toPromise()
+      .then(this.extractData);  
+  }
+  
 }
