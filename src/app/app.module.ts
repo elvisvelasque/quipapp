@@ -6,6 +6,7 @@ import { ventaspage } from '../pages/ventas/ventas';
 import { costospage } from '../pages/costos/costos';
 import { inventariopage } from '../pages/inventario/inventario';
 import { proveedorespage } from '../pages/proveedores/proveedores';
+import { proveedoresInfo } from '../pages/proveedores/proveedoresInfo/proveedoresInfo';
 import { ratiospage } from '../pages/ratios/ratios';
 import { resumenpage } from '../pages/resumen/resumen';
 import { InvoiceProvider } from '../providers/InvoiceProvider';
@@ -25,6 +26,7 @@ import { ventasPeriodo } from '../pages/ventas/ventasPeriodo/ventasPeriodo';
     ventaspage,
     ratiospage,
     proveedorespage,
+    proveedoresInfo,
     resumenpage,
     LoginSliderPage,
     ventasPeriodo,
@@ -40,6 +42,7 @@ import { ventasPeriodo } from '../pages/ventas/ventasPeriodo/ventasPeriodo';
     costospage,
     inventariopage,
     proveedorespage,
+    proveedoresInfo,
     ventaspage,
     ratiospage,
     resumenpage,

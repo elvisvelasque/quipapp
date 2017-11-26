@@ -9,12 +9,12 @@
 
 <ion-content padding class="transparent-header" [ngStyle]="{'background-image': 'url(' + backgroundImage +')'}">
 
-  <ion-col align-self-center><h1>Ventas</h1></ion-col>
+  <ion-col align-self-center><h1>Proveedores</h1></ion-col>
 
     <ion-card>
-      <ion-card-content>
-      <ion-row style="height: 25%;"><strong>Último Mes</strong></ion-row>
-      <ion-row style="height: 50%;">Producto más vendido</ion-row>
+      <ion-card-content class="titulo1">
+      <ion-row class="text_indicator" style="height: 25%;"><strong>Último Mes</strong></ion-row>
+      <ion-row class="fila2" style="height: 50%;"><ion-icon  style="font-size: 15px;margin-right: 7px" name="cube"></ion-icon> Tus proveedores</ion-row>
       <ion-row id="porc" style="height: 25%;"><strong></strong></ion-row>
 
         <ion-row>
@@ -25,4 +25,8 @@
       </ion-card-content>
     </ion-card>
 
+    <ion-row>
+      <button ion-button color="light" round (click)="abrirProveedoresInfo()">Información de Proveedores</button>
+      <button ion-button round>Compras por Periodo</button>
+    </ion-row>
 </ion-content>
