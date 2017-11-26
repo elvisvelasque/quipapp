@@ -126,21 +126,12 @@ viewg1() {
   this.type="1";
   document.getElementById("sw1").style.display = "block";
   document.getElementById("sw2").style.display = "none";
-  document.getElementById("sw3").style.display = "none";
 }
 
 viewg2() {
   this.type="2";
   document.getElementById("sw1").style.display = "none";
   document.getElementById("sw2").style.display = "block";
-  document.getElementById("sw3").style.display = "none";
-}
-
-viewg3() {
-  this.type="3";
-  document.getElementById("sw1").style.display = "none";
-  document.getElementById("sw2").style.display = "none";
-  document.getElementById("sw3").style.display = "block";
 }
 
 
