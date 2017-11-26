@@ -23,6 +23,21 @@ export class InvoiceProvider {
     return this.sunatEndpoint + command;
   }
 
+  public GetAllInvoices(): Promise<any> {
+    let url: string = this.getUrl("invoices");
+    return this.http.get(url)
+      .toPromise()
+      .then(this.extractData);
+  }
+  public GetRespuesta(pregunta: string): Promise<any> {
+    let content = {mensaje: ""};
+    content.mensaje = pregunta;
+    let url: string = this.getUrl("watson");
+    return this.http.post(url, content)
+      .toPromise()
+      .then(this.extractData);
+  }
+
   private extractData(res: Response) {
     //Convert the response to JSON format
     let body = res.json();
