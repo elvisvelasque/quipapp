@@ -1,6 +1,7 @@
 import { Component, ViewChild } from '@angular/core';
 import { NavController, NavParams, Platform } from 'ionic-angular'
 import { InvoiceProvider } from '../../providers/InvoiceProvider';
+import { proveedoresInfo } from './proveedoresInfo/proveedoresInfo';
 import chartJs from 'chart.js';
 
 @Component({
@@ -96,8 +97,13 @@ export class proveedorespage{
     );
   }
 
+  abrirProveedoresInfo(){
+   this.navCtrl.push(proveedoresInfo);
+  }
 
   getProducts() {
+    this.pieChart = this.getPieChart();
+    /*
     this.p_items = [];
     this.invoice.GetProductSales().then(
       data => {
@@ -116,6 +122,6 @@ export class proveedorespage{
         console.error('Error retrieving weather data');
         console.dir(error);
       }
-    );
+    );*/
   }
 }
