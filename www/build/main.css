@@ -22775,15 +22775,39 @@ body {
 }
 
 .circle#compradores {
-  background: #7bdd5d;
+  background: #f44242;
 }
 
-.circle#ventas {
+.circle#inventario {
+  background: #efd407;
+}
+
+.circle#chatpakita {
+  background: #ea5e07;
+}
+
+.circle#clientes {
+  background: #07cfea;
+}
+
+.circle#metas {
+  background: #ea07de;
+}
+
+.circle#proveedores {
   background: #5b96dd;
 }
 
-.circle#productos {
-  background: #dd675c;
+.circle#estrategias {
+  background: #6dea07;
+}
+
+.circle#geomarketing {
+  background: #f20000;
+}
+
+.circle#marketing {
+  background: #cecb21;
 }
 
 .circle i {
@@ -22792,6 +22816,11 @@ body {
 
 page-home .center {
   text-align: center;
+}
+
+page-home #minilabel {
+  margin-top: 5px;
+  background-color: white;
 }
 
 page-home .ionic-logo {

@@ -268,15 +268,39 @@ body{
   }
 
   &#compradores {
-    background: #7bdd5d;
+    background: #f44242;
   }
 
-  &#ventas {
+  &#inventario {
+    background: #efd407;
+  }
+
+  &#chatpakita {
+    background: #ea5e07;
+  }
+
+  &#clientes {
+    background: #07cfea;
+  }
+
+  &#metas {
+    background: #ea07de;
+  }
+
+  &#proveedores {
     background: #5b96dd;
   }
 
-  &#productos {
-    background: #dd675c;
+  &#estrategias {
+    background: #6dea07;
+  }
+
+  &#geomarketing {
+    background: #f20000;
+  }
+
+  &#marketing {
+    background: #cecb21;
   }
 }
 
@@ -287,6 +311,11 @@ font-size: 30px;
 page-home {
     .center {
         text-align: center;  
+    }
+
+    #minilabel {
+      margin-top: 5px;
+      background-color: white;
     }
     
     .ionic-logo {
