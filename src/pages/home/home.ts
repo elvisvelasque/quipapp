@@ -3,6 +3,7 @@ import { Component } from '@angular/core';
 import { NavController, Platform } from 'ionic-angular';
 import { ventaspage } from '../ventas/ventas';
 import { costospage } from '../costos/costos';
+import { proveedorespage } from '../proveedores/proveedores';
 import { inventariopage } from '../inventario/inventario';
 import { ratiospage } from '../ratios/ratios';
 import { resumenpage } from '../resumen/resumen';
@@ -42,6 +43,10 @@ export class HomePage {
 
   abrirresumen() {
     this.navCtrl.push(resumenpage);
+  }
+
+  abrirproveedores() {
+    this.navCtrl.push(proveedorespage); 
   }
 
   ionViewDidLoad() {

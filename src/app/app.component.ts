@@ -8,6 +8,7 @@ import { costospage } from '../pages/costos/costos';
 import { inventariopage } from '../pages/inventario/inventario';
 import { ratiospage } from '../pages/ratios/ratios';
 import { resumenpage } from '../pages/resumen/resumen';
+import { proveedorespage } from '../pages/proveedores/proveedores';
 import { LoginSliderPage } from '../pages/login-slider/login-slider';
 
 
@@ -30,7 +31,7 @@ export class MyApp {
       { title: 'Inventario', component: inventariopage, badge: '', icon: 'home' },
       { title: 'Ratios', component: ratiospage, badge: '', icon: 'home' },
       { title: 'Resumen', component: resumenpage, badge: '', icon: 'home' },
-
+      { title: 'Proveedores', component: proveedorespage, badge: '', icon: 'home' },
 
     ];
 
