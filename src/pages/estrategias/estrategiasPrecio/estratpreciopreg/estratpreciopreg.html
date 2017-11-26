@@ -12,6 +12,7 @@
  <div [ngSwitch]="type">
 
     <div *ngSwitchCase = "'preg1'">
+    
     <ion-row>
      {{ pages[0]["title"] }}
     </ion-row>
@@ -28,6 +29,7 @@
     <div *ngSwitchCase = "'preg2'">
         <ion-row>
      {{ pages[1]["title"] }}
+
     </ion-row>
 	<ion-list inset>
  	 <button ion-item  (click)="preg3()">

@@ -32,7 +32,7 @@ export class MyApp {
       { title: 'ChatPakita', component: costospage, badge: '', icon: 'home' },
       { title: 'Clientes', component: clientespage, badge: '', icon: 'home' },
       { title: 'Inventario', component: inventariopage, badge: '', icon: 'home' },
-      { title: 'Ratios', component: ratiospage, badge: '', icon: 'home' },
+      { title: 'Metas', component: ratiospage, badge: '', icon: 'home' },
       { title: 'Resumen', component: resumenpage, badge: '', icon: 'home' },
       { title: 'Proveedores', component: proveedorespage, badge: '', icon: 'home' },
       { title: 'Estrategias', component: estrategias, badge: '', icon: 'home' },
