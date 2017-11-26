@@ -9,6 +9,7 @@ import { ratiospage } from '../ratios/ratios';
 import { resumenpage } from '../resumen/resumen';
 import { InvoiceProvider } from '../../providers/InvoiceProvider';
 import { estrategias } from '../estrategias/estrategias';
+import { clientespage } from '../clientes/clientes';
 
 
 @Component({
@@ -53,6 +54,10 @@ export class HomePage {
 
  abrirestrategias() {
     this.navCtrl.push(estrategias); 
+  }
+
+  abrirclientes() {
+    this.navCtrl.push(clientespage);
   }
 
   ionViewDidLoad() {

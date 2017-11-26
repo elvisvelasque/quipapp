@@ -42,6 +42,12 @@ export class InvoiceProvider {
       .toPromise()
       .then(this.extractData);
   }
+  public GetCompras(): Promise<any> {
+    let url: string = this.getUrl("producto/inventarios");
+    return this.http.post(url, this.ruc)
+      .toPromise()
+      .then(this.extractData);
+  }
 
   public GetProvidersSales(): Promise<any> {
     let url: string = this.getUrl("clientes/mas/vendido");
@@ -64,6 +70,20 @@ export class InvoiceProvider {
     return this.http.post(url, content)
       .toPromise()
       .then(this.extractData);  
+  }
+
+  public GetClients():  Promise<any> {
+    let url: string = this.getUrl("clientes/caracteristicas");
+    return this.http.post(url, this.ruc)
+      .toPromise()
+      .then(this.extractData); 
+  }
+
+    public GetClientsPie():  Promise<any> {
+    let url: string = this.getUrl("clientes/mas/vendido");
+    return this.http.post(url, this.ruc)
+      .toPromise()
+      .then(this.extractData); 
   }
   
 }

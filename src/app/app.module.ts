@@ -18,7 +18,7 @@ import { estrategias } from '../pages/estrategias/estrategias';
 import { estrategiasPrecio } from '../pages/estrategias/estrategiasPrecio/estrategiasPrecio';
 import { estratpreciopreg } from '../pages/estrategias/estrategiasPrecio/estratpreciopreg/estratpreciopreg';
 import { estratprecioideal } from '../pages/estrategias/estrategiasPrecio/estratprecioideal/estratprecioideal';
-
+import {clientespage} from '../pages/clientes/clientes'
 
 @NgModule({
   declarations: [
@@ -40,6 +40,7 @@ import { estratprecioideal } from '../pages/estrategias/estrategiasPrecio/estrat
     estrategiasPrecio,
     estratpreciopreg,
     estratprecioideal,
+    clientespage,
   ],
   imports: [
     IonicModule.forRoot(MyApp)
@@ -64,6 +65,7 @@ import { estratprecioideal } from '../pages/estrategias/estrategiasPrecio/estrat
     estrategiasPrecio,
     estratpreciopreg,
     estratprecioideal,
+    clientespage,
   ],
   providers: [InvoiceProvider, {provide: ErrorHandler, useClass: IonicErrorHandler}]
 })

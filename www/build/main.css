@@ -22216,6 +22216,17 @@ sub {
   }
 }
 
+.quick-report-side {
+  float: left;
+  padding: 30px 27px;
+  width: 100%;
+  color: #505050;
+  float: left;
+  font-family: Roboto;
+  position: relative;
+  width: 100%;
+}
+
 #menu-material .menu-header {
   padding: 5px 15px;
   background-image: url("../assets/img/material-design-background.jpg");
@@ -22246,6 +22257,29 @@ sub {
 
 #menu-material ion-icon {
   color: #777;
+}
+
+.text_indicator {
+  background: #1b2f73;
+  color: white;
+  text-align: center;
+  display: block;
+  border-radius: 10px 0 0 0;
+  font-size: 13px;
+}
+
+.fila2 {
+  background: #7388d8;
+  color: white;
+  font-size: 13px;
+}
+
+ion-row {
+  padding: 10px;
+}
+
+.titulo1 {
+  padding: 0;
 }
 
 .card-background-page ion-card {
@@ -22284,6 +22318,275 @@ page-lists .scroll-content {
 
 page-lists ion-card-header {
   font-weight: bold;
+}
+
+/* General CSS Setup */
+body {
+  background-color: lightblue;
+  font-family: "Ubuntu-Italic", "Lucida Sans", helvetica, sans;
+}
+
+/* container */
+.container {
+  padding: 5% 5%;
+}
+
+/* CSS talk bubble */
+.talk-bubble {
+  display: inline-block;
+  position: relative;
+  width: 200px;
+  height: auto;
+  background-color: lightyellow;
+}
+
+.border {
+  border: 8px solid #666;
+}
+
+.round {
+  border-radius: 30px;
+  -webkit-border-radius: 30px;
+  -moz-border-radius: 30px;
+}
+
+/* Right triangle placed top left flush. */
+.tri-right.border.left-top:before {
+  content: ' ';
+  position: absolute;
+  width: 0;
+  height: 0;
+  left: -40px;
+  right: auto;
+  top: -8px;
+  bottom: auto;
+  border: 32px solid;
+  border-color: #666 transparent transparent transparent;
+}
+
+.tri-right.left-top:after {
+  content: ' ';
+  position: absolute;
+  width: 0;
+  height: 0;
+  left: -20px;
+  right: auto;
+  top: 0px;
+  bottom: auto;
+  border: 22px solid;
+  border-color: lightyellow transparent transparent transparent;
+}
+
+/* Right triangle, left side slightly down */
+.tri-right.border.left-in:before {
+  content: ' ';
+  position: absolute;
+  width: 0;
+  height: 0;
+  left: -40px;
+  right: auto;
+  top: 30px;
+  bottom: auto;
+  border: 20px solid;
+  border-color: #666 #666 transparent transparent;
+}
+
+.tri-right.left-in:after {
+  content: ' ';
+  position: absolute;
+  width: 0;
+  height: 0;
+  left: -20px;
+  right: auto;
+  top: 38px;
+  bottom: auto;
+  border: 12px solid;
+  border-color: lightyellow lightyellow transparent transparent;
+}
+
+/*Right triangle, placed bottom left side slightly in*/
+.tri-right.border.btm-left:before {
+  content: ' ';
+  position: absolute;
+  width: 0;
+  height: 0;
+  left: -8px;
+  right: auto;
+  top: auto;
+  bottom: -40px;
+  border: 32px solid;
+  border-color: transparent transparent transparent #666;
+}
+
+.tri-right.btm-left:after {
+  content: ' ';
+  position: absolute;
+  width: 0;
+  height: 0;
+  left: 0px;
+  right: auto;
+  top: auto;
+  bottom: -20px;
+  border: 22px solid;
+  border-color: transparent transparent transparent lightyellow;
+}
+
+/*Right triangle, placed bottom left side slightly in*/
+.tri-right.border.btm-left-in:before {
+  content: ' ';
+  position: absolute;
+  width: 0;
+  height: 0;
+  left: 30px;
+  right: auto;
+  top: auto;
+  bottom: -40px;
+  border: 20px solid;
+  border-color: #666 transparent transparent #666;
+}
+
+.tri-right.btm-left-in:after {
+  content: ' ';
+  position: absolute;
+  width: 0;
+  height: 0;
+  left: 38px;
+  right: auto;
+  top: auto;
+  bottom: -20px;
+  border: 12px solid;
+  border-color: lightyellow transparent transparent lightyellow;
+}
+
+/*Right triangle, placed bottom right side slightly in*/
+.tri-right.border.btm-right-in:before {
+  content: ' ';
+  position: absolute;
+  width: 0;
+  height: 0;
+  left: auto;
+  right: 30px;
+  bottom: -40px;
+  border: 20px solid;
+  border-color: #666 #666 transparent transparent;
+}
+
+.tri-right.btm-right-in:after {
+  content: ' ';
+  position: absolute;
+  width: 0;
+  height: 0;
+  left: auto;
+  right: 38px;
+  bottom: -20px;
+  border: 12px solid;
+  border-color: lightyellow lightyellow transparent transparent;
+}
+
+/*
+  left: -8px;
+  right: auto;
+  top: auto;
+  bottom: -40px;
+  border: 32px solid;
+  border-color: transparent transparent transparent #666;
+  left: 0px;
+  right: auto;
+  top: auto;
+  bottom: -20px;
+  border: 22px solid;
+  border-color: transparent transparent transparent lightyellow;
+
+/*Right triangle, placed bottom right side slightly in*/
+.tri-right.border.btm-right:before {
+  content: ' ';
+  position: absolute;
+  width: 0;
+  height: 0;
+  left: auto;
+  right: -8px;
+  bottom: -40px;
+  border: 20px solid;
+  border-color: #666 #666 transparent transparent;
+}
+
+.tri-right.btm-right:after {
+  content: ' ';
+  position: absolute;
+  width: 0;
+  height: 0;
+  left: auto;
+  right: 0px;
+  bottom: -20px;
+  border: 12px solid;
+  border-color: lightyellow lightyellow transparent transparent;
+}
+
+/* Right triangle, right side slightly down*/
+.tri-right.border.right-in:before {
+  content: ' ';
+  position: absolute;
+  width: 0;
+  height: 0;
+  left: auto;
+  right: -40px;
+  top: 30px;
+  bottom: auto;
+  border: 20px solid;
+  border-color: #666 transparent transparent #666;
+}
+
+.tri-right.right-in:after {
+  content: ' ';
+  position: absolute;
+  width: 0;
+  height: 0;
+  left: auto;
+  right: -20px;
+  top: 38px;
+  bottom: auto;
+  border: 12px solid;
+  border-color: lightyellow transparent transparent lightyellow;
+}
+
+/* Right triangle placed top right flush. */
+.tri-right.border.right-top:before {
+  content: ' ';
+  position: absolute;
+  width: 0;
+  height: 0;
+  left: auto;
+  right: -40px;
+  top: -8px;
+  bottom: auto;
+  border: 32px solid;
+  border-color: #666 transparent transparent transparent;
+}
+
+.tri-right.right-top:after {
+  content: ' ';
+  position: absolute;
+  width: 0;
+  height: 0;
+  left: auto;
+  right: -20px;
+  top: 0px;
+  bottom: auto;
+  border: 20px solid;
+  border-color: lightyellow transparent transparent transparent;
+}
+
+/* talk bubble contents */
+.talktext {
+  padding: 1em;
+  text-align: left;
+  line-height: 1.5em;
+}
+
+.talktext p {
+  /* remove webkit p margins */
+  -webkit-margin-before: 0em;
+  -webkit-margin-after: 0em;
 }
 
 page-home .center {
@@ -22341,6 +22644,92 @@ page-home .ionic-logo:before {
   100% {
     -webkit-transform: rotate(360deg);
   }
+}
+
+ion-col {
+  text-align: center;
+}
+
+ion-card.card-md {
+  border-radius: 15px !important;
+  margin-top: 25px;
+  margin-bottom: 25px;
+}
+
+ion-card span {
+  display: block;
+  text-align: center;
+}
+
+ion-card#customer {
+  background: #f4a742;
+}
+
+ion-card#product {
+  background: #41acf4;
+}
+
+#opciones {
+  margin-top: 50px;
+}
+
+.text_indicator {
+  background: #1b2f73;
+  color: white;
+  text-align: center;
+  display: block;
+  border-radius: 10px 0 0 0;
+  font-size: 13px;
+}
+
+.fila2 {
+  background: #7388d8;
+  color: white;
+  font-size: 13px;
+}
+
+ion-row {
+  padding: 10px;
+}
+
+.titulo1 {
+  padding: 0;
+}
+
+.circle {
+  background: blue;
+  width: 50px;
+  height: 50px;
+  position: relative;
+  border-radius: 100%;
+}
+
+.circle .icon {
+  font-size: 30px;
+}
+
+.circle#compradores {
+  background: #7bdd5d;
+}
+
+.circle#ventas {
+  background: #5b96dd;
+}
+
+.circle#productos {
+  background: #dd675c;
+}
+
+.circle i {
+  font-size: 30px;
+}
+
+page-charts .scroll-content {
+  background-color: #f4f4f4;
+}
+
+page-charts ion-card-header {
+  font-weight: bold;
 }
 
 page-login-slider ion-content {

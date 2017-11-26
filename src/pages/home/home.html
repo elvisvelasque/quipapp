@@ -32,13 +32,27 @@
           <span *ngIf="IsLogged">Tu Empresa</span>
         </h1>
       </ion-col>
+      
 
     </ion-row>
+     <ion-row>
+
+        <img class="user-avatar round" src='assets/img/llamahola.gif' style=" max-height: 70px; max-width: 80px;margin-left: 10px;margin-right:15px;" />
+
+      <ion-col col-6>
+        <div class="talk-bubble tri-right left-top" style="margin-top: 10px;">
+        <div class="talktext">
+          <p>La plata sola llega. Quipapp</p>
+        </div>
+      </div>
+      </ion-col>
 
 
+  </ion-row>
   </div>
+    
 
-  <div style="margin-top: 70px;">
+  <div style="margin-top: 10px;">
 
     <ion-row class="row">
       <ion-col class="col"><ion-icon (click)="abrirventas()" style="font-size: 60px;" name="cart"></ion-icon><br>Ventas</ion-col>
@@ -47,7 +61,7 @@
     </ion-row>
 
     <ion-row class="row">
-      <ion-col class="col"><ion-icon style="font-size: 60px;" color="secondary" name="md-contacts"></ion-icon><br>Clientes</ion-col>
+      <ion-col class="col"><ion-icon (click)="abrirclientes()" style="font-size: 60px;" color="secondary" name="md-contacts"></ion-icon><br>Clientes</ion-col>
       <ion-col class="col"><ion-icon (click)="abrirratios()" style="font-size: 60px;" name="md-infinite"></ion-icon><br>Ratios</ion-col>
       <ion-col class="col"><ion-icon (click)="abrirproveedores()" style="font-size: 60px;" name="md-briefcase"></ion-icon><br>Proveedores</ion-col>
     </ion-row>
