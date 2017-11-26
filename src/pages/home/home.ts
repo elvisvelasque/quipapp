@@ -19,6 +19,7 @@ import { NativeGoogleMapsPage } from '../geolocalizacion/geolocalizacion';
 })
 export class HomePage {
 
+  public headerName: string = "Invitado";
   public IsLogged: boolean = true;
 
   i_items: Array<any> = [];
@@ -66,28 +67,8 @@ export class HomePage {
 
   ionViewDidLoad() {
     this.platform.ready().then(() => {
-      this.getInvoices();
+        this.headerName = this.invoice.name;
     });
-  }
-
-  getInvoices() {
-    this.i_items = [];
-    this.invoice.GetAllInvoices().then(
-      data => {
-        if (data) {
-          this.i_items = data;
-          console.log("home.ts");
-          console.log(this.i_items);
-        } else {
-          console.error('Error retrieving weather data: Data object is empty');
-        }
-      },
-      error => {
-        //Hide the loading indicator
-        console.error('Error retrieving weather data');
-        console.dir(error);
-      }
-    );
   }
 
 }

@@ -106,32 +106,9 @@ export class ventaspage{
 
   ionViewDidLoad() {
     this.platform.ready().then(() => {
-      this.getInvoices();
       this.getProducts();
       this.getProviders();
     });
-  }
-
-
-
-  getInvoices() {
-    this.i_items = [];
-    this.invoice.GetAllInvoices().then(
-      data => {
-        if (data) {
-          this.i_items = data;
-          console.log("ventas.ts");
-          console.log(this.i_items);
-        } else {
-          console.error('Error retrieving weather data: Data object is empty');
-        }
-      },
-      error => {
-        //Hide the loading indicator
-        console.error('Error retrieving weather data');
-        console.dir(error);
-      }
-    );
   }
 
 

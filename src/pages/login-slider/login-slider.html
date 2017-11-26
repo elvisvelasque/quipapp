@@ -27,10 +27,10 @@
         </ion-slides>
         <ion-row>
           <ion-col col-6>
-            <button ion-button round color="light" class="login-button" (click)="goToLogin()">SIGN UP</button>
+            <button ion-button round color="light" class="login-button" (click)="goToLogin()">Ingresa si ya estás registrado!!</button>
           </ion-col>
           <ion-col col-6>
-            <button ion-button round color="light" class="login-button" (click)="goToSignup()">SIGN IN</button>
+            <button ion-button round color="light" class="login-button" (click)="goToSignup()">Registrate, ¿qué?</button>
           </ion-col>
         </ion-row>
       </div>
@@ -41,11 +41,11 @@
           <div style="padding: 20% 32px 32px 32px">
             <ion-item>
               <ion-label floating>RUC</ion-label>
-              <ion-input type="text"></ion-input>
+              <ion-input type="text" [(ngModel)]="ruc_log"></ion-input>
             </ion-item>
             <ion-item>
               <ion-label floating>Contraseña</ion-label>
-              <ion-input type="password"></ion-input>
+              <ion-input type="password" [(ngModel)]="pass_log"></ion-input>
             </ion-item>
             <button ion-button block round (click)="login()" color="light" class="login-button">INICAR SESION</button>
             <!--<button ion-button clear (click)="slideNext()" color="light" class="forgot-button">F?</button>-->
@@ -75,23 +75,27 @@
       <div style="padding: 32px">
         <ion-item>
           <ion-label floating>Nombre de la empresa</ion-label>
-          <ion-input type="text"></ion-input>
+          <ion-input type="text" [(ngModel)]="name"></ion-input>
         </ion-item>
         <ion-item>
           <ion-label floating>Email</ion-label>
-          <ion-input type="text"></ion-input>
+          <ion-input type="text" [(ngModel)]="email"></ion-input>
+        </ion-item>
+        <ion-item>
+          <ion-label floating>Usuario</ion-label>
+          <ion-input type="text" [(ngModel)]="username"></ion-input>
         </ion-item>
         <ion-item>
           <ion-label floating>RUC</ion-label>
-          <ion-input type="text"></ion-input>
+          <ion-input type="text" [(ngModel)]="ruc"></ion-input>
         </ion-item>
         <ion-item>
-          <ion-label floating>Clave sol</ion-label>
-          <ion-input type="password"></ion-input>
+          <ion-label floating>Contraseña</ion-label>
+          <ion-input type="password" [(ngModel)]="password"></ion-input>
         </ion-item>
         <ion-item class="margin-bottom">
-          <ion-label floating>Confirmar clave sol</ion-label>
-          <ion-input type="password"></ion-input>
+          <ion-label floating>Confirmar contraseña</ion-label>
+          <ion-input type="password" [(ngModel)]="password_confirmation"></ion-input>
         </ion-item>
         <button ion-button block round (click)="signup()" color="light" class="login-button">REGISTRARSE</button>
       </div>
