@@ -1,0 +1,46 @@
+<ion-header>
+
+  <ion-navbar>
+    <ion-title><ion-icon name="menu" menuToggle></ion-icon> Costos</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+
+    <ion-card>
+      <ion-card-content class="titulo1">
+	      <ion-row class="text_indicator" style="height: 25%;"><strong>Último Mes</strong></ion-row>
+	      <ion-row class="fila2" style="height: 50%;"><ion-icon  style="font-size: 15px;margin-right: 7px" name="cube"></ion-icon> Compradores</ion-row>
+	      <ion-row id="porc" style="height: 25%;"><strong></strong></ion-row>
+
+        <ion-row>
+          <ion-col>
+            <canvas #pieCanvas></canvas>
+          </ion-col>
+        </ion-row>
+      </ion-card-content>
+    </ion-card>
+
+	<div *ngIf="loaded" id="table">
+        <ion-row class="row header">
+          <ion-col>#</ion-col>
+          <ion-col>Cliente</ion-col>
+          <ion-col>RUC</ion-col>
+          <ion-col>Puntaje</ion-col>
+        </ion-row> 
+        <ion-row *ngFor = "let data of cl_items; let i = index">
+        	<ion-col class="col">{{i}}</ion-col>
+        	<ion-col class="col">{{data["clientes"]}}</ion-col>
+        	<ion-col class="col">{{data["RucCliente"]}}</ion-col>
+        	<ion-col class="col">
+          		<ion-icon *ngIf="i==0" name="star"></ion-icon>
+          		<ion-icon *ngIf="i<=1" name="star"></ion-icon>
+          		<ion-icon name="star"></ion-icon>
+          		<ion-icon name="star"></ion-icon>
+          		<ion-icon name="star"></ion-icon>
+          	</ion-col>
+        </ion-row>
+    </div>
+</ion-content>

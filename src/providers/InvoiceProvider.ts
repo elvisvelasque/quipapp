@@ -65,5 +65,19 @@ export class InvoiceProvider {
       .toPromise()
       .then(this.extractData);  
   }
+
+  public GetClients():  Promise<any> {
+    let url: string = this.getUrl("clientes/caracteristicas");
+    return this.http.post(url, this.ruc)
+      .toPromise()
+      .then(this.extractData); 
+  }
+
+    public GetClientsPie():  Promise<any> {
+    let url: string = this.getUrl("clientes/mas/vendido");
+    return this.http.post(url, this.ruc)
+      .toPromise()
+      .then(this.extractData); 
+  }
   
 }
