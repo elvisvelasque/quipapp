@@ -22720,3 +22720,11 @@ page-charts .scroll-content {
 page-charts ion-card-header {
   font-weight: bold;
 }
+
+page-charts .scroll-content {
+  background-color: #f4f4f4;
+}
+
+page-charts ion-card-header {
+  font-weight: bold;
+}
