@@ -22248,6 +22248,36 @@ sub {
   color: #777;
 }
 
+.card-background-page ion-card {
+  position: relative;
+  text-align: center;
+}
+
+.card-background-page .card-title {
+  position: absolute;
+  top: 36%;
+  font-size: 2.0em;
+  width: 100%;
+  font-weight: bold;
+  color: #fff;
+}
+
+.card-background-page .card-subtitle {
+  font-size: 1.0em;
+  position: absolute;
+  top: 52%;
+  width: 100%;
+  color: #fff;
+}
+
+page-charts .scroll-content {
+  background-color: #f4f4f4;
+}
+
+page-charts ion-card-header {
+  font-weight: bold;
+}
+
 page-home .center {
   text-align: center;
 }
@@ -22703,6 +22733,14 @@ ion-row {
 
 .circle i {
   font-size: 30px;
+}
+
+page-charts .scroll-content {
+  background-color: #f4f4f4;
+}
+
+page-charts ion-card-header {
+  font-weight: bold;
 }
 
 page-charts .scroll-content {
