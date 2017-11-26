@@ -24,18 +24,24 @@
     </ion-card>
 
 	<div *ngIf="loaded" id="table">
-    <ion-card>
-      <ion-card-content class="titulo1">
-        <ion-row class="row header">
-          <ion-col>#</ion-col>
-          <ion-col>Cliente</ion-col>
-        </ion-row> 
-        <ion-row *ngFor = "let data of cl_items; let i = index">
-          <ion-col class="col">{{i}}</ion-col>
-          <ion-col class="col">{{data["clientes"]}}</ion-col>
-        </ion-row>
-      </ion-card-content>
-    </ion-card>
+    <ion-row>
+      <ion-col>
+        <img class="user-avatar round" src='assets/img/stars.png' style="margin-top: 100px;" />
+      </ion-col>
+      <ion-col>
+
+        <ion-card>
+          <ion-card-content class="titulo1">
+            <ion-row class="row header">
+              <ion-col><h2 style="border-bottom-style: groove;">CLIENTES</h2></ion-col>
+            </ion-row> 
+            <ion-row *ngFor = "let data of cl_items">
+              <ion-col class="col">{{data["clientes"]}}</ion-col>
+            </ion-row>
+          </ion-card-content>
+        </ion-card>
+      </ion-col>
+    </ion-row>
     </div>
 </ion-content>
 
