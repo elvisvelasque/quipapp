@@ -49,4 +49,12 @@ export class InvoiceProvider {
       .toPromise()
       .then(this.extractData); 
   }
+  
+  public GetPeriodSales(): Promise<any> {
+    let url: string = this.getUrl("ventas");
+    return this.http.post(url, this.ruc)
+      .toPromise()
+      .then(this.extractData); 
+  }
+  
 }
