@@ -30,29 +30,6 @@ export class inventariopage{
 
   constructor(public navCtrl: NavController, public navParams: NavParams,) { }
 
-  ngAfterViewInit() {
-    setTimeout(() => {
-     
-    }, 150);
-    setTimeout(() => {
-      
-    }, 250);
-    setTimeout(() => {
-     
-
-    }, 350);
-
-  }
-
-  updateData() {
-    // After instantiating your chart, its data is accessible and
-    // can be changed anytime with the function update().
-    // It takes care of everything and even redraws the animations :D
-    this.pieChart.data.datasets[0].data = [Math.random() * 1000, Math.random() * 1000, Math.random() * 1000];
-    this.pieChart.update();
-  }
-
-
   getChart(context, chartType, data, options?) {
     return new chartJs(context, {
       data,
@@ -61,6 +38,12 @@ export class inventariopage{
     });
   }
 
+  ngAfterViewInit() {
+    setTimeout(() => {
+      console.log("after view init");
+      this.pieChart = this.getPieChart();
+    }, 1000);
+  }
 
   getPieChart() {
     const data = {
@@ -79,15 +62,23 @@ export class inventariopage{
 
 viewg1() {
   this.type="1";
-        this.pieChart = this.getPieChart();
+  document.getElementById("sw1").style.display = "block";
+  document.getElementById("sw2").style.display = "none";
+  document.getElementById("sw3").style.display = "none";
 }
 
 viewg2() {
   this.type="2";
+  document.getElementById("sw1").style.display = "none";
+  document.getElementById("sw2").style.display = "block";
+  document.getElementById("sw3").style.display = "none";
 }
 
 viewg3() {
   this.type="3";
+  document.getElementById("sw1").style.display = "none";
+  document.getElementById("sw2").style.display = "none";
+  document.getElementById("sw3").style.display = "block";
 }
 
 
