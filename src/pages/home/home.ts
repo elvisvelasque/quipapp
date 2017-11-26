@@ -72,8 +72,7 @@ export class HomePage {
     this.navCtrl.push(marketing);
   }
 
-
-  ionViewDidLoad() {
+ionViewDidLoad() {
     this.platform.ready().then(() => {
         this.headerName = this.invoice.name;
     });
