@@ -55,10 +55,10 @@ export class ventaspage{
 
   getPieChart() {
     const data = {
-      labels: [this.p_items["Nombre"][0], "Otros"],
+      labels: [this.p_items["Nombre"][0], this.p_items["Nombre"][1], "Otros"],
       datasets: [
         {
-          data: [this.p_items["Datas"][0], this.getOtros(this.p_items["Datas"], 1)],
+          data: [this.p_items["Datas"][0], this.p_items["Datas"][0], this.getOtros(this.p_items["Datas"], 2)],
           backgroundColor: ['#FF6384', '#36A2EB', '#FFCE56'],
           hoverBackgroundColor: ['#FF6384', '#36A2EB', '#FFCE56']
         }]
@@ -92,10 +92,10 @@ export class ventaspage{
 
   getDoughnutChart() {
     const data = {
-      labels: [this.prov_items["Nombre"][0], "Otros"],
+      labels: [this.prov_items["Nombre"][0], this.prov_items["Nombre"][1], "Otros"],
       datasets: [
       {
-        data: [this.prov_items["Datas"][0], this.getOtros(this.prov_items["Datas"], 1)],
+        data: [this.prov_items["Datas"][0], this.prov_items["Datas"][1], this.getOtros(this.prov_items["Datas"], 2)],
         backgroundColor: ['#FF6384', '#36A2EB', '#FFCE56'],
         hoverBackgroundColor: ['#FF6384', '#36A2EB', '#FFCE56']
       }]

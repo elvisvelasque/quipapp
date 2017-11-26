@@ -49,12 +49,12 @@ export class proveedorespage{
 
   getPieChart() {
     const data = {
-      labels: ["Proveedor 1", "Proveedor 2", "Proveedor 3"],
+      labels: ["Swiss Just Products", "Region Berna", "Ave Fenix", "Otros"],
       datasets: [
         {
-          data: [1000, 2000, 3000],
-          backgroundColor: ['#FF6384', '#36A2EB', '#FFCE56'],
-          hoverBackgroundColor: ['#FF6384', '#36A2EB', '#FFCE56']
+          data: [40, 25, 15, 20],
+          backgroundColor: ['#FF6384', '#36A2EB', '#FFCE56', '#42f48c'],
+          hoverBackgroundColor: ['#FF6384', '#36A2EB', '#FFCE56', '#42f48c']
         }]
     };
 
