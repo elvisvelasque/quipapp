@@ -10,6 +10,7 @@ import { resumenpage } from '../resumen/resumen';
 import { InvoiceProvider } from '../../providers/InvoiceProvider';
 import { estrategias } from '../estrategias/estrategias';
 import { clientespage } from '../clientes/clientes';
+import { NativeGoogleMapsPage } from '../geolocalizacion/geolocalizacion';
 
 
 @Component({
@@ -59,6 +60,9 @@ export class HomePage {
 
   abrirclientes() {
     this.navCtrl.push(clientespage);
+  }
+  abrirgeo() {
+    this.navCtrl.push(NativeGoogleMapsPage);
   }
 
   ionViewDidLoad() {

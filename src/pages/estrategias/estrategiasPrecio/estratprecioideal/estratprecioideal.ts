@@ -32,9 +32,9 @@ export class estratprecioideal{
 
    getBarChart() {
     const data = {
-      labels: ['Red', 'Blue', 'Yellow', 'Green', 'Purple', 'Orange'],
+      labels: ['Diciembre', 'Enero', 'Febrero', 'Marzo', 'Abril', 'Mayo'],
       datasets: [{
-        label: '# of Votes',
+        label: '# Pronostico de las ventas a este precio',
         data: [12, 19, 3, 5, 2, 3],
         backgroundColor: [
           'rgba(255, 99, 132, 0.2)',
