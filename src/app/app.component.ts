@@ -29,7 +29,7 @@ export class MyApp {
     this.pages = [
       { title: 'Inicio', component: HomePage, badge: 'Nuevo', icon: 'home' },
       { title: 'Ventas', component: ventaspage, badge: '', icon: 'home' },
-      { title: 'Costos', component: costospage, badge: '', icon: 'home' },
+      { title: 'ChatPakita', component: costospage, badge: '', icon: 'home' },
       { title: 'Clientes', component: clientespage, badge: '', icon: 'home' },
       { title: 'Inventario', component: inventariopage, badge: '', icon: 'home' },
       { title: 'Ratios', component: ratiospage, badge: '', icon: 'home' },

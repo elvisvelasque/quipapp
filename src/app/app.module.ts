@@ -18,7 +18,9 @@ import { estrategias } from '../pages/estrategias/estrategias';
 import { estrategiasPrecio } from '../pages/estrategias/estrategiasPrecio/estrategiasPrecio';
 import { estratpreciopreg } from '../pages/estrategias/estrategiasPrecio/estratpreciopreg/estratpreciopreg';
 import { estratprecioideal } from '../pages/estrategias/estrategiasPrecio/estratprecioideal/estratprecioideal';
-import {clientespage} from '../pages/clientes/clientes'
+import {clientespage} from '../pages/clientes/clientes';
+import {NativeGoogleMapsPage} from '../pages/geolocalizacion/geolocalizacion';
+
 
 @NgModule({
   declarations: [
@@ -41,6 +43,7 @@ import {clientespage} from '../pages/clientes/clientes'
     estratpreciopreg,
     estratprecioideal,
     clientespage,
+    NativeGoogleMapsPage,
   ],
   imports: [
     IonicModule.forRoot(MyApp)
@@ -66,6 +69,7 @@ import {clientespage} from '../pages/clientes/clientes'
     estratpreciopreg,
     estratprecioideal,
     clientespage,
+    NativeGoogleMapsPage,
   ],
   providers: [InvoiceProvider, {provide: ErrorHandler, useClass: IonicErrorHandler}]
 })
