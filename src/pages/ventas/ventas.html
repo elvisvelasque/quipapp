@@ -11,12 +11,49 @@
 
   <ion-col align-self-center><h1>Ventas</h1></ion-col>
 
-  <ion-card id="customer">
+    <ion-card>
+      <ion-card-content>
+        <ion-row>
+          <ion-col>
+            <ion-row style="height: 25%;"><strong>Último Mes</strong></ion-row>
+            <ion-row style="height: 50%;">Producto más vendido</ion-row>
+            <ion-row id="porc" style="height: 25%;"><strong></strong></ion-row>
+          </ion-col>
+          <ion-col>
+            <canvas #pieCanvas></canvas>
+          </ion-col>
+        </ion-row>
+      </ion-card-content>
+    </ion-card>
+
+  <ion-card>
+    <ion-card-header>
+      Doughnut Chart
+    </ion-card-header>
     <ion-card-content>
-      Tu mejor comprador ha sido {{ bestCustomer }}
-      <br /><span class="amount"><strong>S/1500</strong></span>
+      <canvas #doughnutCanvas></canvas>
     </ion-card-content>
   </ion-card>
+  
+      <ion-row align-items-start justify-content-center>
+        <ion-card>
+          <ion-card-header>
+            Último mes
+          </ion-card-header>
+          <ion-card-content>
+            <ion-grid>
+              <ion-row>
+                <ion-col>
+                  <ion-icon (click)="abrirVentasCompradores()" name="people" role="img" class="icon"></ion-icon>
+                </ion-col>
+                <ion-col col-8>
+                  Producto más vendido
+                </ion-col>
+              </ion-row>
+            </ion-grid>
+          </ion-card-content>
+        </ion-card>
+      </ion-row>
 
   <ion-card id="product">
     <ion-card-content>

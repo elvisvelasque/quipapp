@@ -1,19 +1,144 @@
-import { Component } from '@angular/core';
-import { NavController, NavParams } from 'ionic-angular';
+import { Component, ViewChild } from '@angular/core';
+import { NavController, NavParams, Platform } from 'ionic-angular'
+import { InvoiceProvider } from '../../providers/InvoiceProvider';
+import chartJs from 'chart.js';
 
 @Component({
   selector: 'ventas-lists',
   templateUrl: 'ventas.html'
 })
 export class ventaspage{
+
+  @ViewChild('doughnutCanvas') doughnutCanvas;
+  @ViewChild('pieCanvas') pieCanvas;
+
+  doughnutChart: any;
+  pieChart: any;
+  i_items: Array<any> = [];
+  p_items: Array<any> = [];
+
   public backgroundImage = 'assets/img/nube3.png';
 
   public bestCustomer : string = "Maricos Villamar S.A.C";
   public bestProduct : string = "Atún procesado";
+  public RUC: number = 20480072872;
 
   constructor(
+    public platform: Platform,
     public navCtrl: NavController,
-    public navParams: NavParams)
+    public navParams: NavParams,
+    public invoice: InvoiceProvider)
   {
+  }
+
+  ngAfterViewInit() {
+    setTimeout(() => {
+      console.log("after view init");
+    }, 1000);
+  }
+
+  getChart(context, chartType, data, options?) {
+    return new chartJs(context, {
+      data,
+      options,
+      type: chartType,
+    });
+  }
+
+
+  getPieChart() {
+    const data = {
+      labels: [this.p_items["Nombre"][0], "Otros"],
+      datasets: [
+        {
+          data: [this.p_items["Datas"][0], this.getOtros(this.p_items["Datas"], 1)],
+          backgroundColor: ['#FF6384', '#36A2EB', '#FFCE56'],
+          hoverBackgroundColor: ['#FF6384', '#36A2EB', '#FFCE56']
+        }]
+    };
+
+    return this.getChart(this.pieCanvas.nativeElement, 'pie', data);
+  }
+
+  getOtros(list: any[], num: number) {
+    let suma: number = 0;
+    for (var i = 0; i < list.length; i++) {
+      if (i >= num) {
+        suma = suma + list[i];
+      }
+    }
+    return suma;
+  }
+
+  getDoughnutChart() {
+    const data = {
+      labels: ['Red', 'Blue', 'Yellow', 'Green', 'Purple', 'Orange'],
+      datasets: [{
+        label: '# of Votes',
+        data: [12, 19, 3, 5, 2, 3],
+        backgroundColor: [
+          'rgba(255, 99, 132, 0.2)',
+          'rgba(54, 162, 235, 0.2)',
+          'rgba(255, 206, 86, 0.2)',
+          'rgba(75, 192, 192, 0.2)',
+          'rgba(153, 102, 255, 0.2)',
+          'rgba(255, 159, 64, 0.2)'
+        ],
+        hoverBackgroundColor: ['#FF6384', '#36A2EB', '#FFCE56', '#FF6384', '#36A2EB', '#FFCE56']
+      }]
+    };
+
+    return this.getChart(this.doughnutCanvas.nativeElement, 'doughnut', data);
+  }
+
+  ionViewDidLoad() {
+    this.platform.ready().then(() => {
+      this.getInvoices();
+      this.getProducts();
+    });
+  }
+
+  getInvoices() {
+    this.i_items = [];
+    this.invoice.GetAllInvoices().then(
+      data => {
+        if (data) {
+          this.i_items = data;
+          console.log("ventas.ts");
+          console.log(this.i_items);
+        } else {
+          console.error('Error retrieving weather data: Data object is empty');
+        }
+      },
+      error => {
+        //Hide the loading indicator
+        console.error('Error retrieving weather data');
+        console.dir(error);
+      }
+    );
+  }
+
+
+  getProducts() {
+    this.p_items = [];
+    this.invoice.GetProductSales().then(
+      data => {
+        if (data) {
+          this.p_items = data;
+          console.log("PRODUCTOS");
+          console.log(this.p_items);
+          this.doughnutChart = this.getDoughnutChart();
+          this.pieChart = this.getPieChart();
+          document.getElementById("porc").textContent = Math.round(this.p_items["Datas"][0]) + " %";
+        } else {
+          console.error('Error retrieving weather data: Data object is empty');
+        }
+      },
+      error => {
+        //Hide the loading indicator
+        console.error('Error retrieving weather data');
+        console.dir(error);
+      }
+    );
   }
 }

@@ -56,6 +56,7 @@ export class HomePage {
       data => {
         if (data) {
           this.i_items = data;
+          console.log("home.ts");
           console.log(this.i_items);
         } else {
           console.error('Error retrieving weather data: Data object is empty');

@@ -8,7 +8,7 @@ ion-col {
 
 ion-card {
   &.card-md {
-    border-radius: 30px !important;
+    border-radius: 15px !important;
     margin-top: 25px;
     margin-bottom: 25px;
   }
@@ -58,3 +58,14 @@ ion-card {
 .circle i {
 font-size: 30px;
 }
+
+page-charts {
+    .scroll-content {
+        background-color: map-get($colors, light);
+    }
+
+    ion-card-header {
+        font-weight: bold;
+    }
+}
+ 

@@ -12,13 +12,18 @@ import 'rxjs/add/operator/toPromise';
 @Injectable()
 export class InvoiceProvider {
 
-  private sunatEndpoint = 'https://sunatcodeblack.mybluemix.net/invoices';
+  private sunatEndpoint = 'https://sunatcodeblack.mybluemix.net/';
+  ruc = { RucVendedor : 20480072872 };
 
   constructor(public http: Http) {
   }
 
+  private getUrl(command: string) {
+    return this.sunatEndpoint + command;
+  }
+
   public GetAllInvoices(): Promise<any> {
-    let url: string = this.sunatEndpoint;
+    let url: string = this.getUrl("invoices");
     return this.http.get(url)
       .toPromise()
       .then(this.extractData);
@@ -29,5 +34,12 @@ export class InvoiceProvider {
     let body = res.json();
     //Return the data (or nothing)
     return body || {};
+  }
+
+  public GetProductSales(): Promise<any> {
+    let url: string = this.getUrl("producto/mas/vendido");
+    return this.http.post(url, this.ruc)
+      .toPromise()
+      .then(this.extractData);
   }
 }
