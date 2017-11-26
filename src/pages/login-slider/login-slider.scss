@@ -25,6 +25,11 @@ page-login-slider {
   .zoom .slide-zoom {
     height: 100%;
   }
+
+  input, .item-md {
+    background-color: transparent !important;
+    color: white;
+  }
   // Content
   .scroll-content {
     display: flex;

@@ -10,7 +10,7 @@ import { HomePage } from '../home/home';
 })
 export class LoginSliderPage {
   public loginForm: any;
-  public backgroundImage = 'assets/img/background-6.jpg';
+  public backgroundImage = 'assets/img/background-6.png';
 
   public email;
   public password;
@@ -70,29 +70,33 @@ export class LoginSliderPage {
   login() {
     console.log(this.ruc_log);
     console.log(this.pass_log);
-    this.invoice.LogIn(this.ruc_log, this.pass_log).then(
-      data => {
-        if (data) {
-          console.log(data)
-          if (data["codigo"] == 1) {
-            this.presentLoading('Te identificaste con éxito!');
-            this.invoice.name = data["mensaje"]
-            this.navCtrl.push(HomePage);
-          }
-          else {
+    if (this.ruc_log == undefined || this.pass_log == undefined) {
+      this.presentLoading('Ocurrió un error. Inténtalo de nuevo :)');
+    }
+    else {
+      this.invoice.LogIn(this.ruc_log, this.pass_log).then(
+        data => {
+          if (data) {
+            console.log(data)
+            if (data["codigo"] == 1) {
+              this.presentLoading('Te identificaste con éxito!');
+              this.invoice.name = data["mensaje"]
+              this.navCtrl.push(HomePage);
+            }
+            else {
+              this.presentLoading('Ocurrió un error. Inténtalo de nuevo :)');
+            }
+            
+          } else {
             this.presentLoading('Ocurrió un error. Inténtalo de nuevo :)');
           }
-          
-        } else {
-          console.error('Error retrieving weather data: Data object is empty');
+        },
+        error => {
+          this.presentLoading('Ocurrió un error. Inténtalo de nuevo :)');
+          console.dir(error);
         }
-      },
-      error => {
-        console.error('Error retrieving weather data');
-        console.dir(error);
-      }
-    );
-    
+      );
+    }
   }
 
   signup() {
