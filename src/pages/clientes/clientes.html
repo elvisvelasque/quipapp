@@ -29,20 +29,10 @@
         <ion-row class="row header">
           <ion-col>#</ion-col>
           <ion-col>Cliente</ion-col>
-          <ion-col>RUC</ion-col>
-          <ion-col>Puntaje</ion-col>
         </ion-row> 
         <ion-row *ngFor = "let data of cl_items; let i = index">
           <ion-col class="col">{{i}}</ion-col>
           <ion-col class="col">{{data["clientes"]}}</ion-col>
-          <ion-col class="col">{{data["RucCliente"]}}</ion-col>
-          <ion-col class="col">
-              <ion-icon name="star"></ion-icon>
-              <ion-icon name="star"></ion-icon>
-              <ion-icon name="star"></ion-icon>
-              <ion-icon name="star"></ion-icon>
-              <ion-icon name="star"></ion-icon>
-            </ion-col>
         </ion-row>
       </ion-card-content>
     </ion-card>
