@@ -28,8 +28,7 @@
         <ion-icon (click)="abrirresumen()" style="font-size: 60px;" color="primary" name="ionic" role="img" class="icon icon-ios icon-ios-primary ion-ios-ionic" aria-label="ionic">
       </ion-icon><br>
         <h1>
-          <span *ngIf="!IsLogged">Invitado</span>
-          <span *ngIf="IsLogged">Tu Empresa</span>
+          <span>{{headerName}}</span>
         </h1>
       </ion-col>
       
@@ -57,19 +56,19 @@
     <ion-row class="row">
       <ion-col class="col"><ion-icon (click)="abrirventas()" style="font-size: 60px;" name="cart"></ion-icon><br>Ventas</ion-col>
       <ion-col class="col"><ion-icon (click)="abririnventario()" style="font-size: 60px;" color="danger" name="cube" ></ion-icon><br>Inventario</ion-col>
-      <ion-col class="col"><ion-icon (click)="abrircostos()" style="font-size: 60px;" color="primary" name="md-cash"></ion-icon><br>Costos</ion-col>
+      <ion-col class="col"><ion-icon (click)="abrirestrategias()" style="font-size: 60px;" name="bulb"></ion-icon><br>Estrategias</ion-col>
     </ion-row>
 
     <ion-row class="row">
       <ion-col class="col"><ion-icon (click)="abrirclientes()" style="font-size: 60px;" color="secondary" name="md-contacts"></ion-icon><br>Clientes</ion-col>
-      <ion-col class="col"><ion-icon (click)="abrirratios()" style="font-size: 60px;" name="md-infinite"></ion-icon><br>Ratios</ion-col>
+      <ion-col class="col"><ion-icon (click)="abrirratios()" style="font-size: 60px;" name="md-infinite"></ion-icon><br>Metas</ion-col>
       <ion-col class="col"><ion-icon (click)="abrirproveedores()" style="font-size: 60px;" name="md-briefcase"></ion-icon><br>Proveedores</ion-col>
     </ion-row>
 
     <ion-row class="row">
-      <ion-col class="col"><ion-icon (click)="abrirestrategias()" style="font-size: 60px;" name="bulb"></ion-icon><br>Estrategias</ion-col>
       <ion-col class="col"><ion-icon style="font-size: 60px;" name="pin"></ion-icon><br>Geo-Marketing</ion-col>
       <ion-col class="col"><ion-icon style="font-size: 60px;" color="bright" name="md-at"></ion-icon><br>Marketing</ion-col>
+      <ion-col class="col"><ion-icon (click)="abrirconsulta()" style="font-size: 60px;" color="primary" name="md-cash"></ion-icon><br>Consultas</ion-col>
     </ion-row>
 
   </div>

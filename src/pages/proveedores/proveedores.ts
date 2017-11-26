@@ -77,26 +77,6 @@ export class proveedorespage{
     });
   }
 
-  getInvoices() {
-    this.i_items = [];
-    this.invoice.GetAllInvoices().then(
-      data => {
-        if (data) {
-          this.i_items = data;
-          console.log("ventas.ts");
-          console.log(this.i_items);
-        } else {
-          console.error('Error retrieving weather data: Data object is empty');
-        }
-      },
-      error => {
-        //Hide the loading indicator
-        console.error('Error retrieving weather data');
-        console.dir(error);
-      }
-    );
-  }
-
   abrirProveedoresInfo(){
    this.navCtrl.push(proveedoresInfo);
   }
