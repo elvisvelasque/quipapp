@@ -122,6 +122,7 @@ export class ventasPeriodo {
           this.v_items_orig = data;
           console.log("PROVIDERS");
           console.log(this.v_items);
+          console.log(this.v_items_orig);
           this.barChart = this.getBarChart();
         } else {
           console.error('Error retrieving weather data: Data object is empty');
@@ -136,24 +137,7 @@ export class ventasPeriodo {
   }
 
   search() {
-    let minit = document.getElementsByClassName('datetime-text')[0].textContent;
-    let mfin = document.getElementsByClassName('datetime-text')[1].textContent;
-    let iin = this.getIndex(minit);
-    let ifi = this.getIndex(mfin);
-
-    let new_array = [];
-    for (let i = iin; i<=ifi; i++) {
-      new_array.push(this.months[i]);
-    }
-
-    this.v_items = new_array;
-    this.getBarChart();
-  }
-
-  getIndex(mont: string) {
-    for (let i = 0; i<12; i++) {
-      if (this.months[i] == mont)
-        return i;
-    }
+    console.log(this.v_items);
+    this.barChart = this.getBarChart;
   }
 }
