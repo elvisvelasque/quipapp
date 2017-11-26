@@ -121,7 +121,7 @@ export class ventaspage{
           console.log("PRODUCTOS");
           console.log(this.p_items);
           this.pieChart = this.getPieChart();
-          document.getElementById("porc").textContent = "El producto mas vendido es " + this.p_items["Nombre"][0] + ", con " + Math.round(this.p_items["Datas"][0]) + " %";
+          document.getElementById("porc").textContent = "El producto mas vendido es " + this.p_items["Nombre"][0] + ", con " + Math.round(this.p_items["Datas"][0]*100) + " %";
         } else {
           console.error('Error retrieving weather data: Data object is empty');
         }
@@ -143,7 +143,7 @@ export class ventaspage{
           console.log("PROVIDERS");
           console.log(this.prov_items);
           this.doughnutChart = this.getDoughnutChart();
-          document.getElementById("porcprov").textContent = "El cliente mas vendido es " + this.prov_items["Nombre"][0] + ", con " +Math.round(this.prov_items["Datas"][0]) + " %";
+          document.getElementById("porcprov").textContent = "El cliente mas vendido es " + this.prov_items["Nombre"][0] + ", con " +Math.round(this.prov_items["Datas"][0]*100) + " %";
         } else {
           console.error('Error retrieving weather data: Data object is empty');
         }

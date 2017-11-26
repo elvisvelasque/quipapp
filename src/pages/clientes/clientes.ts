@@ -67,10 +67,10 @@ ngAfterViewInit() {
 
     getPieChart() {
     const data = {
-      labels: [this.clp_items["Nombre"][0], this.clp_items["Nombre"][1], "Otros"],
+      labels: [this.clp_items["Nombre"][0], this.clp_items["Nombre"][1], this.clp_items["Nombre"][2], this.clp_items["Nombre"][3], this.clp_items["Nombre"][4], "Otros"],
       datasets: [
         {
-          data: [this.clp_items["Datas"][0], this.clp_items["Datas"][1], this.getOtros(this.clp_items["Datas"], 2)],
+          data: [this.clp_items["Datas"][0], this.clp_items["Datas"][1], this.clp_items["Datas"][2], this.clp_items["Datas"][3], this.clp_items["Datas"][4], this.getOtros(this.clp_items["Datas"], 4)],
           backgroundColor: ['#FF6384', '#36A2EB', '#FFCE56'],
           hoverBackgroundColor: ['#FF6384', '#36A2EB', '#FFCE56']
         }]
