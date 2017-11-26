@@ -22439,6 +22439,69 @@ page-login-slider .position-bottom {
   width: 200px;
 }
 
+ion-col {
+  text-align: center;
+}
+
+ion-card.card-md {
+  border-radius: 15px !important;
+  margin-top: 25px;
+  margin-bottom: 25px;
+}
+
+ion-card span {
+  display: block;
+  text-align: center;
+}
+
+ion-card#customer {
+  background: #f4a742;
+}
+
+ion-card#product {
+  background: #41acf4;
+}
+
+#opciones {
+  margin-top: 50px;
+}
+
+.circle {
+  background: blue;
+  width: 50px;
+  height: 50px;
+  position: relative;
+  border-radius: 100%;
+}
+
+.circle .icon {
+  font-size: 30px;
+}
+
+.circle#compradores {
+  background: #7bdd5d;
+}
+
+.circle#ventas {
+  background: #5b96dd;
+}
+
+.circle#productos {
+  background: #dd675c;
+}
+
+.circle i {
+  font-size: 30px;
+}
+
+page-charts .scroll-content {
+  background-color: #f4f4f4;
+}
+
+page-charts ion-card-header {
+  font-weight: bold;
+}
+
 page-charts .scroll-content {
   background-color: #f4f4f4;
 }
@@ -22523,6 +22586,14 @@ ion-row {
 
 .circle i {
   font-size: 30px;
+}
+
+page-charts .scroll-content {
+  background-color: #f4f4f4;
+}
+
+page-charts ion-card-header {
+  font-weight: bold;
 }
 
 page-charts .scroll-content {
