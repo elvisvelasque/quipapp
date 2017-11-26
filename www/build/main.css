@@ -22985,6 +22985,11 @@ page-login-slider .zoom .slide-zoom {
   height: 100%;
 }
 
+page-login-slider input, page-login-slider .item-md {
+  background-color: transparent !important;
+  color: white;
+}
+
 page-login-slider .scroll-content {
   display: -webkit-flex;
   display: -ms-flexbox;
