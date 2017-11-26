@@ -1,0 +1,76 @@
+<ion-header>
+
+  <ion-navbar>
+    <ion-title><ion-icon name="menu" menuToggle></ion-icon> Preguntas</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+
+ <div [ngSwitch]="type">
+
+    <div *ngSwitchCase = "'preg1'">
+    <ion-row>
+     {{ pages[0]["title"] }}
+    </ion-row>
+	<ion-list inset>
+ 	 <button ion-item  (click)="preg2()">
+  	  si
+  	</button> 
+  	<button ion-item   (click)="salida1()">
+  	  no
+  	</button> 
+	</ion-list>
+    </div>
+
+    <div *ngSwitchCase = "'preg2'">
+        <ion-row>
+     {{ pages[1]["title"] }}
+    </ion-row>
+	<ion-list inset>
+ 	 <button ion-item  (click)="preg3()">
+  	  si
+  	</button> 
+  	<button ion-item   (click)="salida1()">
+  	  no
+  	</button> 
+	</ion-list>
+	</div>
+
+	<div *ngSwitchCase = "'preg3'">
+	    <ion-row>
+     {{ pages[2]["title"] }}
+    </ion-row>
+	<ion-list inset>
+ 	 <button ion-item  (click)="salida2()">
+  	  si
+  	</button> 
+  	<button ion-item   (click)="salida1()">
+  	  no
+  	</button> 
+	</ion-list>
+	</div>
+
+	<div *ngSwitchCase = "'salida1'">
+	 <ion-row>
+     {{ pages[3]["title"] }}
+    </ion-row>
+	</div>
+
+	<div *ngSwitchCase = "'salida2'">
+	<ion-row>
+     Posibles soluciones
+    </ion-row>
+	<ion-list inset>
+ 	 <ion-row ion-item *ngFor="let p of pages2">
+     {{ p.title }}
+ 	 </ion-row> 
+	</ion-list>
+	</div>
+
+
+ </div>
+
+</ion-content>

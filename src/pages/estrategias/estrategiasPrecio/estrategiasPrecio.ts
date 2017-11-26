@@ -1,7 +1,8 @@
 import { Component, ViewChild } from '@angular/core';
 import { NavController} from 'ionic-angular';
 import chartJs from 'chart.js';
-
+import {estratpreciopreg} from './estratpreciopreg/estratpreciopreg'
+import {estratprecioideal} from './estratprecioideal/estratprecioideal'
 
 
 @Component({
@@ -30,6 +31,15 @@ export class estrategiasPrecio {
     });
   }
 
+  abrirestratpreciopreg(){
+    this.navCtrl.push(estratpreciopreg);
+  }
+
+
+
+  abrirestratprecioideal(){
+    this.navCtrl.push(estratprecioideal);
+  }
   /*
   *  By specifying different types inside each dataset
   *  it's possible to have multiple bar types mixed into one.

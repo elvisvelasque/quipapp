@@ -12,7 +12,7 @@ export class estrategias{
   constructor(public navCtrl: NavController, public navParams: NavParams,) {}
 
 abrirestrategiasPrecio(){
-	this.navCtrl.push(estrategiasPrecio)
+	this.navCtrl.push(estrategiasPrecio);
 }
 
 }

@@ -22278,6 +22278,14 @@ page-charts ion-card-header {
   font-weight: bold;
 }
 
+page-lists .scroll-content {
+  background-color: #f4f4f4;
+}
+
+page-lists ion-card-header {
+  font-weight: bold;
+}
+
 page-home .center {
   text-align: center;
 }

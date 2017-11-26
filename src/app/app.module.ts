@@ -16,9 +16,9 @@ import { ventaProyecciones } from '../pages/ventas/ventaProyecciones/ventaProyec
 import { ventasEstrategias } from '../pages/ventas/ventasEstrategias/ventasEstrategias';
 import { estrategias } from '../pages/estrategias/estrategias';
 import { estrategiasPrecio } from '../pages/estrategias/estrategiasPrecio/estrategiasPrecio';
+import { estratpreciopreg } from '../pages/estrategias/estrategiasPrecio/estratpreciopreg/estratpreciopreg';
+import { estratprecioideal } from '../pages/estrategias/estrategiasPrecio/estratprecioideal/estratprecioideal';
 
-
-ventaProyecciones
 
 @NgModule({
   declarations: [
@@ -38,6 +38,8 @@ ventaProyecciones
     ventasEstrategias,
     estrategias,
     estrategiasPrecio,
+    estratpreciopreg,
+    estratprecioideal,
   ],
   imports: [
     IonicModule.forRoot(MyApp)
@@ -60,6 +62,8 @@ ventaProyecciones
     ventasEstrategias,
     estrategias,
     estrategiasPrecio,
+    estratpreciopreg,
+    estratprecioideal,
   ],
   providers: [InvoiceProvider, {provide: ErrorHandler, useClass: IonicErrorHandler}]
 })
