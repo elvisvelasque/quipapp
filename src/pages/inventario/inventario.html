@@ -26,28 +26,32 @@
   </ion-row>
  </div>
 
-  <div [ngSwitch]="type">
 
-    <div *ngSwitchCase = "1">
-   		<ion-card>
-    		<ion-card-header>
-     		 PRODUCTOS MAS VENDIDOS
-    		</ion-card-header>
-    		<ion-card-content>
-    		  <canvas #pieCanvas></canvas>
-    		</ion-card-content>
-  		</ion-card>
+    <div id = "sw1" style="display: block;">
+      <ion-card>
+        <ion-card-header>
+         PRODUCTOS MAS VENDIDOS
+        </ion-card-header>
+        <ion-card-content>
+          <canvas #pieCanvas></canvas>
+        </ion-card-content>
+      </ion-card>
     </div>
 
-    <div *ngSwitchCase = "2">
-        <h1>que hace</h1>
+    <div id = "sw2" style="display: none;">
+        <ion-row class="row header">
+          <ion-col>Utility Company Name</ion-col>
+          <ion-col>Service Code</ion-col>
+        </ion-row>
+        <ion-row ng-repeat="data in ctrl.data">
+          <ion-col class="col">1</ion-col>
+          <ion-col class="col">2</ion-col>
+        </ion-row>
     </div>
 
-    <div *ngSwitchCase = "3">
+    <div id = "sw3" style="display: none;">
         <h1>amio</h1>
     </div>
-
-  </div>
 
 
 </ion-content>
