@@ -4,7 +4,8 @@ import { NavController, Platform } from 'ionic-angular';
 import { ventaspage } from '../ventas/ventas';
 import { costospage } from '../costos/costos';
 import { proveedorespage } from '../proveedores/proveedores';
-import { inventariopage } from '../inventario/inventario';
+//import { inventariopage } from '../inventario/inventario';
+import { compraspage } from '../compras/compras';
 import { ratiospage } from '../ratios/ratios';
 import { resumenpage } from '../resumen/resumen';
 import { InvoiceProvider } from '../../providers/InvoiceProvider';
@@ -37,8 +38,8 @@ export class HomePage {
     this.navCtrl.push(ventaspage);
   }
 
-  abririnventario() {
-    this.navCtrl.push(inventariopage);
+  abrircompras() {
+    this.navCtrl.push(compraspage);
   }
 
   abrircostos() {
