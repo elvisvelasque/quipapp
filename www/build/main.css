@@ -22282,6 +22282,116 @@ ion-row {
   padding: 0;
 }
 
+ion-col {
+  text-align: center;
+}
+
+ion-card.card-md {
+  border-radius: 15px !important;
+  margin-top: 25px;
+  margin-bottom: 25px;
+}
+
+ion-card span {
+  display: block;
+  text-align: center;
+}
+
+ion-card#customer {
+  background: #f4a742;
+}
+
+ion-card#product {
+  background: #41acf4;
+}
+
+#opciones {
+  margin-top: 50px;
+}
+
+.text_indicator {
+  background: #1b2f73;
+  color: white;
+  text-align: center;
+  display: block;
+  border-radius: 10px 0 0 0;
+  font-size: 13px;
+}
+
+.fila2 {
+  background: #7388d8;
+  color: white;
+  font-size: 13px;
+}
+
+ion-row {
+  padding: 10px;
+}
+
+.titulo1 {
+  padding: 0;
+}
+
+.circle {
+  background: blue;
+  width: 50px;
+  height: 50px;
+  position: relative;
+  border-radius: 100%;
+}
+
+.circle .icon {
+  font-size: 30px;
+}
+
+.circle#compradores {
+  background: #7bdd5d;
+}
+
+.circle#ventas {
+  background: #5b96dd;
+}
+
+.circle#productos {
+  background: #dd675c;
+}
+
+.circle i {
+  font-size: 30px;
+}
+
+page-charts .scroll-content {
+  background-color: #f4f4f4;
+}
+
+page-charts ion-card-header {
+  font-weight: bold;
+}
+
+page-charts .scroll-content {
+  background-color: #f4f4f4;
+}
+
+page-charts ion-card-header {
+  font-weight: bold;
+}
+
+page-charts .scroll-content {
+  background-color: #f4f4f4;
+}
+
+page-charts ion-card-header {
+  font-weight: bold;
+}
+
+page-charts .scroll-content {
+  background-color: #f4f4f4;
+}
+
+page-charts ion-card-header {
+  font-weight: bold;
+}
+
 /* allows the bar-footer to be elastic /*
 /* optionally set a max-height */
 /* maxlength on the textarea will prevent /*
@@ -22466,7 +22576,7 @@ a.autolinker {
   font-size: 2.0em;
   width: 100%;
   font-weight: bold;
-  color: #fff;
+  color: #343434;
 }
 
 .card-background-page .card-subtitle {
@@ -22474,7 +22584,7 @@ a.autolinker {
   position: absolute;
   top: 52%;
   width: 100%;
-  color: #fff;
+  color: #343434;
 }
 
 page-charts .scroll-content {
@@ -22879,92 +22989,6 @@ page-home .ionic-logo:before {
   100% {
     -webkit-transform: rotate(360deg);
   }
-}
-
-ion-col {
-  text-align: center;
-}
-
-ion-card.card-md {
-  border-radius: 15px !important;
-  margin-top: 25px;
-  margin-bottom: 25px;
-}
-
-ion-card span {
-  display: block;
-  text-align: center;
-}
-
-ion-card#customer {
-  background: #f4a742;
-}
-
-ion-card#product {
-  background: #41acf4;
-}
-
-#opciones {
-  margin-top: 50px;
-}
-
-.text_indicator {
-  background: #1b2f73;
-  color: white;
-  text-align: center;
-  display: block;
-  border-radius: 10px 0 0 0;
-  font-size: 13px;
-}
-
-.fila2 {
-  background: #7388d8;
-  color: white;
-  font-size: 13px;
-}
-
-ion-row {
-  padding: 10px;
-}
-
-.titulo1 {
-  padding: 0;
-}
-
-.circle {
-  background: blue;
-  width: 50px;
-  height: 50px;
-  position: relative;
-  border-radius: 100%;
-}
-
-.circle .icon {
-  font-size: 30px;
-}
-
-.circle#compradores {
-  background: #7bdd5d;
-}
-
-.circle#ventas {
-  background: #5b96dd;
-}
-
-.circle#productos {
-  background: #dd675c;
-}
-
-.circle i {
-  font-size: 30px;
-}
-
-page-charts .scroll-content {
-  background-color: #f4f4f4;
-}
-
-page-charts ion-card-header {
-  font-weight: bold;
 }
 
 page-login-slider ion-content {

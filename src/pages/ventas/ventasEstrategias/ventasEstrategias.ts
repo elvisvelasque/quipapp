@@ -38,7 +38,7 @@ export class ventasEstrategias {
     const data = {
       labels: ['Octubre', 'Noviembre'],
       datasets: [{
-        label: '# of Votes',
+        label: 'Monto de venta',
         data: [19, 12],
         backgroundColor: [
           'rgba(255, 99, 132, 0.2)',

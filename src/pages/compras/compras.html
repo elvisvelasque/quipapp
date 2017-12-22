@@ -1,0 +1,68 @@
+<ion-header>
+
+  <ion-navbar>
+    <ion-title><ion-icon name="menu" menuToggle></ion-icon> QuipApp</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding class="transparent-header" [ngStyle]="{'background-image': 'url(' + backgroundImage +')'}">
+
+  <ion-col align-self-center><h1>Compras</h1></ion-col>
+
+    <ion-card>
+      <ion-card-content class="titulo1">
+      <ion-row class="text_indicator" style="height: 25%;"><strong>Último Mes</strong></ion-row>
+      <ion-row class="fila2" style="height: 50%;"><ion-icon  style="font-size: 15px;margin-right: 7px" name="cube"></ion-icon> Producto más comprado:</ion-row>
+      <ion-row id="porc" style="height: 25%;"><strong></strong></ion-row>
+
+        <ion-row>
+          <ion-col>
+            <canvas #pieCanvas></canvas>
+          </ion-col>
+        </ion-row>
+      </ion-card-content>
+    </ion-card>
+
+  <ion-card>
+    <ion-card-content class="titulo1">
+        
+      <ion-row class="text_indicator" style="height: 25%;"><strong>Último Mes</strong></ion-row>
+      <ion-row class="fila2" style="height: 50%;"><ion-icon  style="font-size: 15px;margin-right: 7px" name="cube"></ion-icon>Proveedor de quien mas se compro</ion-row>
+      <ion-row id="porcprov" style="height: 25%;"><strong></strong></ion-row>
+      <ion-row>
+          <ion-col>
+           <canvas #doughnutCanvas></canvas>
+          </ion-col>
+      </ion-row>
+    </ion-card-content>
+  </ion-card>
+  
+  <div>
+    <ion-row class="row" id="opciones">
+      <ion-col class="col">
+        <button primary large class="circle" id="compradores">
+          <ion-icon (click)="abrirVentasPeriodo()" name="people" role="img" class="icon">
+          </ion-icon>
+        </button>
+        <br>Compras por periodo
+      </ion-col>
+      <ion-col class="col">
+        <button primary large class="circle" id="proyecciones">
+          <ion-icon (click)="abrirVentasProyecciones()" name="pricetags" role="img" class="icon">
+          </ion-icon>
+        </button>
+        <br>Proyecciones
+      </ion-col>
+      <ion-col class="col">
+        <button primary large class="circle" id="estrategias">
+          <ion-icon (click)="abrirVentasEstrategias()" name="cube" role="img" class="icon">
+          </ion-icon>
+        </button>
+        <br>Estrategias
+      </ion-col>
+    </ion-row>
+  </div>
+
+</ion-content>

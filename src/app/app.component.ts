@@ -4,8 +4,9 @@ import { StatusBar, Splashscreen } from 'ionic-native';
 
 import { HomePage } from '../pages/home/home';
 import { ventaspage } from '../pages/ventas/ventas';
+import { compraspage } from '../pages/compras/compras';
 import { costospage } from '../pages/costos/costos';
-import { inventariopage } from '../pages/inventario/inventario';
+//import { inventariopage } from '../pages/inventario/inventario';
 import { ratiospage } from '../pages/ratios/ratios';
 import { resumenpage } from '../pages/resumen/resumen';
 import { proveedorespage } from '../pages/proveedores/proveedores';
@@ -28,13 +29,13 @@ export class MyApp {
 
     this.pages = [
       { title: 'Inicio', component: HomePage, badge: 'Nuevo', icon: 'home' },
-      { title: 'Ventas', component: ventaspage, badge: '', icon: 'home' },
-      { title: 'ChatPakita', component: costospage, badge: '', icon: 'home' },
-      { title: 'Clientes', component: clientespage, badge: '', icon: 'home' },
-      { title: 'Inventario', component: inventariopage, badge: '', icon: 'home' },
-      { title: 'Metas', component: ratiospage, badge: '', icon: 'home' },
+      { title: 'Ventas', component: ventaspage, badge: '', icon: 'pricetag' },
+      { title: 'ChatPakita', component: costospage, badge: '', icon: 'chatbubbles' },
+      { title: 'Clientes', component: clientespage, badge: '', icon: 'people' },
+      { title: 'Compras', component: compraspage, badge: '', icon: 'cart' },
+      { title: 'Metas', component: ratiospage, badge: '', icon: 'flag' },
       { title: 'Resumen', component: resumenpage, badge: '', icon: 'home' },
-      { title: 'Proveedores', component: proveedorespage, badge: '', icon: 'home' },
+      { title: 'Proveedores', component: proveedorespage, badge: '', icon: 'people' },
       { title: 'Estrategias', component: estrategias, badge: '', icon: 'home' },
 
     ];

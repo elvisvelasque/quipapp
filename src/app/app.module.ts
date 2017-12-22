@@ -3,8 +3,9 @@ import { IonicApp, IonicModule, IonicErrorHandler } from 'ionic-angular';
 import { MyApp } from './app.component';
 import { HomePage } from '../pages/home/home';
 import { ventaspage } from '../pages/ventas/ventas';
+import { compraspage } from '../pages/compras/compras';
 import { costospage } from '../pages/costos/costos';
-import { inventariopage } from '../pages/inventario/inventario';
+//import { inventariopage } from '../pages/inventario/inventario';
 import { proveedorespage } from '../pages/proveedores/proveedores';
 import { proveedoresInfo } from '../pages/proveedores/proveedoresInfo/proveedoresInfo';
 import { ratiospage } from '../pages/ratios/ratios';
@@ -14,6 +15,9 @@ import { LoginSliderPage } from '../pages/login-slider/login-slider';
 import { ventasPeriodo } from '../pages/ventas/ventasPeriodo/ventasPeriodo';
 import { ventaProyecciones } from '../pages/ventas/ventaProyecciones/ventaProyecciones';
 import { ventasEstrategias } from '../pages/ventas/ventasEstrategias/ventasEstrategias';
+import { comprasPeriodo } from '../pages/compras/comprasPeriodo/comprasPeriodo';
+import { comprasProyecciones } from '../pages/compras/comprasProyecciones/comprasProyecciones';
+import { comprasEstrategias } from '../pages/compras/comprasEstrategias/comprasEstrategias';
 import { estrategias } from '../pages/estrategias/estrategias';
 import { estrategiasPrecio } from '../pages/estrategias/estrategiasPrecio/estrategiasPrecio';
 import { estratpreciopreg } from '../pages/estrategias/estrategiasPrecio/estratpreciopreg/estratpreciopreg';
@@ -29,8 +33,8 @@ import {marketing} from '../pages/marketing/marketing';
     HomePage,
     ventaspage,
     costospage,
-    inventariopage,
-    ventaspage,
+   // inventariopage,
+    compraspage,
     ratiospage,
     proveedorespage,
     proveedoresInfo,
@@ -39,6 +43,9 @@ import {marketing} from '../pages/marketing/marketing';
     ventasPeriodo,
     ventaProyecciones,
     ventasEstrategias,
+    comprasPeriodo,
+    comprasProyecciones,
+    comprasEstrategias,
     estrategias,
     estrategiasPrecio,
     estratpreciopreg,
@@ -56,16 +63,19 @@ import {marketing} from '../pages/marketing/marketing';
     HomePage,
     ventaspage,
     costospage,
-    inventariopage,
+  //  inventariopage,
     proveedorespage,
     proveedoresInfo,
-    ventaspage,
+    compraspage,
     ratiospage,
     resumenpage,
     LoginSliderPage,
     ventasPeriodo,
     ventaProyecciones,
     ventasEstrategias,
+    comprasPeriodo,
+    comprasProyecciones,
+    comprasEstrategias,
     estrategias,
     estrategiasPrecio,
     estratpreciopreg,
