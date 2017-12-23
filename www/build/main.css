@@ -23126,6 +23126,11 @@ button span {
   white-space: initial;
 }
 
+.boton {
+  position: absolute;
+  bottom: 1;
+}
+
 page-charts .scroll-content {
   background-color: #f4f4f4;
 }

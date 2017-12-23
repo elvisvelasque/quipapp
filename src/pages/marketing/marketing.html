@@ -20,7 +20,7 @@
     </ion-thumbnail>
     <h2>Facebook</h2>
     <p>Nuevos mensajes relacionados a tu pagina</p>
-    <button ion-button clear item-end>View</button>
+    <button (click)="openFacebook('')" ion-button clear item-end>View</button>
   </ion-item>
 
    <ion-item>
@@ -29,7 +29,7 @@
     </ion-thumbnail>
     <h2>Twitter</h2>
     <p>Nuevos eventos</p>
-    <button ion-button clear item-end>View</button>
+    <button (click)="openTwitter('')" ion-button clear item-end>View</button>
   </ion-item>
 
    <ion-item>
@@ -38,7 +38,7 @@
     </ion-thumbnail>
     <h2>Instagram</h2>
     <p>Nuevos seguidores</p>
-    <button ion-button clear item-end>View</button>
+    <button (click)="openInstagram('')" ion-button clear item-end>View</button>
   </ion-item>
 
 </ion-list>

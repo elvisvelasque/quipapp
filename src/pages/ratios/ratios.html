@@ -9,13 +9,89 @@
 
 <ion-content padding>
 
+<div [ngSwitch]="type">
+
+  <div *ngSwitchCase = "'principal'">
   <ion-item-group>
     <h2>Mis Objetivos</h2>
      </ion-item-group>
   <ion-row>	
   <img style="margin:10px auto; display:block;" SRC="assets/img/genial.gif">
   </ion-row>
-  <ion-item-group>
+ 
+ <ion-list>
+    <ion-list-header>
+      Agregar nuevo mes- Deslizar para eliminar
+      <button item-end ion-button icon-only clear (click)="addThing()">
+        <ion-icon color="primary" name="add-circle"></ion-icon>
+      </button>
+    </ion-list-header>
+    <ion-item-sliding #slidingItem *ngFor="let thing of things; let i = index; ">
+      <ion-item (click)="irAlternativas()" #item>
+        <ion-icon item-start color="danger" name="remove-circle" (click)="openOption(slidingItem, item, $event)"></ion-icon> {{thing.title}}
+      </ion-item>
+      <ion-item-options icon-start (ionSwipe)="deleteItem(things, i)">
+        <button color="danger" ion-button expandable (click)="deleteItem(things, i)">
+          <ion-icon name="trash"></ion-icon>
+        </button>
+      </ion-item-options>
+    </ion-item-sliding>
+  </ion-list>
+
+  </div>
+
+ <div *ngSwitchCase = "'alternativas'">
+
+  <ion-list>
+    
+    <ion-list-header>
+      Agregar nueva meta
+      <button item-end ion-button icon-only clear (click)="addItem()">
+        <ion-icon color="primary" name="add-circle"></ion-icon>
+      </button>
+    </ion-list-header>
+    
+    <ion-item-sliding  #slidingItem *ngFor="let thing of items; let i = index; ">
+      <ion-item  #item>
+        <ion-icon item-start color="danger" name="remove-circle" (click)="openOption(slidingItem, item, $event)"></ion-icon> 
+          <ion-input type="text" placeholder={{thing.title}}></ion-input>
+      </ion-item>
+      <ion-item-options icon-start (ionSwipe)="deleteItem(things, i)">
+        <button color="danger" ion-button expandable (click)="deleteItem(things, i)">
+          <ion-icon name="trash"></ion-icon>
+        </button>
+      </ion-item-options>
+    </ion-item-sliding>
+  </ion-list>
+
+   <ion-grid>
+          <ion-row>
+            <ion-col col-6>
+              <button ion-button block icon-start (click)="back()" color="Light">
+                    <ion-icon name="arrow-back"></ion-icon>
+                    Atras
+                  </button>
+            </ion-col>
+            <ion-col col-6>
+              <button id="darExamen" ion-button block icon-end (click)="DarExamen(id);" color="secondary" disabled>
+                    Guardar
+                  <ion-icon name="star" style="margin-left:5px;"></ion-icon>
+                </button>
+            </ion-col>
+          </ion-row>
+   </ion-grid>
+
+   </div>
+  
+    </div>
+
+
+
+
+
+
+
+ <!-- <ion-item-group>
     <ion-item-divider color="light">Diciembre-2017</ion-item-divider>
     <ion-item>Aumentar mis ventas en un 20%</ion-item>
     <ion-item>Reducir mis costos en un 5%</ion-item>
@@ -31,7 +107,7 @@
     <ion-item-divider color="light">Marzo</ion-item-divider>
     <ion-item>Aumentar mis ventas 5%</ion-item>
     <ion-item>Ingresar en nuevos mercados</ion-item>
-  </ion-item-group>
+  </ion-item-group> -->
 
 
 
