@@ -11,7 +11,7 @@ import { InvoiceProvider } from '../../providers/InvoiceProvider';
 import { estrategias } from '../estrategias/estrategias';
 import { clientespage } from '../clientes/clientes';
 import { marketing } from '../marketing/marketing';
-import { consejosgeneralespage } from '../consejosGenerales/consejosGenerales';
+import { chatpakitapage } from '../chatPakita/chatPakita';
 
 @Component({
   selector: 'page-home',
@@ -39,8 +39,8 @@ export class HomePage {
     this.navCtrl.push(compraspage);
   }
 
-  abrirconsejos() {
-    this.navCtrl.push(consejosgeneralespage);
+  abrirchat() {
+    this.navCtrl.push(chatpakitapage);
   }
 
   abrirratios() {

@@ -4,7 +4,6 @@ import { MyApp } from './app.component';
 import { HomePage } from '../pages/home/home';
 import { ventaspage } from '../pages/ventas/ventas';
 import { compraspage } from '../pages/compras/compras';
-//import { inventariopage } from '../pages/inventario/inventario';
 import { proveedorespage } from '../pages/proveedores/proveedores';
 import { proveedoresInfo } from '../pages/proveedores/proveedoresInfo/proveedoresInfo';
 import { ratiospage } from '../pages/ratios/ratios';
@@ -21,7 +20,7 @@ import { estrategias } from '../pages/estrategias/estrategias';
 import { estratpreciopreg } from '../pages/estrategias/estratpreciopreg/estratpreciopreg';
 import { clientespage } from '../pages/clientes/clientes';
 import { marketing } from '../pages/marketing/marketing';
-import { consejosgeneralespage } from '../pages/consejosGenerales/consejosGenerales';
+import { chatpakitapage } from '../pages/chatPakita/chatPakita';
 
 @NgModule({
   declarations: [
@@ -44,7 +43,7 @@ import { consejosgeneralespage } from '../pages/consejosGenerales/consejosGenera
     estrategias,
     estratpreciopreg,
     clientespage,
-    consejosgeneralespage,
+    chatpakitapage,
     marketing,
   ],
   imports: [
@@ -70,7 +69,7 @@ import { consejosgeneralespage } from '../pages/consejosGenerales/consejosGenera
     estrategias,
     estratpreciopreg,
     clientespage,
-    consejosgeneralespage,
+    chatpakitapage,
     marketing,
   ],
   providers: [InvoiceProvider, {provide: ErrorHandler, useClass: IonicErrorHandler}]
