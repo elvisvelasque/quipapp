@@ -15,7 +15,6 @@ export class ventaProyecciones {
 
   proj_items = [];
   lineChart: any;
-  numero_proy: number = 0;
 
   constructor(public platform: Platform,
     public navCtrl: NavController,
@@ -75,13 +74,13 @@ export class ventaProyecciones {
 
   ionViewDidLoad() {
     this.platform.ready().then(() => {
-      this.getSalesProjections(3);
+      this.getSalesProjections();
     });
   }
 
-  getSalesProjections(num: number) {
+  getSalesProjections() {
     this.proj_items = [];
-    this.invoice.getSalesProjections(num).then(
+    this.invoice.getSalesProjections().then(
       data => {
         if (data) {
           this.proj_items = data;

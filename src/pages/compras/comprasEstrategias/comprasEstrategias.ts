@@ -1,5 +1,6 @@
 import { Component, ViewChild } from '@angular/core';
-import { NavController} from 'ionic-angular';
+import { NavController, Platform} from 'ionic-angular';
+import { InvoiceProvider } from '../../../providers/InvoiceProvider';
 import chartJs from 'chart.js';
 
 
@@ -11,9 +12,16 @@ import chartJs from 'chart.js';
 export class comprasEstrategias {
   @ViewChild('barCanvas') barCanvas;
 
+  v_items: Array<any> = [];
+  lastData: Array<any> = [];
+  lastNombres: Array<any> = [];
+  message: string;
+  
   barChart: any;
 
-  constructor(public navCtrl: NavController) { }
+  constructor(public platform: Platform,
+    public navCtrl: NavController,
+    public invoice: InvoiceProvider) { }
 
   ngAfterViewInit() {
     setTimeout(() => {
@@ -34,12 +42,12 @@ export class comprasEstrategias {
   *  it's possible to have multiple bar types mixed into one.
   */
 
-  getBarChart() {
+getBarChart() {
     const data = {
-      labels: ['Octubre', 'Noviembre'],
+      labels: this.v_items["nombres"],
       datasets: [{
-        label: 'Monto de compra',
-        data: [19, 12],
+        label: 'Monto de venta',
+        data: this.v_items["data"],
         backgroundColor: [
           'rgba(255, 99, 132, 0.2)',
           'rgba(54, 162, 235, 0.2)'
@@ -65,5 +73,32 @@ export class comprasEstrategias {
     return this.getChart(this.barCanvas.nativeElement, 'bar', data, options);
   }
 
+  ionViewDidLoad() {
+    this.platform.ready().then(() => {
+      this.getPurchaseStrategies();
+    });
+  }
+
+  getPurchaseStrategies() {
+    this.v_items = [];
+    this.invoice.getSalesStrategies().then(
+      data => {
+        if (data) {
+          this.v_items = data;
+          console.log(this.v_items);
+          this.message = this.v_items["mensaje"];
+
+          this.barChart = this.getBarChart();
+        } else {
+          console.error('Error retrieving weather data: Data object is empty');
+        }
+      },
+      error => {
+        //Hide the loading indicator
+        console.error('Error retrieving weather data');
+        console.dir(error);
+      }
+    );
+  }
   
 }

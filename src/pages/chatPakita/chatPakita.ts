@@ -8,7 +8,7 @@ import { InvoiceProvider } from '../../providers/InvoiceProvider';
   templateUrl: 'chatPakita.html'
 })
 export class chatpakitapage{
-toUser = {
+  toUser = {
     _id: '534b8e5aaa5e7afc1b23e69b',
     pic: 'assets/img/curioso.gif',
     username: 'Pakita',
@@ -22,8 +22,9 @@ toUser = {
 
   doneLoading = false;
 
-  messages = [
-  ];
+  messages = [];
+
+  context: any;
 
   @ViewChild(Content) content: Content;
 
@@ -44,8 +45,9 @@ toUser = {
       // this.messageService.sendMessage(chatId, message);
       this.new = ' ';
       console.log(message);
-      this.invoice.GetRespuesta(message).then(
+      this.invoice.GetRespuesta(message, this.context).then(
           data => {
+            this.context = data["context"];
             const replyData =
               {
                 toId: this.toUser._id,
@@ -64,6 +66,7 @@ toUser = {
             
           }
         );
+
       const messageData =
         {
           toId: this.toUser._id,

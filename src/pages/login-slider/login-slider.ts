@@ -80,7 +80,8 @@ export class LoginSliderPage {
             console.log(data)
             if (data["codigo"] == 1) {
               this.presentLoading('Te identificaste con éxito!');
-              this.invoice.name = data["mensaje"]
+              this.invoice.name = data["mensaje"];
+              this.invoice.token = data["token"];
               this.navCtrl.push(HomePage);
             }
             else {

@@ -75,34 +75,18 @@ export class ventasEstrategias {
 
   ionViewDidLoad() {
     this.platform.ready().then(() => {
-      this.getPeriodSales();
+      this.getSalesStrategies();
     });
   }
 
-  getPeriodSales() {
+  getSalesStrategies() {
     this.v_items = [];
-    this.invoice.GetPeriodSales().then(
+    this.invoice.getSalesStrategies().then(
       data => {
         if (data) {
           this.v_items = data;
           console.log(this.v_items);
-
-          this.lastData.push(this.v_items["data"][4]);
-          this.lastData.push(this.v_items["data"][5]);
-          this.lastNombres.push(this.v_items["nombres"][4]);
-          this.lastNombres.push(this.v_items["nombres"][5]);
-          
-          this.v_items["data"] = this.lastData;
-          this.v_items["nombres"] = this.lastNombres;
-
-          if (this.lastData[1] > this.lastData[0])
-          {
-            this.message = "Tus ventas aumentaron";
-          }
-          else
-          {
-            this.message = "Tus ventas disminuyeron";
-          }
+          this.message = this.v_items["mensaje"];
 
           this.barChart = this.getBarChart();
         } else {

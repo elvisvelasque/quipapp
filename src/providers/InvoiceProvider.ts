@@ -14,7 +14,7 @@ export class InvoiceProvider {
 
   public name = "";
   private sunatEndpoint = 'https://sunatcodeblack.mybluemix.net/';
-  ruc = { RucVendedor : 20480072872 };
+  public token: number = 0;
 
   constructor(public http: Http) {
   }
@@ -41,9 +41,11 @@ export class InvoiceProvider {
 
   // Watson
 
-  public GetRespuesta(pregunta: string): Promise<any> {
-    let content = {mensaje: ""};
+  public GetRespuesta(pregunta: string, contexto: any): Promise<any> {
+    let content = {mensaje: "", context: {}};
     content.mensaje = pregunta;
+    content.context = contexto;
+    console.log(JSON.stringify(content));
     let url: string = this.getUrl("watson");
     return this.http.post(url, content)
       .toPromise()
@@ -53,79 +55,113 @@ export class InvoiceProvider {
   //Ventas
   
   public GetProductSales(): Promise<any> {
+    let content = {RucVendedor: 0};
+    content.RucVendedor = this.token;
     let url: string = this.getUrl("producto/mas/vendido");
-    return this.http.post(url, this.ruc)
+    return this.http.post(url, content)
       .toPromise()
       .then(this.extractData);
   }
 
   public GetClientsSales(): Promise<any> {
+    let content = {RucVendedor: 0};
+    content.RucVendedor = this.token;
     let url: string = this.getUrl("clientes/mas/vendido");
-    return this.http.post(url, this.ruc)
+    return this.http.post(url, content)
       .toPromise()
       .then(this.extractData); 
   }
   
   public GetPeriodSales(): Promise<any> {
+    let content = {RucVendedor: 0};
+    content.RucVendedor = this.token;
     let url: string = this.getUrl("ventas");
-    return this.http.post(url, this.ruc)
+    return this.http.post(url, content)
       .toPromise()
       .then(this.extractData); 
   }
 
-  public getSalesProjections(num:number): Promise<any> {
-    let content = { RucVendedor: 20480072872, dias: 0};
-    content.dias = num;
+  public getSalesProjections(): Promise<any> {
+    let content = {RucVendedor: 0};
+    content.RucVendedor = this.token;
     let url: string = this.getUrl("ventas/proyectadas");
     return this.http.post(url, content)
       .toPromise()
       .then(this.extractData);  
   }
 
+  public getSalesStrategies(): Promise<any> {
+    let content = {RucVendedor: 0};
+    content.RucVendedor = this.token;
+    let url: string = this.getUrl("ventas/estrategias");
+    return this.http.post(url, content)
+      .toPromise()
+      .then(this.extractData);  
+  }
+ 
   //Compras
 
   public GetProductPurchases(): Promise<any> {
-    let url: string = this.getUrl("producto/inventarios");
-    return this.http.post(url, this.ruc)
+    let content = {RucVendedor: 0};
+    content.RucVendedor = this.token;
+    let url: string = this.getUrl("producto/mas/comprado");
+    return this.http.post(url, content)
       .toPromise()
       .then(this.extractData);
   }
 
   public GetProvidersPurchases(): Promise<any> {
-    let url: string = this.getUrl("clientes/mas/vendido");
-    return this.http.post(url, this.ruc)
+    let content = {RucVendedor: 0};
+    content.RucVendedor = this.token;
+    let url: string = this.getUrl("proveedor/mas/comprado");
+    return this.http.post(url, content)
       .toPromise()
       .then(this.extractData); 
   }
 
   public GetPeriodPurchases(): Promise<any> {
-    let url: string = this.getUrl("ventas");
-    return this.http.post(url, this.ruc)
+    let content = {RucVendedor: 0};
+    content.RucVendedor = this.token;
+    let url: string = this.getUrl("compras");
+    return this.http.post(url, content)
       .toPromise()
       .then(this.extractData); 
   }
 
   public getPurchasesProjections(num:number): Promise<any> {
-    let content = { RucVendedor: 20480072872, dias: 0};
-    content.dias = num;
-    let url: string = this.getUrl("ventas/proyectadas");
+    let content = {RucVendedor: 0};
+    content.RucVendedor = this.token;
+    let url: string = this.getUrl("compras/proyectadas");
     return this.http.post(url, content)
       .toPromise()
       .then(this.extractData);  
   }
   
+  public getPurchasesStrategies(): Promise<any> {
+    let content = {RucVendedor: 0};
+    content.RucVendedor = this.token;
+    let url: string = this.getUrl("compras/estrategias");
+    return this.http.post(url, content)
+      .toPromise()
+      .then(this.extractData);  
+  }
+
   //Clientes
 
   public GetClients():  Promise<any> {
+    let content = {RucVendedor: 0};
+    content.RucVendedor = this.token;
     let url: string = this.getUrl("clientes/caracteristicas");
-    return this.http.post(url, this.ruc)
+    return this.http.post(url, content)
       .toPromise()
       .then(this.extractData); 
   }
 
     public GetClientsPie():  Promise<any> {
+      let content = {RucVendedor: 0};
+    content.RucVendedor = this.token;
     let url: string = this.getUrl("clientes/mas/vendido");
-    return this.http.post(url, this.ruc)
+    return this.http.post(url, content)
       .toPromise()
       .then(this.extractData); 
   }
