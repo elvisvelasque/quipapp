@@ -4,7 +4,6 @@ import { MyApp } from './app.component';
 import { HomePage } from '../pages/home/home';
 import { ventaspage } from '../pages/ventas/ventas';
 import { compraspage } from '../pages/compras/compras';
-import { costospage } from '../pages/costos/costos';
 //import { inventariopage } from '../pages/inventario/inventario';
 import { proveedorespage } from '../pages/proveedores/proveedores';
 import { proveedoresInfo } from '../pages/proveedores/proveedoresInfo/proveedoresInfo';
@@ -19,9 +18,7 @@ import { comprasPeriodo } from '../pages/compras/comprasPeriodo/comprasPeriodo';
 import { comprasProyecciones } from '../pages/compras/comprasProyecciones/comprasProyecciones';
 import { comprasEstrategias } from '../pages/compras/comprasEstrategias/comprasEstrategias';
 import { estrategias } from '../pages/estrategias/estrategias';
-import { estrategiasPrecio } from '../pages/estrategias/estrategiasPrecio/estrategiasPrecio';
-import { estratpreciopreg } from '../pages/estrategias/estrategiasPrecio/estratpreciopreg/estratpreciopreg';
-import { estratprecioideal } from '../pages/estrategias/estrategiasPrecio/estratprecioideal/estratprecioideal';
+import { estratpreciopreg } from '../pages/estrategias/estratpreciopreg/estratpreciopreg';
 import { clientespage } from '../pages/clientes/clientes';
 import { marketing } from '../pages/marketing/marketing';
 import { consejosgeneralespage } from '../pages/consejosGenerales/consejosGenerales';
@@ -31,7 +28,6 @@ import { consejosgeneralespage } from '../pages/consejosGenerales/consejosGenera
     MyApp,
     HomePage,
     ventaspage,
-    costospage,
    // inventariopage,
     compraspage,
     ratiospage,
@@ -46,9 +42,7 @@ import { consejosgeneralespage } from '../pages/consejosGenerales/consejosGenera
     comprasProyecciones,
     comprasEstrategias,
     estrategias,
-    estrategiasPrecio,
     estratpreciopreg,
-    estratprecioideal,
     clientespage,
     consejosgeneralespage,
     marketing,
@@ -61,8 +55,6 @@ import { consejosgeneralespage } from '../pages/consejosGenerales/consejosGenera
     MyApp,
     HomePage,
     ventaspage,
-    costospage,
-  //  inventariopage,
     proveedorespage,
     proveedoresInfo,
     compraspage,
@@ -76,9 +68,7 @@ import { consejosgeneralespage } from '../pages/consejosGenerales/consejosGenera
     comprasProyecciones,
     comprasEstrategias,
     estrategias,
-    estrategiasPrecio,
     estratpreciopreg,
-    estratprecioideal,
     clientespage,
     consejosgeneralespage,
     marketing,

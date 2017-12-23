@@ -2,7 +2,6 @@ import { Component } from '@angular/core';
 
 import { NavController, Platform } from 'ionic-angular';
 import { ventaspage } from '../ventas/ventas';
-import { costospage } from '../costos/costos';
 import { proveedorespage } from '../proveedores/proveedores';
 //import { inventariopage } from '../inventario/inventario';
 import { compraspage } from '../compras/compras';

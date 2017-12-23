@@ -1,7 +1,6 @@
 import { Component } from '@angular/core';
 import { NavController, NavParams } from 'ionic-angular';
-//import { estrategiasPrecio } from './estrategiasPrecio/estrategiasPrecio';
-import {estratpreciopreg} from './estrategiasPrecio/estratpreciopreg/estratpreciopreg'
+import { estratpreciopreg } from './estratpreciopreg/estratpreciopreg'
 
 
 @Component({
@@ -10,10 +9,10 @@ import {estratpreciopreg} from './estrategiasPrecio/estratpreciopreg/estratpreci
 })
 export class estrategias{
 
-  constructor(public navCtrl: NavController, public navParams: NavParams,) {}
+	constructor(public navCtrl: NavController, public navParams: NavParams,) {}
 
-abrirestrategiasPrecio(){
-	this.navCtrl.push(estratpreciopreg);
-}
+	abrirestrategiasPrecio(){
+		this.navCtrl.push(estratpreciopreg);
+	}
 
 }

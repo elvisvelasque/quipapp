@@ -1,6 +1,6 @@
 import { FormControl, FormBuilder } from '@angular/forms';
 import { Component } from '@angular/core';
-import { NavController, Content } from 'ionic-angular';
+import { NavController } from 'ionic-angular';
 import { InvoiceProvider } from '../../providers/InvoiceProvider';
 
 @Component({

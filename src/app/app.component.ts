@@ -5,14 +5,13 @@ import { StatusBar, Splashscreen } from 'ionic-native';
 import { HomePage } from '../pages/home/home';
 import { ventaspage } from '../pages/ventas/ventas';
 import { compraspage } from '../pages/compras/compras';
-import { costospage } from '../pages/costos/costos';
 //import { inventariopage } from '../pages/inventario/inventario';
 import { ratiospage } from '../pages/ratios/ratios';
 import { resumenpage } from '../pages/resumen/resumen';
 import { proveedorespage } from '../pages/proveedores/proveedores';
 import { LoginSliderPage } from '../pages/login-slider/login-slider';
 import { estrategias } from '../pages/estrategias/estrategias';
-import {clientespage} from '../pages/clientes/clientes';
+import { clientespage } from '../pages/clientes/clientes';
 import { consejosgeneralespage } from '../pages/consejosGenerales/consejosGenerales';
 
 
