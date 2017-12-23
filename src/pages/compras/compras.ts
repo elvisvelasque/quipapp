@@ -114,7 +114,7 @@ export class compraspage{
 
   getProducts() {
     this.p_items = [];
-    this.invoice.GetProductSales().then(
+    this.invoice.GetProductPurchases().then(
       data => {
         if (data) {
           this.p_items = data;
@@ -136,7 +136,7 @@ export class compraspage{
 
   getProviders() {
     this.prov_items = [];
-    this.invoice.GetProvidersSales().then(
+    this.invoice.GetProvidersPurchases().then(
       data => {
         if (data) {
           this.prov_items = data;

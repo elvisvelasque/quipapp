@@ -12,12 +12,8 @@ import chartJs from 'chart.js';
 export class ventasPeriodo {
   @ViewChild('barCanvas') barCanvas;
 
-  fechaInicio: string;
-  fechaFin: string;
   v_items: Array<any> = [];
-  v_items_orig: Array<any> = [];
   barChart: any;
-  months = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
 
   constructor(public platform: Platform,
     public navCtrl: NavController,
@@ -55,18 +51,6 @@ export class ventasPeriodo {
           'rgba(75, 192, 192, 0.2)',
           'rgba(153, 102, 255, 0.2)',
           'rgba(255, 159, 64, 0.2)',
-          'rgba(255, 99, 132, 0.2)',
-          'rgba(54, 162, 235, 0.2)',
-          'rgba(255, 206, 86, 0.2)',
-          'rgba(75, 192, 192, 0.2)',
-          'rgba(153, 102, 255, 0.2)',
-          'rgba(255, 159, 64, 0.2)',
-          'rgba(255, 99, 132, 0.2)',
-          'rgba(54, 162, 235, 0.2)',
-          'rgba(255, 206, 86, 0.2)',
-          'rgba(75, 192, 192, 0.2)',
-          'rgba(153, 102, 255, 0.2)',
-          'rgba(255, 159, 64, 0.2)',
         ],
         borderColor: [
           'rgba(255,99,132,1)',
@@ -76,17 +60,6 @@ export class ventasPeriodo {
           'rgba(153, 102, 255, 1)',
           'rgba(255, 159, 64, 1)',
           'rgba(255,99,132,1)',
-          'rgba(54, 162, 235, 1)',
-          'rgba(255, 206, 86, 1)',
-          'rgba(75, 192, 192, 1)',
-          'rgba(153, 102, 255, 1)',
-          'rgba(255, 159, 64, 1)',
-          'rgba(255,99,132,1)',
-          'rgba(54, 162, 235, 1)',
-          'rgba(255, 206, 86, 1)',
-          'rgba(75, 192, 192, 1)',
-          'rgba(153, 102, 255, 1)',
-          'rgba(255, 159, 64, 1)',
         ],
         borderWidth: 1
       }]
@@ -114,15 +87,11 @@ export class ventasPeriodo {
 
   getPeriodSales() {
     this.v_items = [];
-    this.v_items_orig = [];
     this.invoice.GetPeriodSales().then(
       data => {
         if (data) {
           this.v_items = data;
-          this.v_items_orig = data;
-          console.log("PROVIDERS");
           console.log(this.v_items);
-          console.log(this.v_items_orig);
           this.barChart = this.getBarChart();
         } else {
           console.error('Error retrieving weather data: Data object is empty');

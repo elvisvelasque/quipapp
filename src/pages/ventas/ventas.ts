@@ -136,7 +136,7 @@ export class ventaspage{
 
   getProviders() {
     this.prov_items = [];
-    this.invoice.GetProvidersSales().then(
+    this.invoice.GetClientsSales().then(
       data => {
         if (data) {
           this.prov_items = data;

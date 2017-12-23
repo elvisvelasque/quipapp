@@ -75,14 +75,14 @@ export class comprasProyecciones {
 
   ionViewDidLoad() {
     this.platform.ready().then(() => {
-      this.getSalesProjections(3);
+      this.getPurchasesProjections(3);
     });
   }
 
-  getSalesProjections(num: number) {
+  getPurchasesProjections(num: number) {
     this.proj_items = [];
     this.proj_items = [];
-    this.invoice.getSalesProjections(num).then(
+    this.invoice.getPurchasesProjections(num).then(
       data => {
         if (data) {
           this.proj_items = data;
