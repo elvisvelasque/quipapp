@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { NavController, NavParams } from 'ionic-angular';
-import { estrategiasPrecio } from './estrategiasPrecio/estrategiasPrecio';
+//import { estrategiasPrecio } from './estrategiasPrecio/estrategiasPrecio';
 import {estratpreciopreg} from './estrategiasPrecio/estratpreciopreg/estratpreciopreg'
 
 

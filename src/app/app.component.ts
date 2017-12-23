@@ -13,6 +13,7 @@ import { proveedorespage } from '../pages/proveedores/proveedores';
 import { LoginSliderPage } from '../pages/login-slider/login-slider';
 import { estrategias } from '../pages/estrategias/estrategias';
 import {clientespage} from '../pages/clientes/clientes';
+import { consejosgeneralespage } from '../pages/consejosGenerales/consejosGenerales';
 
 
 @Component({
@@ -30,7 +31,7 @@ export class MyApp {
     this.pages = [
       { title: 'Inicio', component: HomePage, badge: 'Nuevo', icon: 'home' },
       { title: 'Ventas', component: ventaspage, badge: '', icon: 'pricetag' },
-      { title: 'ChatPakita', component: costospage, badge: '', icon: 'chatbubbles' },
+      { title: 'Consejos Generales', component: consejosgeneralespage, badge: '', icon: 'chatbubbles' },
       { title: 'Clientes', component: clientespage, badge: '', icon: 'people' },
       { title: 'Compras', component: compraspage, badge: '', icon: 'cart' },
       { title: 'Metas', component: ratiospage, badge: '', icon: 'flag' },

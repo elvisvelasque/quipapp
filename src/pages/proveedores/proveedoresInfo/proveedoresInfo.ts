@@ -1,7 +1,6 @@
-import { Component, ViewChild } from '@angular/core';
+import { Component } from '@angular/core';
 import { NavController, NavParams, Platform } from 'ionic-angular'
 import { InvoiceProvider } from '../../../providers/InvoiceProvider';
-import chartJs from 'chart.js';
 
 @Component({
   selector: 'proveedoresInfo-lists',

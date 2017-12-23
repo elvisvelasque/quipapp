@@ -22,10 +22,9 @@ import { estrategias } from '../pages/estrategias/estrategias';
 import { estrategiasPrecio } from '../pages/estrategias/estrategiasPrecio/estrategiasPrecio';
 import { estratpreciopreg } from '../pages/estrategias/estrategiasPrecio/estratpreciopreg/estratpreciopreg';
 import { estratprecioideal } from '../pages/estrategias/estrategiasPrecio/estratprecioideal/estratprecioideal';
-import {clientespage} from '../pages/clientes/clientes';
-import {NativeGoogleMapsPage} from '../pages/geolocalizacion/geolocalizacion';
-import { Camera, CameraOptions  } from '@ionic-native/camera';
-import {marketing} from '../pages/marketing/marketing';
+import { clientespage } from '../pages/clientes/clientes';
+import { marketing } from '../pages/marketing/marketing';
+import { consejosgeneralespage } from '../pages/consejosGenerales/consejosGenerales';
 
 @NgModule({
   declarations: [
@@ -51,7 +50,7 @@ import {marketing} from '../pages/marketing/marketing';
     estratpreciopreg,
     estratprecioideal,
     clientespage,
-    NativeGoogleMapsPage,
+    consejosgeneralespage,
     marketing,
   ],
   imports: [
@@ -81,9 +80,9 @@ import {marketing} from '../pages/marketing/marketing';
     estratpreciopreg,
     estratprecioideal,
     clientespage,
-    NativeGoogleMapsPage,
+    consejosgeneralespage,
     marketing,
   ],
-  providers: [InvoiceProvider, Camera, {provide: ErrorHandler, useClass: IonicErrorHandler}]
+  providers: [InvoiceProvider, {provide: ErrorHandler, useClass: IonicErrorHandler}]
 })
 export class AppModule {}

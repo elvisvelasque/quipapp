@@ -81,7 +81,6 @@ export class ventaProyecciones {
 
   getSalesProjections(num: number) {
     this.proj_items = [];
-    this.proj_items = [];
     this.invoice.getSalesProjections(num).then(
       data => {
         if (data) {
