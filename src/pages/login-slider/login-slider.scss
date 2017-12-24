@@ -1,123 +1,64 @@
 page-login-slider {
-  $base-color: rgb(24, 72, 90);
-  // Fullscreen centered image background
-  ion-content {
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-    border-color: transparent;
+  .backgroundImgA {
+    background-image: url('https://cdn.pixabay.com/photo/2015/06/20/07/24/color-815546_960_720.png')
   }
-  // Slider
-  .content-slider {
-    ion-slides,
-    .swiper-container {
-      height: 100%;
-      width: auto;
-    }
-  }
-  .text-slider {
-    ion-slides,
-    .swiper-container {
-      height: 20vh;
-      width: auto;
-    }
-  }
-  .zoom .slide-zoom {
-    height: 100%;
-  }
-
-  input, .item-md {
-    background-color: transparent !important;
-    color: white;
-  }
-  // Content
   .scroll-content {
+    align-content: center;
     display: flex;
     flex-direction: column;
-    overflow: hidden;
-  }
-  .logo {
-    width: 100%;
-    max-width: 19em;
-    height: auto;
-    margin: 0 auto;
-  }
-  ion-row {
-    align-items: center;
+    justify-content: center;
     text-align: center;
   }
-  ion-col {
-    padding: 0 20px;
+
+  .backgroundImgB {
+    background-image: url('/assets/logo1.png')
   }
-  span,
-  p,
-  h3 {
-    color: white;
+  .scroll-content {
+    align-content: center;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
   }
-  // Input items
-  ion-label,
-  .input-has-focus {
-    color: #fff !important;
+
+  ion-card.card {
+    box-shadow: none;
+    background: rgba(232, 246, 248, 0.5);
+    border-radius: 5px;
   }
-  ion-item {
-    border-radius: 3px !important;
-    padding-right: 16px !important;
-    margin-bottom: 5px !important;
-    color: #fff !important;
-    background-color: transparent !important;
-    font-size: 0.9em;
+
+
+  .list > .item-block:first-child {
+    border: medium none;
   }
-  .margin-bottom {
-    margin-bottom: 15px !important;
-  }
-   ::-webkit-input-placeholder {
-    color: white !important;
-  }
-  .item-inner {
-    border-bottom: 2px solid white !important;
-    box-shadow: none !important;
-  }
-  //
-  .login-button {
-    width: 100%;
-    max-width: 40rem;
-    height: 50px;
-    font-size: 1.2em;
-    span {
-      color: $base-color !important;
+  .item {
+    margin-bottom: 10px;
+    background: rgba(255, 255, 255, 0.5);
+    border: medium none;
+    .item-input {
+      color: #fff;
     }
-    // border: 1px solid #fff;
-  }
-  .forgot-button {
-    font-weight: bold;
-    float: right;
-    ion-icon {
-      padding-left: 10px;
-      font-size: 2.2rem;
+    *:-moz-placeholder {
+      color: #fff !important;
     }
-  }
-  .goback-button {
-    font-weight: bold;
-    float: left;
-    ion-icon {
-      padding-right: 10px;
-      font-size: 2.2rem;
+    *:-ms-input-placeholder {
+      color: #fff !important;
     }
-  }
-  .slide-button {
-    margin-top: 4rem;
-    font-weight: bold;
-    ion-icon {
-      padding-left: 10px;
-      font-size: 2.2rem;
+    *::-webkit-input-placeholder {
+      color: #fff !important;
     }
+    input::-moz-placeholder {
+      color: #fff !important;
+    }
+    input:-moz-placeholder {
+      color: #fff !important;
+    }
+
   }
-  .position-bottom {
+
+  .botom {
     position: absolute;
-    left: 0;
-    bottom: 10px;
-    right: 0;
-    margin: 0 auto;
-    width: 200px;
+    bottom: 0;
   }
 }

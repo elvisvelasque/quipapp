@@ -22970,143 +22970,92 @@ page-home .ionic-logo:before {
   }
 }
 
-page-login-slider ion-content {
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-  border-color: transparent;
-}
-
-page-login-slider .content-slider ion-slides,
-page-login-slider .content-slider .swiper-container {
-  height: 100%;
-  width: auto;
-}
-
-page-login-slider .text-slider ion-slides,
-page-login-slider .text-slider .swiper-container {
-  height: 20vh;
-  width: auto;
-}
-
-page-login-slider .zoom .slide-zoom {
-  height: 100%;
-}
-
-page-login-slider input, page-login-slider .item-md {
-  background-color: transparent !important;
-  color: white;
+page-login-slider .backgroundImgA {
+  background-image: url("https://cdn.pixabay.com/photo/2015/06/20/07/24/color-815546_960_720.png");
 }
 
 page-login-slider .scroll-content {
+  -webkit-align-content: center;
+  -ms-flex-line-pack: center;
+  align-content: center;
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
-  overflow: hidden;
-}
-
-page-login-slider .logo {
-  width: 100%;
-  max-width: 19em;
-  height: auto;
-  margin: 0 auto;
-}
-
-page-login-slider ion-row {
-  -webkit-align-items: center;
-  -ms-flex-align: center;
-  align-items: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
   text-align: center;
 }
 
-page-login-slider ion-col {
-  padding: 0 20px;
+page-login-slider .backgroundImgB {
+  background-image: url("/assets/logo1.png");
 }
 
-page-login-slider span,
-page-login-slider p,
-page-login-slider h3 {
-  color: white;
+page-login-slider .scroll-content {
+  -webkit-align-content: center;
+  -ms-flex-line-pack: center;
+  align-content: center;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-wrap: wrap;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  text-align: center;
 }
 
-page-login-slider ion-label,
-page-login-slider .input-has-focus {
+page-login-slider ion-card.card {
+  box-shadow: none;
+  background: rgba(232, 246, 248, 0.5);
+  border-radius: 5px;
+}
+
+page-login-slider .list > .item-block:first-child {
+  border: medium none;
+}
+
+page-login-slider .item {
+  margin-bottom: 10px;
+  background: rgba(255, 255, 255, 0.5);
+  border: medium none;
+}
+
+page-login-slider .item .item-input {
+  color: #fff;
+}
+
+page-login-slider .item *:-moz-placeholder {
   color: #fff !important;
 }
 
-page-login-slider ion-item {
-  border-radius: 3px !important;
-  padding-right: 16px !important;
-  margin-bottom: 5px !important;
+page-login-slider .item *:-ms-input-placeholder {
   color: #fff !important;
-  background-color: transparent !important;
-  font-size: 0.9em;
 }
 
-page-login-slider .margin-bottom {
-  margin-bottom: 15px !important;
+page-login-slider .item *::-webkit-input-placeholder {
+  color: #fff !important;
 }
 
-page-login-slider ::-webkit-input-placeholder {
-  color: white !important;
+page-login-slider .item input::-moz-placeholder {
+  color: #fff !important;
 }
 
-page-login-slider .item-inner {
-  border-bottom: 2px solid white !important;
-  box-shadow: none !important;
+page-login-slider .item input:-moz-placeholder {
+  color: #fff !important;
 }
 
-page-login-slider .login-button {
-  width: 100%;
-  max-width: 40rem;
-  height: 50px;
-  font-size: 1.2em;
-}
-
-page-login-slider .login-button span {
-  color: #18485a !important;
-}
-
-page-login-slider .forgot-button {
-  font-weight: bold;
-  float: right;
-}
-
-page-login-slider .forgot-button ion-icon {
-  padding-left: 10px;
-  font-size: 2.2rem;
-}
-
-page-login-slider .goback-button {
-  font-weight: bold;
-  float: left;
-}
-
-page-login-slider .goback-button ion-icon {
-  padding-right: 10px;
-  font-size: 2.2rem;
-}
-
-page-login-slider .slide-button {
-  margin-top: 4rem;
-  font-weight: bold;
-}
-
-page-login-slider .slide-button ion-icon {
-  padding-left: 10px;
-  font-size: 2.2rem;
-}
-
-page-login-slider .position-bottom {
+page-login-slider .botom {
   position: absolute;
-  left: 0;
-  bottom: 10px;
-  right: 0;
-  margin: 0 auto;
-  width: 200px;
+  bottom: 0;
 }
 
 ion-col {
@@ -23302,14 +23251,6 @@ button span {
 .boton {
   position: absolute;
   bottom: 1;
-}
-
-page-charts .scroll-content {
-  background-color: #f4f4f4;
-}
-
-page-charts ion-card-header {
-  font-weight: bold;
 }
 
 ion-col {

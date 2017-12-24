@@ -33,9 +33,11 @@ export class MyApp {
       { title: 'Clientes', component: clientespage, badge: '', icon: 'people' },
       { title: 'Compras', component: compraspage, badge: '', icon: 'cart' },
       { title: 'Metas', component: ratiospage, badge: '', icon: 'flag' },
-      { title: 'Resumen', component: resumenpage, badge: '', icon: 'home' },
       { title: 'Proveedores', component: proveedorespage, badge: '', icon: 'people' },
       { title: 'Estrategias', component: estrategias, badge: '', icon: 'home' },
+      { title: 'Subir Facturas', component: resumenpage, badge: '', icon: 'home' },
+      //{ title: 'Cerrar sesion', component: , badge: '', icon: 'log-out' },
+
 
     ];
 

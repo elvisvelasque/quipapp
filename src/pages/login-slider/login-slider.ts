@@ -9,6 +9,7 @@ import { HomePage } from '../home/home';
   templateUrl: 'login-slider.html',
 })
 export class LoginSliderPage {
+
   public loginForm: any;
   public backgroundImage = 'assets/img/background-6.png';
 
@@ -22,13 +23,17 @@ export class LoginSliderPage {
   public ruc_log;
   public pass_log;
 
+  type: string;
+
   constructor(
     public loadingCtrl: LoadingController,
     public alertCtrl: AlertController,
     public navCtrl: NavController,
     public app: App,
     public invoice: InvoiceProvider
-  ) { }
+  ) { 
+    this.type = "login";
+  }
 
   // Slider methods
   @ViewChild('slider') slider: Slides;
@@ -39,7 +44,7 @@ export class LoginSliderPage {
   }
 
   goToSignup() {
-    this.slider.slideTo(2);
+    this.type="register"
   }
 
   slideNext() {
@@ -67,6 +72,11 @@ export class LoginSliderPage {
     loading.present();
   }
 
+  back3(){
+    this.type="login";
+  }
+
+
   login() {
     console.log(this.ruc_log);
     console.log(this.pass_log);
@@ -82,7 +92,7 @@ export class LoginSliderPage {
               this.presentLoading('Te identificaste con éxito!');
               this.invoice.name = data["mensaje"];
               this.invoice.token = data["token"];
-              this.navCtrl.push(HomePage);
+              this.navCtrl.setRoot(HomePage);
             }
             else {
               this.presentLoading('Ocurrió un error. Inténtalo de nuevo :)');

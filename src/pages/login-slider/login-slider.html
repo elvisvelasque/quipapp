@@ -1,101 +1,95 @@
 
-<ion-content class="transparent-header" [ngStyle]="{'background-image': 'url(' + backgroundImage +')'}">
+<ion-content class="backgroundImgA">
 <ion-header>
   <ion-navbar>
     <ion-title><ion-icon name="menu" menuToggle></ion-icon></ion-title>
   </ion-navbar>
 </ion-header>
+  <ion-grid>
+  <ion-row>
+    
+      <ion-col >
+          <div [ngSwitch]="type">
+              <div *ngSwitchCase = "'login'">
+              <br> 
+              <br>
+                  <ion-card>
+                      <br>
+                      <ion-card-header>
+                        <img src="http://www.comfiar.com.pe/img/Sunat.png" width="100" height="100"/>
+                        tuQuipu
+                      </ion-card-header>
+                      <ion-card-content>
+                        <form #FormLogin="ngForm" (ngSubmit)="login()">
+                          <ion-item>
+                            <ion-label floating>RUC</ion-label>
+                            <ion-input [(ngModel)]="ruc_log" name="username" type="text" required></ion-input>
+                          </ion-item>
+                          <ion-item>
+                            <ion-label floating>Clave</ion-label>
+                            <ion-input [(ngModel)]="pass_log" name="password" type="password" required></ion-input>
+                          </ion-item>
+        
+                            <button class="button button-block button-calm" [disabled]="!FormLogin.form.valid" type="submit" style="background-color: #F7FE2E; color: #000000" full ion-button>ENTRAR
+                            </button>
+                            <button ion-button class="register-btn" type="button" block clear (click)="goToSignup()" style="color:#000;">Crear nueva cuenta</button>
+                        </form>
+                        <br>
+                      </ion-card-content>
+                    </ion-card>
+              </div>
+              <div *ngSwitchCase = "'register'">
 
+                  <br>
+
+                  <ion-card>
+                      <br>
+                      <ion-card-header>
+                        CREAR NUEVA CUENTA
+                      </ion-card-header>
+                      <ion-card-content>
+                        <form #FormLogin2="ngForm" (ngSubmit)="signup()">
+                          <ion-item>
+                            <ion-label floating>Nombre de la empresa</ion-label>
+                            <ion-input [(ngModel)]="name" name="company" type="text" required></ion-input>
+                          </ion-item>
+                          <ion-item>
+                            <ion-label floating>E-mail</ion-label>
+                            <ion-input [(ngModel)]="email" name="email" type="email" required></ion-input>
+                          </ion-item>
+                          <ion-item>
+                            <ion-label floating>Usuario</ion-label>
+                            <ion-input [(ngModel)]="username" name="username" type="text" required></ion-input>
+                          </ion-item>
+                          <ion-item>
+                            <ion-label floating>RUC</ion-label>
+                            <ion-input [(ngModel)]="ruc" name="username" type="text" required></ion-input>
+                          </ion-item>
+                          <ion-item>
+                            <ion-label floating>Contraseña</ion-label>
+                            <ion-input [(ngModel)]="password" name="password" type="password" required></ion-input>
+                          </ion-item>
+                          <ion-item>
+                              <ion-label floating>Repita la contraseña</ion-label>
+                              <ion-input [(ngModel)]="password_confirmation" name="password2" type="password" required></ion-input>
+                          </ion-item>
+                          
+        
+                            <button class="button button-block button-calm" [disabled]="!(FormLogin2.form.valid)|| password != password_confirmation" type="submit" style="background-color: #F7FE2E; color: #000000" full ion-button>REGISTRARSE
+                            </button><!---->
+
+                            <button ion-button block icon-start (click)="back3()" color="Light">
+                            <ion-icon name="arrow-back"></ion-icon>
+                             Atras
+                           </button>
+                        </form>
+                        <br>
+                      </ion-card-content>
+                    </ion-card>
+              </div>
+            </div>
+    </ion-col>
  
-  <ion-slides #slider class="content-slider" direction="vertical">
-    <ion-slide class="swiper-no-swiping">
-      <div padding>
-        <!--<img class="logo" src="assets/img/logo-pr.png" />-->
-        <ion-slides class="text-slider" autoplay="2000">
-          <ion-slide>
-            <h3> Really nice stuff </h3>
-          </ion-slide>
-          <ion-slide>
-            <img src="assets/img/misc/emoji.png" />
-          </ion-slide>
-          <ion-slide>
-            <h3> Unique experiences given to you for just a couple bucks </h3>
-          </ion-slide>
-          <ion-slide>
-            <h3> Share what you love </h3>
-          </ion-slide>
-        </ion-slides>
-        <ion-row>
-            <button ion-button round color="light" class="login-button" (click)="goToLogin()">Ingresa si ya estás registrado!!</button></ion-row>
-            <ion-row>
-            <button ion-button round color="light" class="login-button" (click)="goToSignup()">Registrate</button>
-        </ion-row>
-      </div>
-    </ion-slide>
-    <ion-slide class="zoom swiper-no-swiping">
-      <ion-slides #innerSlider class="content-slider">
-        <ion-slide class="swiper-no-swiping">
-          <div style="padding: 20% 32px 32px 32px">
-            <ion-item>
-              <ion-label floating>RUC</ion-label>
-              <ion-input type="text" [(ngModel)]="ruc_log"></ion-input>
-            </ion-item>
-            <ion-item>
-              <ion-label floating>Contraseña</ion-label>
-              <ion-input type="password" [(ngModel)]="pass_log"></ion-input>
-            </ion-item>
-            <button ion-button block round (click)="login()" color="light" class="login-button">INICAR SESION</button>
-            <!--<button ion-button clear (click)="slideNext()" color="light" class="forgot-button">F?</button>-->
-          </div>
-          <button ion-button clear (click)="goToSignup()" class="slide-button position-bottom">IR A REGISTRARSE<ion-icon name="arrow-down"></ion-icon></button>
-        </ion-slide>
-        <!--<ion-slide class="swiper-no-swiping">
-          <div style="padding: 20% 32px 32px 32px">
-            <ion-item>
-              <ion-label floating>E-mail</ion-label>
-              <ion-input type="email"></ion-input>
-            </ion-item>
-            <button ion-button block round (click)="resetPassword()" color="light" class="login-button">RESET PASSWORD</button>
-            <button ion-button clear (click)="slidePrevious()" color="light" class="goback-button"><ion-icon name="arrow-back"></ion-icon> GO BACK</button>
-          </div>
-        </ion-slide> -->
-      </ion-slides>
-    </ion-slide>
-    <br>
-    <br>
-    <br>
-    <ion-slide class="zoom swiper-no-swiping">
-      <button ion-button clear (click)="goToLogin()" class="slide-button">
-        IR A INICIAR SESION
-        <ion-icon name="arrow-up"></ion-icon>
-      </button>
-      <div style="padding: 32px">
-        <ion-item>
-          <ion-label floating>Nombre de la empresa</ion-label>
-          <ion-input type="text" [(ngModel)]="name"></ion-input>
-        </ion-item>
-        <ion-item>
-          <ion-label floating>Email</ion-label>
-          <ion-input type="text" [(ngModel)]="email"></ion-input>
-        </ion-item>
-        <ion-item>
-          <ion-label floating>Usuario</ion-label>
-          <ion-input type="text" [(ngModel)]="username"></ion-input>
-        </ion-item>
-        <ion-item>
-          <ion-label floating>RUC</ion-label>
-          <ion-input type="text" [(ngModel)]="ruc"></ion-input>
-        </ion-item>
-        <ion-item>
-          <ion-label floating>Contraseña</ion-label>
-          <ion-input type="password" [(ngModel)]="password"></ion-input>
-        </ion-item>
-        <ion-item class="margin-bottom">
-          <ion-label floating>Confirmar contraseña</ion-label>
-          <ion-input type="password" [(ngModel)]="password_confirmation"></ion-input>
-        </ion-item>
-        <button ion-button block round (click)="signup()" color="light" class="login-button">REGISTRARSE</button>
-      </div>
-    </ion-slide>
-  </ion-slides>
+</ion-row>
+</ion-grid>
 </ion-content>
