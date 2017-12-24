@@ -49,16 +49,15 @@ export class proveedorespage{
 
   getPieChart() {
     const data = {
-      labels: ["Swiss Just Products", "Region Berna", "Ave Fenix", "Otros"],
+      labels: [this.prov_items["Nombre"][0], this.prov_items["Nombre"][1], this.prov_items["Nombre"][2], this.prov_items["Nombre"][3], this.prov_items["Nombre"][4], "Otros"],
       datasets: [
         {
-          data: [40, 25, 15, 20],
-          backgroundColor: ['#FF6384', '#36A2EB', '#FFCE56', '#42f48c'],
-          hoverBackgroundColor: ['#FF6384', '#36A2EB', '#FFCE56', '#42f48c']
+          data: [this.prov_items["Datas"][0], this.prov_items["Datas"][1], this.prov_items["Datas"][2], this.prov_items["Datas"][3], this.prov_items["Datas"][4], this.getOtros(this.prov_items["Datas"], 4)],
+          backgroundColor: ['#FF6384', '#36A2EB', '#FFCE56'],
+          hoverBackgroundColor: ['#FF6384', '#36A2EB', '#FFCE56']
         }]
     };
-
-    return this.getChart(this.pieCanvas.nativeElement, 'pie', data);
+     return this.getChart(this.pieCanvas.nativeElement, 'pie', data);
   }
 
   getOtros(list: any[], num: number) {
@@ -73,7 +72,7 @@ export class proveedorespage{
 
   ionViewDidLoad() {
     this.platform.ready().then(() => {
-      this.getProducts();
+      this.getProvidersPie();
     });
   }
 
@@ -81,18 +80,15 @@ export class proveedorespage{
    this.navCtrl.push(proveedoresInfo);
   }
 
-  getProducts() {
-    this.pieChart = this.getPieChart();
-    /*
-    this.p_items = [];
-    this.invoice.GetProductSales().then(
+  getProvidersPie() {
+    this.prov_items = [];
+    this.invoice.GetProvidersPie().then(
       data => {
         if (data) {
-          this.p_items = data;
-          console.log("PRODUCTOS");
-          console.log(this.p_items);
-          this.pieChart = this.getPieChart();
-          document.getElementById("porc").textContent = Math.round(this.p_items["Datas"][0]) + " %";
+          this.prov_items = data;
+          console.log("PROVEEDORES");
+          console.log(this.prov_items);
+          this.pieChart= this.getPieChart();
         } else {
           console.error('Error retrieving weather data: Data object is empty');
         }
@@ -102,6 +98,6 @@ export class proveedorespage{
         console.error('Error retrieving weather data');
         console.dir(error);
       }
-    );*/
+    );
   }
 }

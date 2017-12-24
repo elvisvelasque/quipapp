@@ -157,10 +157,30 @@ export class InvoiceProvider {
       .then(this.extractData); 
   }
 
-    public GetClientsPie():  Promise<any> {
+  public GetClientsPie():  Promise<any> {
       let content = {RucVendedor: 0};
     content.RucVendedor = this.token;
-    let url: string = this.getUrl("clientes/mas/vendido");
+    let url: string = this.getUrl("clientes/mas/cantidad");
+    return this.http.post(url, content)
+      .toPromise()
+      .then(this.extractData); 
+  }
+
+  //Proveedores
+
+  public GetProviders():  Promise<any> {
+    let content = {RucVendedor: 0};
+    content.RucVendedor = this.token;
+    let url: string = this.getUrl("proveedores/caracteristicas");
+    return this.http.post(url, content)
+      .toPromise()
+      .then(this.extractData); 
+  }
+
+    public GetProvidersPie():  Promise<any> {
+      let content = {RucVendedor: 0};
+    content.RucVendedor = this.token;
+    let url: string = this.getUrl("proveedores/mas/vendido");
     return this.http.post(url, content)
       .toPromise()
       .then(this.extractData); 

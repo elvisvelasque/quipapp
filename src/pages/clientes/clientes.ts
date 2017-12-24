@@ -12,7 +12,7 @@ export class clientespage{
 
 	  @ViewChild('pieCanvas') pieCanvas;
 	cl_items: Array<any> = [];
-		clp_items: Array<any> = [];
+	clp_items: Array<any> = [];
   pieChart: any;
 	loaded= false;
   constructor(
@@ -57,7 +57,7 @@ ngAfterViewInit() {
     );
   }
 
-    getChart(context, chartType, data, options?) {
+  getChart(context, chartType, data, options?) {
     return new chartJs(context, {
       data,
       options,
@@ -65,7 +65,7 @@ ngAfterViewInit() {
     });
   }
 
-    getPieChart() {
+  getPieChart() {
     const data = {
       labels: [this.clp_items["Nombre"][0], this.clp_items["Nombre"][1], this.clp_items["Nombre"][2], this.clp_items["Nombre"][3], this.clp_items["Nombre"][4], "Otros"],
       datasets: [
@@ -75,11 +75,10 @@ ngAfterViewInit() {
           hoverBackgroundColor: ['#FF6384', '#36A2EB', '#FFCE56']
         }]
     };
+   	return this.getChart(this.pieCanvas.nativeElement, 'pie', data);
+	}
 
-    	return this.getChart(this.pieCanvas.nativeElement, 'pie', data);
-  	}
-
-    getClientsPie() {
+  getClientsPie() {
     this.clp_items = [];
     this.invoice.GetClientsPie().then(
       data => {
@@ -100,7 +99,7 @@ ngAfterViewInit() {
     );
   }
 
-    getOtros(list: any[], num: number) {
+  getOtros(list: any[], num: number) {
     let suma: number = 0;
     for (var i = 0; i < list.length; i++) {
       if (i >= num) {
