@@ -14,7 +14,7 @@
   </ion-navbar>
 </ion-header>
 
-<ion-content padding class="transparent-header" [ngStyle]="{'background-image': 'url(' + backgroundImage +')'}" style="“background-size: cover” ">
+<ion-content padding class="transparent-header" [ngStyle]="{'background-image': 'url(' + backgroundImage +')'}" style="background-size: cover">
 
   <ion-col align-self-center>
     <h1 style="background: aliceblue; font-family: Serif;">
@@ -62,18 +62,18 @@
         <br><span id="minilabel">Ventas</span>
       </ion-col>
       <ion-col class="col">
-        <button primary large class="circle" id="inventario">
-          <ion-icon (click)="abrircompras()" name="cube" role="img" class="icon">
-          </ion-icon>
-        </button>
-        <br><span id="minilabel">Compras</span>
-      </ion-col>
-      <ion-col class="col">
         <button primary large class="circle" id="chatpakita">
           <ion-icon (click)="abrirchat()" name="md-cash" role="img" class="icon">
           </ion-icon>
         </button>
         <br><span id="minilabel">ChatPakita</span>
+      </ion-col>
+      <ion-col class="col">
+        <button primary large class="circle" id="inventario">
+          <ion-icon (click)="abrircompras()" name="cube" role="img" class="icon">
+          </ion-icon>
+        </button>
+        <br><span id="minilabel">Compras</span>
       </ion-col>
     </ion-row>
 

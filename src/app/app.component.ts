@@ -12,6 +12,7 @@ import { LoginSliderPage } from '../pages/login-slider/login-slider';
 import { estrategias } from '../pages/estrategias/estrategias';
 import { clientespage } from '../pages/clientes/clientes';
 import { chatpakitapage } from '../pages/chatPakita/chatPakita';
+import { InvoiceProvider } from '../providers/InvoiceProvider';
 
 
 @Component({
@@ -24,7 +25,7 @@ export class MyApp {
 
   pages2: Array<{ title: string, component: any}> = [];
 
-  constructor(platform: Platform, public menuCtrl: MenuController) {
+  constructor(platform: Platform, public menuCtrl: MenuController,public invoice: InvoiceProvider) {
 
     this.pages = [
       { title: 'Inicio', component: HomePage, badge: 'Nuevo', icon: 'home' },

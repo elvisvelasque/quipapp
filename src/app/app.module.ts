@@ -5,7 +5,6 @@ import { HomePage } from '../pages/home/home';
 import { ventaspage } from '../pages/ventas/ventas';
 import { compraspage } from '../pages/compras/compras';
 import { proveedorespage } from '../pages/proveedores/proveedores';
-import { proveedoresInfo } from '../pages/proveedores/proveedoresInfo/proveedoresInfo';
 import { ratiospage } from '../pages/ratios/ratios';
 import { resumenpage } from '../pages/resumen/resumen';
 import { InvoiceProvider } from '../providers/InvoiceProvider';
@@ -31,7 +30,6 @@ import { chatpakitapage } from '../pages/chatPakita/chatPakita';
     compraspage,
     ratiospage,
     proveedorespage,
-    proveedoresInfo,
     resumenpage,
     LoginSliderPage,
     ventasPeriodo,
@@ -55,7 +53,6 @@ import { chatpakitapage } from '../pages/chatPakita/chatPakita';
     HomePage,
     ventaspage,
     proveedorespage,
-    proveedoresInfo,
     compraspage,
     ratiospage,
     resumenpage,

@@ -1,7 +1,6 @@
 import { Component, ViewChild } from '@angular/core';
 import { NavController, NavParams, Platform } from 'ionic-angular'
 import { InvoiceProvider } from '../../providers/InvoiceProvider';
-import { proveedoresInfo } from './proveedoresInfo/proveedoresInfo';
 import chartJs from 'chart.js';
 
 @Component({
@@ -33,11 +32,7 @@ export class proveedorespage{
   {
   }
 
-  ngAfterViewInit() {
-    setTimeout(() => {
-      console.log("after view init");
-    }, 1000);
-  }
+  ngAfterViewInit() { }
 
   getChart(context, chartType, data, options?) {
     return new chartJs(context, {
@@ -76,26 +71,21 @@ export class proveedorespage{
     });
   }
 
-  abrirProveedoresInfo(){
-   this.navCtrl.push(proveedoresInfo);
-  }
-
   getProvidersPie() {
     this.prov_items = [];
     this.invoice.GetProvidersPie().then(
       data => {
-        if (data) {
+        if (data.length > 0) {
           this.prov_items = data;
           console.log("PROVEEDORES");
           console.log(this.prov_items);
           this.pieChart= this.getPieChart();
         } else {
-          console.error('Error retrieving weather data: Data object is empty');
+          document.getElementById("msg").textContent = 'Lo sentimos, no hay información disponible sobre tus proveedores';
         }
       },
       error => {
-        //Hide the loading indicator
-        console.error('Error retrieving weather data');
+        console.error('Error al obtener data de proveedores');
         console.dir(error);
       }
     );

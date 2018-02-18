@@ -24,15 +24,11 @@ export class clientespage{
   }
 
 ngAfterViewInit() {
-    setTimeout(() => {
-      console.log("after view init");
-    }, 1000);
   }
 
   ionViewDidLoad() {
     this.platform.ready().then(() => {
       this.getClients();
-      this.getClientsPie();
     });
   }
 
@@ -40,18 +36,18 @@ ngAfterViewInit() {
     this.cl_items = [];
     this.invoice.GetClients().then(
       data => {
-        if (data) {
+        if (data.length > 0) {
           this.cl_items = data;
           console.log("CLIENTES");
           console.log(this.cl_items);
           this.loaded = true;
+          this.getClientsPie();
         } else {
-          console.error('Error retrieving weather data: Data object is empty');
+          document.getElementById("msg").textContent = 'Lo sentimos, no hay información disponible sobre tus clientes';
         }
       },
       error => {
-        //Hide the loading indicator
-        console.error('Error retrieving weather data');
+        console.error('Error al obtener data de clientes');
         console.dir(error);
       }
     );
