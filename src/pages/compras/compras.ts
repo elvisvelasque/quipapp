@@ -38,11 +38,7 @@ export class compraspage{
   {
   }
 
-  ngAfterViewInit() {
-    setTimeout(() => {
-      console.log("after view init");
-    }, 1000);
-  }
+  ngAfterViewInit() { }
 
   getChart(context, chartType, data, options?) {
     return new chartJs(context, {
@@ -116,19 +112,18 @@ export class compraspage{
     this.p_items = [];
     this.invoice.GetProductPurchases().then(
       data => {
-        if (data) {
+        if (data.length > 0) {
           this.p_items = data;
           console.log("PRODUCTOS");
           console.log(this.p_items);
           this.pieChart = this.getPieChart();
           document.getElementById("porc").textContent = "El producto mas comprado es " + this.p_items["Nombre"][0] + ", con " + Math.round(this.p_items["Datas"][0]*100) + " %";
         } else {
-          console.error('Error retrieving weather data: Data object is empty');
+          document.getElementById("porc").textContent = 'Lo sentimos, no hay información disponible sobre tus compras';
         }
       },
       error => {
-        //Hide the loading indicator
-        console.error('Error retrieving weather data');
+        console.error('Error al obtener data de compras');
         console.dir(error);
       }
     );
@@ -138,19 +133,18 @@ export class compraspage{
     this.prov_items = [];
     this.invoice.GetProvidersPurchases().then(
       data => {
-        if (data) {
+        if (data.length) {
           this.prov_items = data;
           console.log("PROVIDERS");
           console.log(this.prov_items);
           this.doughnutChart = this.getDoughnutChart();
           document.getElementById("porcprov").textContent = "El proveedor mas comprado es " + this.prov_items["Nombre"][0] + ", con " +Math.round(this.prov_items["Datas"][0]*100) + " %";
         } else {
-          console.error('Error retrieving weather data: Data object is empty');
+          document.getElementById("porcprov").textContent = 'Lo sentimos, no hay información disponible sobre tus proveedores';
         }
       },
       error => {
-        //Hide the loading indicator
-        console.error('Error retrieving weather data');
+        console.error('Error al obtener data de proveedores');
         console.dir(error);
       }
     );

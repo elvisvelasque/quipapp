@@ -42,9 +42,7 @@ export class chatpakitapage{
   new : string;
   send(message) {
     if (message && message !== '') {
-      // this.messageService.sendMessage(chatId, message);
       this.new = ' ';
-      console.log(message);
       this.invoice.GetRespuesta(message, this.context).then(
           data => {
             this.context = data["context"];

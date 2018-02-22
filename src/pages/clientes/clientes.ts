@@ -12,7 +12,7 @@ export class clientespage{
 
 	  @ViewChild('pieCanvas') pieCanvas;
 	cl_items: Array<any> = [];
-		clp_items: Array<any> = [];
+	clp_items: Array<any> = [];
   pieChart: any;
 	loaded= false;
   constructor(
@@ -24,15 +24,11 @@ export class clientespage{
   }
 
 ngAfterViewInit() {
-    setTimeout(() => {
-      console.log("after view init");
-    }, 1000);
   }
 
   ionViewDidLoad() {
     this.platform.ready().then(() => {
       this.getClients();
-      this.getClientsPie();
     });
   }
 
@@ -40,24 +36,24 @@ ngAfterViewInit() {
     this.cl_items = [];
     this.invoice.GetClients().then(
       data => {
-        if (data) {
+        if (data.length > 0) {
           this.cl_items = data;
           console.log("CLIENTES");
           console.log(this.cl_items);
           this.loaded = true;
+          this.getClientsPie();
         } else {
-          console.error('Error retrieving weather data: Data object is empty');
+          document.getElementById("msg").textContent = 'Lo sentimos, no hay información disponible sobre tus clientes';
         }
       },
       error => {
-        //Hide the loading indicator
-        console.error('Error retrieving weather data');
+        console.error('Error al obtener data de clientes');
         console.dir(error);
       }
     );
   }
 
-    getChart(context, chartType, data, options?) {
+  getChart(context, chartType, data, options?) {
     return new chartJs(context, {
       data,
       options,
@@ -65,7 +61,7 @@ ngAfterViewInit() {
     });
   }
 
-    getPieChart() {
+  getPieChart() {
     const data = {
       labels: [this.clp_items["Nombre"][0], this.clp_items["Nombre"][1], this.clp_items["Nombre"][2], this.clp_items["Nombre"][3], this.clp_items["Nombre"][4], "Otros"],
       datasets: [
@@ -75,11 +71,10 @@ ngAfterViewInit() {
           hoverBackgroundColor: ['#FF6384', '#36A2EB', '#FFCE56']
         }]
     };
+   	return this.getChart(this.pieCanvas.nativeElement, 'pie', data);
+	}
 
-    	return this.getChart(this.pieCanvas.nativeElement, 'pie', data);
-  	}
-
-    getClientsPie() {
+  getClientsPie() {
     this.clp_items = [];
     this.invoice.GetClientsPie().then(
       data => {
@@ -100,7 +95,7 @@ ngAfterViewInit() {
     );
   }
 
-    getOtros(list: any[], num: number) {
+  getOtros(list: any[], num: number) {
     let suma: number = 0;
     for (var i = 0; i < list.length; i++) {
       if (i >= num) {
