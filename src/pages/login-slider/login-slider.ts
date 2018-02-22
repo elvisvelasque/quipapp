@@ -123,7 +123,7 @@ export class LoginSliderPage {
           console.log(data)
           if (data["codigo"] == 1) {
             this.presentLoading('Gracias por registrarte!');
-            this.navCtrl.push(HomePage);
+            this.navCtrl.setRoot(HomePage);
           }
           else {
             this.presentLoading('Ocurrió un error. Inténtalo de nuevo :)');
