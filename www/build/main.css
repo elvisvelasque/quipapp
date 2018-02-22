@@ -23253,6 +23253,18 @@ button span {
   bottom: 1;
 }
 
+page-charts ion-content {
+  text-align: center;
+}
+
+page-charts ion-avatar img,
+page-charts ion-thumbnail img {
+  display: block;
+  margin: 0 auto;
+  width: 25vh;
+  height: auto;
+}
+
 ion-col {
   text-align: center;
 }

@@ -8,6 +8,27 @@
 
 
 <ion-content>
+<ion-avatar (click)="changePicture()">
+    <img [src]="chosenPicture || placeholder" onerror="this.src='assets/img/avatar/girl-avatar.png'" />
+    <button ion-button color="danger">Change image</button>
+  </ion-avatar>
+
+<!--<form [formGroup]="myForm">
+
+<ion-list>
+            <ion-item>
+
+                <input type="file" formControlName="upresume_one" name="upresume_one"/>
+                <p>Supported formats .doc,.docs and .pdf[Max file size: 500KB]</p>
+            </ion-item>
+       <div class="text-right">
+                <button ion-button style="background-color: #16a085;color: white;" color="secondary" (click)="save(myForm.value)">Submit</button>
+            </div>
+
+        </ion-list>
+
+
+</form>-->
  
   
 </ion-content>

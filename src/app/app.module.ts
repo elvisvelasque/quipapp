@@ -8,6 +8,7 @@ import { proveedorespage } from '../pages/proveedores/proveedores';
 import { proveedoresInfo } from '../pages/proveedores/proveedoresInfo/proveedoresInfo';
 import { ratiospage } from '../pages/ratios/ratios';
 import { resumenpage } from '../pages/resumen/resumen';
+import { CameraProvider } from '../providers/camera.provider';
 import { InvoiceProvider } from '../providers/InvoiceProvider';
 import { LoginSliderPage } from '../pages/login-slider/login-slider';
 import { ventasPeriodo } from '../pages/ventas/ventasPeriodo/ventasPeriodo';
@@ -45,6 +46,7 @@ import { chatpakitapage } from '../pages/chatPakita/chatPakita';
     clientespage,
     chatpakitapage,
     marketing,
+    
   ],
   imports: [
     IonicModule.forRoot(MyApp)
@@ -72,6 +74,6 @@ import { chatpakitapage } from '../pages/chatPakita/chatPakita';
     chatpakitapage,
     marketing,
   ],
-  providers: [InvoiceProvider, {provide: ErrorHandler, useClass: IonicErrorHandler}]
+  providers: [CameraProvider,InvoiceProvider, {provide: ErrorHandler, useClass: IonicErrorHandler}]
 })
 export class AppModule {}
