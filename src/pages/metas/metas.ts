@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { NavController, NavParams, ModalController, AlertController, ToastController, Platform } from 'ionic-angular';
+import { NavController, NavParams, ModalController, AlertController, ToastController, Platform, ItemSliding, Item } from 'ionic-angular';
 import { InvoiceProvider } from '../../providers/InvoiceProvider';
 import { metasAdd } from './metas-add/metas-add';
 import { LoadingController } from 'ionic-angular/components/loading/loading';
@@ -15,6 +15,8 @@ export class metaspage{
   today: Date = new Date();
   loading: any;
   errorToast: any;
+  activeItemSliding: ItemSliding = null;
+  swipeAmount: number = 33;
 
   constructor(
     public platform: Platform, 
@@ -30,8 +32,7 @@ export class metaspage{
       content: "Espere un momento",
       spinner: "crescent"
     }); 
-    this.loading.onDidDismiss(() => { }
-  );
+    this.loading.onDidDismiss(() => { });
 
     this.errorToast = this.toastCtrl.create({
       message: "Lo sentimos, no hay información disponible sobre tus metas",
@@ -39,14 +40,24 @@ export class metaspage{
       duration: 2000,
     });
   }
+
+  initLoading() {
+    this.loading = this.loadingCtrl.create({
+      content: "Espere un momento",
+      spinner: "crescent"
+    }); 
+    this.loading.onWillDismiss(() => { });
+    this.loading.onDidDismiss(() => { });
+  }
   
-  ionViewWilload() {
+  ionViewWillLoad() {
     this.platform.ready().then(() => {
       this.getAllMetas();
     });
   }
 
   getAllMetas() {
+    this.initLoading();
     this.loading.present();
     this.metas = [];
     this.invoice.GetAllGoals().then(
@@ -70,7 +81,7 @@ export class metaspage{
   }
 
   addMeta() {
-    let metasAddModal = this.modalCtrl.create(metasAdd, { userId: 8675309 });
+    let metasAddModal = this.modalCtrl.create(metasAdd);
     metasAddModal.present();
     metasAddModal.onWillDismiss(data => {this.getAllMetas()});
   }
@@ -110,5 +121,41 @@ export class metaspage{
       ]
     });
     confirmAlert.present();
+  }
+
+  openItem(itemSlide: ItemSliding, item: Item, event) {
+    event.stopPropagation();
+    if (this.activeItemSliding) {
+      this.closeItem();
+    }
+
+    this.activeItemSliding = itemSlide;
+    
+    itemSlide.startSliding(this.swipeAmount);
+    itemSlide.moveSliding(this.swipeAmount);
+
+    itemSlide.setElementClass("active-slide", true);
+    itemSlide.setElementClass("active-options-right", true);
+    item.setElementStyle('transition', null);
+    item.setElementStyle('transform', 'translate3d(-' + this.swipeAmount + 'px, 0px, 0px)');
+  }
+
+  closeItem() {
+    if (this.activeItemSliding) {
+      this.activeItemSliding.close();
+      this.activeItemSliding = null;
+    }
+  }
+
+  ondrag(item: ItemSliding, event) {
+    let percent = event.getSlidingPercent();
+    if (percent > 0) {
+      // right side
+    } else {
+      // left side
+    }
+    if (Math.abs(percent) > 1) {
+      // overscroll
+    }
   }
 }

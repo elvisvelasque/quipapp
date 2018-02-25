@@ -11,6 +11,9 @@ export class metasAdd {
   goalMessage: string = "";
   metasReady: boolean = false;
   goalDate: string;
+  minDate: string;
+  maxDate: string;
+  datesLoaded: boolean = false;
 
   constructor(
     public platform: Platform, 
@@ -20,7 +23,10 @@ export class metasAdd {
     public viewCtrl: ViewController,
     public invoice: InvoiceProvider
   ) { 
-    this.goalDate = (new Date()).toISOString();
+    let today = new Date();
+    this.goalDate = today.toISOString();
+    this.minDate = today.toISOString();
+    this.maxDate = (new Date(today.getFullYear() + 5, today.getMonth(), today.getDate())).toISOString();
   }
   
   addGoal() {
@@ -41,7 +47,7 @@ export class metasAdd {
         buttons: [{ text: 'Ok', handler: () => {
           let navTransition = alert.dismiss();
           navTransition.then(() => {
-            this.navCtrl.pop();
+            this.dismiss();
           });
             return false;
           }
@@ -67,6 +73,7 @@ export class metasAdd {
         }
       );
     }
+
   }
 
   dismiss() {

@@ -14,12 +14,12 @@
   <ion-content>
     <form (ngSubmit)="addGoal()">
         <ion-item>
-                <ion-label floating>Meta</ion-label>
-                <ion-textarea type="text" [(ngModel)]="goalMessage" name="message"></ion-textarea>
-            </ion-item>
-            <ion-item>
+            <ion-label floating>Meta</ion-label>
+            <ion-textarea type="text" [(ngModel)]="goalMessage" name="message"></ion-textarea>
+        </ion-item>
+        <ion-item>
                 <ion-label>Fecha</ion-label>
-                <ion-datetime displayFormat="DD/MM/YYYY" [(ngModel)]="goalDate" name="day"></ion-datetime>
+                <ion-datetime displayFormat="DD/MM/YYYY" [min]="minDate" [max]="maxDate" [(ngModel)]="goalDate" name="day"></ion-datetime>
         </ion-item>
         
         <button ion-button type="submit" block>Añadir Meta</button>

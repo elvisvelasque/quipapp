@@ -8,8 +8,27 @@
 
 
 <ion-content>
+  <ion-list>
+    <ion-list-header>
+      <button ion-button full color="Light" small="true" outline="true" (click)="addMeta()">
+        <ion-icon color="primary" name="add"></ion-icon>Añadir
+      </button>
+    </ion-list-header>
 
-  <ion-card>
+    <ion-item-sliding #slidingItem *ngFor="let meta of metas">
+      <ion-item #item text-wrap (click)="openItem(slidingItem, item, $event)">
+        <span>{{meta.fecha}}:</span><br><span>{{meta.mensaje}}</span>
+      </ion-item>
+  
+      <ion-item-options side="right">
+        <button color="danger" ion-button expandable (click)="removeModal(meta._id)">
+          <ion-icon name="trash"></ion-icon>
+        </button>
+      </ion-item-options>
+    </ion-item-sliding>
+  </ion-list>
+
+  <!-- <ion-card>
     <ion-card-header>
       <span style="font-size:1.5em; margin-bottom: 10px;"> TUS METAS </span>
       <button ion-button (click)="addMeta()" color="Light" small="true" outline="true" round="true">
@@ -34,9 +53,6 @@
     </ion-card-content>
 
     <ion-row *ngIf="!metasReady" id="msg" style="height: 25%;"><strong></strong></ion-row>
-  </ion-card>
-
-  
-
+  </ion-card> -->
 
 </ion-content>
