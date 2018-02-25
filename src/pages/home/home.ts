@@ -5,7 +5,7 @@ import { ventaspage } from '../ventas/ventas';
 import { proveedorespage } from '../proveedores/proveedores';
 //import { inventariopage } from '../inventario/inventario';
 import { compraspage } from '../compras/compras';
-import { ratiospage } from '../ratios/ratios';
+import { metaspage } from '../metas/metas';
 import { resumenpage } from '../resumen/resumen';
 import { InvoiceProvider } from '../../providers/InvoiceProvider';
 import { estrategias } from '../estrategias/estrategias';
@@ -44,7 +44,7 @@ export class HomePage {
   }
 
   abrirratios() {
-    this.navCtrl.push(ratiospage);
+    this.navCtrl.push(metaspage);
   }
 
   abrirresumen() {

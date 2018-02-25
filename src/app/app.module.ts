@@ -5,7 +5,8 @@ import { HomePage } from '../pages/home/home';
 import { ventaspage } from '../pages/ventas/ventas';
 import { compraspage } from '../pages/compras/compras';
 import { proveedorespage } from '../pages/proveedores/proveedores';
-import { ratiospage } from '../pages/ratios/ratios';
+import { metaspage } from '../pages/metas/metas';
+import { metasAdd } from '../pages/metas/metas-add/metas-add';
 import { resumenpage } from '../pages/resumen/resumen';
 import { CameraProvider } from '../providers/camera.provider';
 import { InvoiceProvider } from '../providers/InvoiceProvider';
@@ -29,7 +30,8 @@ import { chatpakitapage } from '../pages/chatPakita/chatPakita';
     ventaspage,
    // inventariopage,
     compraspage,
-    ratiospage,
+    metaspage,
+    metasAdd,
     proveedorespage,
     resumenpage,
     LoginSliderPage,
@@ -43,8 +45,7 @@ import { chatpakitapage } from '../pages/chatPakita/chatPakita';
     estratpreciopreg,
     clientespage,
     chatpakitapage,
-    marketing,
-    
+    marketing  
   ],
   imports: [
     IonicModule.forRoot(MyApp)
@@ -56,7 +57,8 @@ import { chatpakitapage } from '../pages/chatPakita/chatPakita';
     ventaspage,
     proveedorespage,
     compraspage,
-    ratiospage,
+    metaspage,
+    metasAdd,
     resumenpage,
     LoginSliderPage,
     ventasPeriodo,
@@ -69,7 +71,7 @@ import { chatpakitapage } from '../pages/chatPakita/chatPakita';
     estratpreciopreg,
     clientespage,
     chatpakitapage,
-    marketing,
+    marketing
   ],
   providers: [CameraProvider,InvoiceProvider, {provide: ErrorHandler, useClass: IonicErrorHandler}]
 })

@@ -188,19 +188,40 @@ export class InvoiceProvider {
 
   // Metas
 
-  public AddGoal():  Promise<any> {
-      let content = {RucVendedor: ""};
+  public AddGoal(msg: string, day: string):  Promise<any> {
+      let content = {RucVendedor: "", mensaje: "", fecha: ""};
     content.RucVendedor = this.token;
+    content.mensaje = msg;
+    content.fecha = day;
     let url: string = this.getUrl("metas/subir");
     return this.http.post(url, content)
       .toPromise()
       .then(this.extractData); 
   }
 
-  public GeetGoal():  Promise<any> {
+  public GetGoal():  Promise<any> {
       let content = {RucVendedor: ""};
     content.RucVendedor = this.token;
     let url: string = this.getUrl("metas/random");
+    return this.http.post(url, content)
+      .toPromise()
+      .then(this.extractData); 
+  }
+
+  public GetAllGoals():  Promise<any> {
+    let content = {RucVendedor: ""};
+    content.RucVendedor = this.token;
+    let url: string = this.getUrl("metas/totales");
+    return this.http.post(url, content)
+      .toPromise()
+      .then(this.extractData); 
+  }
+
+  public DeleteGoal(id: string):  Promise<any> {
+    let content = {RucVendedor: "", id: ""};
+    content.RucVendedor = this.token;
+    content.id = id;
+    let url: string = this.getUrl("metas/eliminar");
     return this.http.post(url, content)
       .toPromise()
       .then(this.extractData); 

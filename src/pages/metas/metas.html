@@ -1,0 +1,42 @@
+<ion-header>
+
+  <ion-navbar>
+    <ion-title><ion-icon name="menu" menuToggle></ion-icon> Metas</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content>
+
+  <ion-card>
+    <ion-card-header>
+      <span style="font-size:1.5em; margin-bottom: 10px;"> TUS METAS </span>
+      <button ion-button (click)="addMeta()" color="Light" small="true" outline="true" round="true">
+        <ion-icon name="add"></ion-icon> Nueva meta
+      </button>
+    </ion-card-header>
+
+    <ion-card-content>
+      <ion-grid *ngIf="metasReady">
+        <ion-row *ngFor="let meta of metas; let i = index; ">
+          <ion-col width-50>
+            {{ meta.mensaje }}
+          </ion-col>
+          <ion-col width-33>
+            {{ meta.fecha }}
+          </ion-col>
+          <ion-col width-20>
+            <ion-icon name="md-close" (click)="removeModal(meta._id)" showWhen="android,windows"></ion-icon>
+          </ion-col>
+        </ion-row>
+      </ion-grid>
+    </ion-card-content>
+
+    <ion-row *ngIf="!metasReady" id="msg" style="height: 25%;"><strong></strong></ion-row>
+  </ion-card>
+
+  
+
+
+</ion-content>

@@ -23058,6 +23058,11 @@ page-login-slider .botom {
   bottom: 0;
 }
 
+.boton {
+  position: absolute;
+  bottom: 1;
+}
+
 ion-col {
   text-align: center;
 }
@@ -23152,11 +23157,6 @@ button span {
   height: 45px;
   margin-left: auto;
   margin-right: auto;
-}
-
-.boton {
-  position: absolute;
-  bottom: 1;
 }
 
 page-charts ion-content {

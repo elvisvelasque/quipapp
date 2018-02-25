@@ -5,7 +5,7 @@ import { StatusBar, Splashscreen } from 'ionic-native';
 import { HomePage } from '../pages/home/home';
 import { ventaspage } from '../pages/ventas/ventas';
 import { compraspage } from '../pages/compras/compras';
-import { ratiospage } from '../pages/ratios/ratios';
+import { metaspage } from '../pages/metas/metas';
 import { resumenpage } from '../pages/resumen/resumen';
 import { proveedorespage } from '../pages/proveedores/proveedores';
 import { LoginSliderPage } from '../pages/login-slider/login-slider';
@@ -33,7 +33,7 @@ export class MyApp {
       { title: 'ChatPakita', component: chatpakitapage, badge: '', icon: 'chatbubbles' },
       { title: 'Clientes', component: clientespage, badge: '', icon: 'people' },
       { title: 'Compras', component: compraspage, badge: '', icon: 'cart' },
-      { title: 'Metas', component: ratiospage, badge: '', icon: 'flag' },
+      { title: 'Metas', component: metaspage, badge: '', icon: 'flag' },
       { title: 'Proveedores', component: proveedorespage, badge: '', icon: 'people' },
       { title: 'Estrategias', component: estrategias, badge: '', icon: 'home' },
       { title: 'Subir Facturas', component: resumenpage, badge: '', icon: 'home' },
