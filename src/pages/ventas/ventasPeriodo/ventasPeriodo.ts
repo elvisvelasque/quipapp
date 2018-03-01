@@ -12,6 +12,7 @@ import chartJs from 'chart.js';
 export class ventasPeriodo {
   @ViewChild('barCanvas') barCanvas;
 
+  meta: string = "Sigue así!";
   v_items: Array<any> = [];
   barChart: any;
 
@@ -82,6 +83,7 @@ export class ventasPeriodo {
   ionViewDidLoad() {
     this.platform.ready().then(() => {
       this.getPeriodSales();
+      this.getRandomMeta();
     });
   }
 
@@ -100,6 +102,23 @@ export class ventasPeriodo {
       error => {
         //Hide the loading indicator
         console.error('Error retrieving weather data');
+        console.dir(error);
+      }
+    );
+  }
+
+  getRandomMeta() {
+    this.invoice.GetGoal().then(
+      data => {
+        let code = "0";
+        if (data != null)
+          code = data.codigo;
+
+        if (code == "1")
+          this.meta = data.message;
+      },
+      error => {
+        console.error('Error al registrar meta');
         console.dir(error);
       }
     );

@@ -13,6 +13,7 @@ export class ventaProyecciones {
   
   @ViewChild('lineCanvas') lineCanvas;
 
+  meta: string = "Sigue así!";
   proj_items = [];
   lineChart: any;
 
@@ -75,6 +76,7 @@ export class ventaProyecciones {
   ionViewDidLoad() {
     this.platform.ready().then(() => {
       this.getSalesProjections();
+      this.getRandomMeta();
     });
   }
 
@@ -94,6 +96,23 @@ export class ventaProyecciones {
       error => {
         //Hide the loading indicator
         console.error('Error retrieving weather data');
+        console.dir(error);
+      }
+    );
+  }
+
+  getRandomMeta() {
+    this.invoice.GetGoal().then(
+      data => {
+        let code = "0";
+        if (data != null)
+          code = data.codigo;
+
+        if (code == "1")
+          this.meta = data.message;
+      },
+      error => {
+        console.error('Error al registrar meta');
         console.dir(error);
       }
     );

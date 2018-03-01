@@ -12,6 +12,7 @@ import chartJs from 'chart.js';
 export class ventasEstrategias {
   @ViewChild('barCanvas') barCanvas;
 
+  meta: string = "Sigue así!";
   v_items: Array<any> = [];
   lastData: Array<any> = [];
   lastNombres: Array<any> = [];
@@ -100,6 +101,4 @@ export class ventasEstrategias {
       }
     );
   }
-
-  
 }

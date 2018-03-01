@@ -12,6 +12,7 @@ import chartJs from 'chart.js';
 export class comprasPeriodo {
   @ViewChild('barCanvas') barCanvas;
 
+  meta: string = "";
   v_items: Array<any> = [];
   barChart: any;
 
@@ -20,9 +21,6 @@ export class comprasPeriodo {
     public invoice: InvoiceProvider) { }
 
   ngAfterViewInit() {
-    setTimeout(() => {
-      console.log("after view init");
-    }, 1000);
   }
 
   getChart(context, chartType, data, options?) {
@@ -81,6 +79,7 @@ export class comprasPeriodo {
   ionViewDidLoad() {
     this.platform.ready().then(() => {
       this.getPeriodSales();
+      this.getRandomMeta();
     });
   }
 
@@ -107,5 +106,22 @@ export class comprasPeriodo {
   search() {
     console.log(this.v_items);
     this.barChart = this.getBarChart;
+  }
+
+  getRandomMeta() {
+    this.invoice.GetGoal().then(
+      data => {
+        let code = "0";
+        if (data != null)
+          code = data.codigo;
+
+        if (code == "1")
+          this.meta = data.message;
+      },
+      error => {
+        console.error('Error al registrar meta');
+        console.dir(error);
+      }
+    );
   }
 }
