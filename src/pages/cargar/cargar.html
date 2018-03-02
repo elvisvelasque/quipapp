@@ -1,0 +1,36 @@
+<ion-header>
+
+  <ion-navbar>
+    <ion-title><ion-icon name="menu" menuToggle></ion-icon> QuipApp</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding class="transparent-header" [ngStyle]="{'background-image': 'url(' + backgroundImage +')'}">
+
+  <ion-col align-self-center><h1>Carga de Facturas electronicas</h1></ion-col>
+
+    <ion-card>
+     
+      <form [formGroup]="myForm">
+
+        <ion-list>
+            <ion-item>
+
+                <input type="file" formControlName="upresume_one" name="upresume_one"/>
+                <p>Supported formats .doc,.docs and .pdf[Max file size: 500KB]</p>
+            </ion-item>
+            <div class="text-right">
+                <button ion-button style="background-color: #16a085;color: white;" color="secondary" (click)="save(myForm.value)">Submit</button>
+            </div>
+
+        </ion-list>
+      </form>
+
+
+
+    </ion-card>
+
+
+</ion-content>

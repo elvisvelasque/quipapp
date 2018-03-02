@@ -4,6 +4,7 @@ import { StatusBar, Splashscreen } from 'ionic-native';
 
 import { HomePage } from '../pages/home/home';
 import { ventaspage } from '../pages/ventas/ventas';
+import { cargarpage } from '../pages/cargar/cargar';
 import { compraspage } from '../pages/compras/compras';
 import { metaspage } from '../pages/metas/metas';
 import { resumenpage } from '../pages/resumen/resumen';
@@ -36,7 +37,8 @@ export class MyApp {
       { title: 'Metas', component: metaspage, badge: '', icon: 'flag' },
       { title: 'Proveedores', component: proveedorespage, badge: '', icon: 'people' },
       { title: 'Estrategias', component: estrategias, badge: '', icon: 'home' },
-      { title: 'Subir Facturas', component: resumenpage, badge: '', icon: 'home' },
+      { title: 'Subir Facturas', component: cargarpage, badge: '', icon: 'upload' },      
+      //{ title: 'Subir Facturas', component: resumenpage, badge: '', icon: 'home' },
       //{ title: 'Cerrar sesion', component: , badge: '', icon: 'log-out' },
 
 

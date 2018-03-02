@@ -1,8 +1,10 @@
 <ion-header>
   <ion-navbar>
-    <ion-title>Chat</ion-title>
+    <ion-title>
+      <ion-icon name="menu" menuToggle></ion-icon>Chat</ion-title>
   </ion-navbar>
-</ion-header>
+</ion-header>s
+
 <ion-content>
   <div *ngFor="let message of messages" class="message-wrapper" on-hold="onMessageHold($event, $index, message)">
     <div *ngIf="user._id !== message.userId">

@@ -3,6 +3,7 @@ import { IonicApp, IonicModule, IonicErrorHandler } from 'ionic-angular';
 import { MyApp } from './app.component';
 import { HomePage } from '../pages/home/home';
 import { ventaspage } from '../pages/ventas/ventas';
+import { cargarpage } from '../pages/cargar/cargar';
 import { compraspage } from '../pages/compras/compras';
 import { proveedorespage } from '../pages/proveedores/proveedores';
 import { metaspage } from '../pages/metas/metas';
@@ -28,6 +29,7 @@ import { chatpakitapage } from '../pages/chatPakita/chatPakita';
     MyApp,
     HomePage,
     ventaspage,
+    cargarpage,
    // inventariopage,
     compraspage,
     metaspage,
@@ -55,6 +57,7 @@ import { chatpakitapage } from '../pages/chatPakita/chatPakita';
     MyApp,
     HomePage,
     ventaspage,
+    cargarpage,
     proveedorespage,
     compraspage,
     metaspage,

@@ -2,6 +2,8 @@ import { Component } from '@angular/core';
 
 import { NavController, Platform } from 'ionic-angular';
 import { ventaspage } from '../ventas/ventas';
+import { cargarpage } from '../cargar/cargar';
+
 import { proveedorespage } from '../proveedores/proveedores';
 //import { inventariopage } from '../inventario/inventario';
 import { compraspage } from '../compras/compras';
@@ -33,6 +35,10 @@ export class HomePage {
   
   abrirventas() {
     this.navCtrl.push(ventaspage);
+  }
+
+  abrircarga() {
+    this.navCtrl.push(cargarpage);
   }
 
   abrircompras() {
