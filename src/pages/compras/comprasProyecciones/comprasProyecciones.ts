@@ -13,6 +13,7 @@ export class comprasProyecciones {
   
   @ViewChild('lineCanvas') lineCanvas;
 
+  meta: string = "";
   proj_items = [];
   lineChart: any;
   numero_proy: number = 0;
@@ -22,9 +23,6 @@ export class comprasProyecciones {
     public invoice: InvoiceProvider) { }
 
   ngAfterViewInit() {
-    setTimeout(() => {
-      console.log("after view init");
-    }, 1000);
   }
 
 
@@ -76,6 +74,7 @@ export class comprasProyecciones {
   ionViewDidLoad() {
     this.platform.ready().then(() => {
       this.getPurchasesProjections(3);
+      this.getRandomMeta();
     });
   }
 
@@ -96,6 +95,23 @@ export class comprasProyecciones {
       error => {
         //Hide the loading indicator
         console.error('Error retrieving weather data');
+        console.dir(error);
+      }
+    );
+  }
+
+  getRandomMeta() {
+    this.invoice.GetGoal().then(
+      data => {
+        let code = "0";
+        if (data != null)
+          code = data.codigo;
+
+        if (code == "1")
+          this.meta = data.message;
+      },
+      error => {
+        console.error('Error al registrar meta');
         console.dir(error);
       }
     );
