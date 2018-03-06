@@ -12,23 +12,15 @@
   <ion-col align-self-center><h1>Carga de Facturas electronicas</h1></ion-col>
 
     <ion-card>
+
+      <ion-item>
+      <p>{{imageURI}}</p>
+      <button ion-button color="secondary" (click)="getImage()">Get Image</button>
+      </ion-item>
      
-      <form [formGroup]="myForm">
-
-        <ion-list>
-            <ion-item>
-
-                <input type="file" formControlName="upresume_one" name="upresume_one"/>
-                <p>Supported formats .doc,.docs and .pdf[Max file size: 500KB]</p>
-            </ion-item>
-            <div class="text-right">
-                <button ion-button style="background-color: #16a085;color: white;" color="secondary" (click)="save(myForm.value)">Submit</button>
-            </div>
-
-        </ion-list>
-      </form>
-
-
+      <ion-item>
+      <button ion-button (click)="uploadFile()">Upload</button>
+      </ion-item> 
 
     </ion-card>
 
