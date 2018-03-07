@@ -1,5 +1,5 @@
 import { Component, ViewChild } from '@angular/core';
-import { NavController, NavParams, Platform,LoadingController, ToastController  } from 'ionic-angular'
+import { NavController, NavParams, Platform, LoadingController, ToastController, AlertController  } from 'ionic-angular'
 import { FileChooser } from '@ionic-native/file-chooser';
 import { FileTransfer, FileUploadOptions, FileTransferObject } from '@ionic-native/file-transfer';
 import { File } from '@ionic-native/file';
@@ -19,6 +19,9 @@ export class cargarpage{
   public backgroundImage = 'assets/img/nube3.png';
   imageFileName:any;
   imageURI:any;
+  chooseAlert: any;
+  loadAlert: any;
+  fileTransfer: any;
 
   constructor(
     public platform: Platform,
@@ -27,84 +30,67 @@ export class cargarpage{
     private fileChooser: FileChooser,
     private transfer: FileTransfer,
     public loadingCtrl: LoadingController,
-    public toastCtrl: ToastController
+    public toastCtrl: ToastController,
+    public alertCtrl: AlertController
 
     )
   {
+  	this.fileTransfer = this.transfer.create();
+
+  	this.loadAlert = this.alertCtrl.create({
+      title: "Load",
+      message: "",
+      buttons: [{ text: 'Ok', handler: () => { } }]
+    });
+
+    this.chooseAlert = this.alertCtrl.create({
+      title: "Choose",
+      message: "",
+      buttons: [{ text: 'Ok', handler: () => {
+          let loader = this.loadingCtrl.create({
+            content: "Uploading..."
+          });
+          loader.present();
+          const fileTransfer: FileTransferObject = this.transfer.create();
+      
+          let options: FileUploadOptions = {
+            fileKey: 'media',
+            fileName: 'Facturas.zip',
+            chunkedMode: false,
+            //mimeType: "multipart/form-data",
+            mimeType: "application/zip",
+            httpMethod: "POST",
+            params: {
+              'RucVendedor': 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJydWMiOiIxMDA5NDkwNjQ2MSIsImlhdCI6MTUxNDA0NzIwMX0.W-gz2F13FzyvaI-XcykHo8kONBttlYGIhJKAZddmnX8'
+            }
+          }
+      
+          fileTransfer.upload(this.imageURI, 'http://localhost:3000/subir/invoice', options)
+            .then((data) => {
+              this.loadAlert.setMessage("Bien");
+              this.loadAlert.present();
+            loader.dismiss();
+          }, (err) => {
+            this.loadAlert.setMessage(JSON.stringify(err));
+            this.loadAlert.present();
+            loader.dismiss();
+          });
+      } }]
+    });
   }
 
   ngAfterViewInit() { }
 
- 
-
   uploadFile() {
 
-  this.fileChooser.open()
-      .then(uri => 
-      {
-        console.log(uri)
-         const fileTransfer: FileTransferObject = this.transfer.create();
-       });
-      
-  let loader = this.loadingCtrl.create({
-    content: "Uploading..."
-  });
-  loader.present();
-  const fileTransfer: FileTransferObject = this.transfer.create();
-
-  let options: FileUploadOptions = {
-    fileKey: 'ionicfile',
-    fileName: 'ionicfile',
-    chunkedMode: false,
-    mimeType: "file/xml",
-    headers: {}
+    this.fileChooser.open()
+        .then(uri => 
+        {
+          console.log(uri)         
+          this.imageURI = uri;
+          this.chooseAlert.setMessage(uri);
+          this.chooseAlert.present();
+        });
   }
-
-  fileTransfer.upload(this.imageURI, 'http://192.168.0.7:8080/api/uploadImage', options)
-    .then((data) => {
-    console.log(data+" Uploaded Successfully");
-    this.imageFileName = "http://192.168.0.7:8080/static/images/ionicfile.jpg"
-    loader.dismiss();
-  }, (err) => {
-    console.log(err);
-    loader.dismiss();
-  });
-
-
-
-
-  /*uploadresume()
-  {
-      this.fileChooser.open()
-      .then(uri => 
-      {
-        console.log(uri)
-        const fileTransfer: FileTransferObject = this.transfer.create();
-
-
-    // regarding detailed description of this you cn just refere ionic 2 transfer plugin in official website
-      let options1: FileUploadOptions = {
-         fileKey: 'image_upload_file',
-         fileName: 'name.pdf',
-         headers: {},
-         params: {"app_key":"Testappkey"},
-         chunkedMode : false
-      
-      }
-
-      fileTransfer.upload(uri, 'your API that can take the required type of file that you want to upload.', options1)
-       .then((data) => {
-       // success
-       alert("success"+JSON.stringify(data));
-       }, (err) => {
-       // error
-       alert("error"+JSON.stringify(err));
-           });
-
-      })
-      .catch(e => console.log(e));
-  } */
-
-}
 
 }
